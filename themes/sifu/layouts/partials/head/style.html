@@ -1,0 +1,32 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/>
+{{- with resources.Get "css/root.css" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+/>
+{{- with resources.Get "fonts/DingTalk-JinBuTi.woff2" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- with
+resources.Get "fonts/DingTalk-JinBuTi.woff" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- with
+resources.Get "fonts/DingTalk-JinBuTi.ttf" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- with
+resources.Get "fonts/fonts.css" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- with
+resources.Get "icons/iconfont.ttf" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- with
+resources.Get "icons/iconfont.woff" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- with
+resources.Get "icons/iconfont.woff2" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- with
+resources.Get "icons/iconfont.css" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- with
+resources.Get "css/header.css" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- with
+resources.Get "css/content.css" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- with
+resources.Get "css/footer.css" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end}}

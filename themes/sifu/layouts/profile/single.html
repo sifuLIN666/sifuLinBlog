@@ -1,0 +1,10 @@
+{{ define "main" }}
+
+<h1 class="content-title">{{ .Title }}</h1>
+<div class="content-msg">
+  {{- range .Params.keywords -}}
+  <span class="content-msg-item">{{- . -}}</span>
+  {{- end -}}
+</div>
+<div>{{ .Content }}</div>
+{{ end }}

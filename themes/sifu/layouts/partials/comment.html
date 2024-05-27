@@ -1,0 +1,5 @@
+{{- if .Site.Params.waline.enable -}}{{- partial "components/waline.html" . -}}
+{{- else if .Site.Params.disqus.enable -}} {{- partial "components/disqus.html"
+. -}} {{- else if .Site.Params.utterances.enable -}} {{- partial
+"components/utterances.html" . -}} {{- else if .Site.Params.giscus.enable -}}
+{{- partial "components/giscus.html" . -}} {{- end -}}

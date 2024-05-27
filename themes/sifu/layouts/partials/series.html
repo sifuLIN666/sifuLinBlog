@@ -1,0 +1,47 @@
+{{- $page := .page }} {{- $taxonomy := .taxonomy }} {{- with $page.GetTerms
+$taxonomy }} {{- range . }}
+<style>
+  .series-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    height: fit-content;
+    width: 100%;
+  }
+  .series-link {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 0.2rem;
+    background: linear-gradient(
+      to right,
+      var(--header-background-color-from),
+      var(--header-background-color-to)
+    );
+    width: 6rem;
+    height: fit-content;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 10px;
+    font-family: "Dingding";
+    margin: 3px 2px;
+    transition: 0.5s;
+  }
+  .series-link:hover {
+    transform: scale(1.05);
+  }
+</style>
+<div class="series-container">
+  <span style="font-size: 1.2rem; font-family: Dingding">
+    {{ .LinkTitle }}<i class="bi bi-three-dots"></i>
+  </span>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center">
+    {{- range .Site.Taxonomies.series.Get .LinkTitle -}}
+    <a href="{{- .RelPermalink -}}" class="series-link">{{- .Title -}}</a>{{-
+    end -}}
+  </div>
+</div>
+
+{{- end }} {{- end }}

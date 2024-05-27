@@ -1,0 +1,14 @@
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+; {{- with resources.Get "js/themeColors.js" }}
+<script src="{{ .RelPermalink }}" defer></script>
+{{- end}} {{- with resources.Get "js/mobile/headerNav.js" }}
+<script src="{{ .RelPermalink }}" defer></script>
+{{- end}} {{- with resources.Get "js/langSwitch.js" }}
+<script src="{{ .RelPermalink }}" defer></script>
+{{- end}}{{- with resources.Get "js/footer/footerStyle.js" }}
+<script src="{{ .RelPermalink }}" defer></script>
+{{- end}} {{- with resources.Get "js/rssCopy.js" }}
+<script src="{{ .RelPermalink }}" defer></script>
+{{- end}} {{- with resources.Get "js/typed.js" }}
+<script src="{{ .RelPermalink }}" defer></script>
+{{- end}}

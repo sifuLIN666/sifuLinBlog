@@ -1,0 +1,145 @@
+{{ $toc := .toc }}
+<style>
+  #toc-button {
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 3px;
+    padding: 0 2px;
+  }
+  #toc-button:hover {
+    cursor: pointer;
+  }
+  #toc-button svg {
+    /* The size of the SVG defines the overall size */
+    height: 1.5rem;
+    width: 1.5rem;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line {
+    fill: none;
+    stroke: var(--text-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  [toc-expanded="open"] svg {
+    transform: rotate(-45deg);
+  }
+  [toc-expanded="open"] svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  #toc-items-container {
+    background-color: #72727242;
+    padding: 2px 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    max-height: 8rem;
+  }
+  #toc-items-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  #toc-items-container::-webkit-scrollbar-track {
+    background-color: #313131;
+    border-radius: 2px;
+  }
+  #toc-items-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff6f;
+  }
+  #toc-items-container a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 5px 0;
+    word-wrap: break-word;
+    background-color: #ffffff2b;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px 0;
+  }
+  [toc-expanded="open"] + #toc-items-container {
+    animation: toc-show 0.5s;
+  }
+  [toc-expanded="closed"] + #toc-items-container {
+    animation: toc-close 0.5s;
+  }
+  @keyframes toc-show {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes toc-close {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+  }
+  /* 二级目录样式 */
+  #toc-items-container ul li {
+    width: 7rem;
+    font-size: 1rem;
+    font-family: "Dingding";
+  }
+  /* 三级目录样式 */
+  #toc-items-container ul li ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  #toc-items-container ul li ul li {
+    width: 5rem;
+    font-size: 0.8rem;
+    font-family: "Dingding";
+  }
+</style>
+<div style="position: fixed; left: 10px; top: 20%">
+  <button id="toc-button" toc-expanded="open">
+    <svg viewBox="0 0 32 32">
+      <path
+        class="line line-top-bottom"
+        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+      ></path>
+      <path class="line" d="M7 16 27 16"></path>
+    </svg>
+  </button>
+
+  <div id="toc-items-container">{{$toc}}</div>
+</div>
+<script>
+  const tocButton = document.getElementById("toc-button");
+  const tocItemsContainer = document.getElementById("toc-items-container");
+  tocButton.addEventListener("click", () => {
+    const expanded = tocButton.getAttribute("toc-expanded");
+    if (expanded === "open") {
+      tocButton.setAttribute("toc-expanded", "closed");
+    } else {
+      tocButton.setAttribute("toc-expanded", "open");
+      tocItemsContainer.style.display = "block";
+    }
+  });
+  tocItemsContainer.addEventListener("animationend", () => {
+    if (tocButton.getAttribute("toc-expanded") === "closed") {
+      tocItemsContainer.style.display = "none";
+    }
+  });
+</script>

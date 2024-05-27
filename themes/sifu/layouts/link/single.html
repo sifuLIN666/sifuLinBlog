@@ -1,0 +1,38 @@
+{{ define "main" }}{{- with resources.Get "css/links.css" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}}
+<h1 class="links-title">{{ .Title }}</h1>
+<div class="links-container">
+  {{- range .Site.Params.links -}}
+  <a href="{{ .url }}" class="links-card" target="_blank">
+    <div class="links-card-item-container">
+      <p class="links-card-text-container">
+        <span href="{{ .url }}" class="links-card-name">
+          <i class="bi bi-box-arrow-up-right"></i>{{ .name }}
+        </span>
+        <span class="links-card-description">{{ .description }}</span>
+      </p>
+      {{- with .img }}
+      <span class="links-card-img-container">
+        <img src="{{ . }}" alt="" class="links-card-img" />
+      </span>
+      {{- end -}}
+    </div>
+  </a>
+  {{/*
+  <div class="links-card">
+    <p class="links-card-item-container">
+      <a href="{{ .url }}" class="links-card-name">
+        <i class="bi bi-box-arrow-up-right"></i>{{ .name }}
+      </a>
+      <span>{{ .description }}</span>
+    </p>
+    {{- with .img }}
+    <span class="links-card-img-container"
+      ><img src="{{ . }}" alt="" class="links-card-img"
+    /></span>
+    {{- end -}}
+  </div>
+  */}} {{- end -}}
+</div>
+<div>{{ .Content }}</div>
+{{ end }}

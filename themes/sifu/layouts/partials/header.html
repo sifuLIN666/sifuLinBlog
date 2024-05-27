@@ -1,0 +1,32 @@
+<div class="header-title">
+  <div class="header-nav-container" id="header-nav-container">
+    {{ partial "menu.html" (dict "menuID" "main" "page" . "lang" .Site.Language
+    "menus" .Site.Menus)}}
+  </div>
+
+  <p class="header-author-msg">
+    <span class="header-author-title">{{ .Site.Title }}</span>
+    <span class="header-author-description">
+      {{- .Site.Params.description -}}
+    </span>
+  </p>
+  <span class="header-buttons">
+    <span class="header-button-container">
+      <button id="lang-switch" class="header-button">
+        <i class="bi bi-translate"></i>
+      </button>
+      <div class="header-language" id="header-language-container">
+        {{- range .Site.Languages -}}
+        <span class="header-language-item" id="{{ .LanguageCode }}">
+          <i class="{{ .LanguageName }}"></i>
+        </span>
+        {{ end }}
+      </div>
+    </span>
+    <span class="header-button-container">
+      <button id="theme-toggle" class="header-button">
+        <i class="iconfont icon-Sun" id="header-theme-button-icon"></i>
+      </button>
+    </span>
+  </span>
+</div>

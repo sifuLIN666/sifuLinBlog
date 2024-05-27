@@ -1,0 +1,27 @@
+body {
+  background-color: var(--window-background-color);
+  overflow: auto;
+}
+.main-container {
+  /* 4rem:header 1rem:footer-padding */
+  height: calc(100dvh - 4rem - 1rem);
+  margin-top: 3rem;
+  color: var(--text-color);
+  position: relative;
+}
+main {
+  padding: 0 15%;
+  height: calc(100% - var(--footer-container-height));
+  overflow: auto;
+}
+main::-webkit-scrollbar {
+  width: 10px;
+}
+main::-webkit-scrollbar-track {
+  background-color: #515151;
+  border-radius: 3px;
+}
+main::-webkit-scrollbar-thumb {
+  background-color: #8e8e8e;
+  border-radius: 3px;
+}

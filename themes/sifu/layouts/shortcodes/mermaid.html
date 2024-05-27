@@ -1,0 +1,19 @@
+<style>.mermaid svg { width: 100%;max-height:20rem; overflow: auto;background-color: #aeaeae7d;border-radius: 5px;margin: 5px 0; }</style>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<pre class="mermaid" align="{{ if .Get "align" }}{{ .Get "align" }}{{ else }}center{{ end }}">{{ safeHTML .Inner }}</pre>
+<script>
+var config = {
+    startOnLoad:true,
+    flowchart:{
+        useMaxWidth:true,
+        htmlLabels:true
+    },
+    sequence: { 
+        showSequenceNumbers: true,
+        actorMargin: 0, 
+        diagramMarginX:10, 
+        diagramMarginY:0 
+    },
+};
+mermaid.initialize(config);
+</script>

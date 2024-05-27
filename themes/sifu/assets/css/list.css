@@ -1,0 +1,118 @@
+.list-title {
+  font-family: "Dingding";
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  font-weight: 1000;
+}
+.list-article-container {
+  display: block;
+  flex-direction: column;
+  width: calc(96% - 25px);
+  margin: 1rem auto;
+  transition: 0.5s;
+  padding: 10px;
+  border-radius: 15px;
+  justify-content: center;
+  align-content: center;
+  text-decoration: none;
+  color: var(--text-color);
+  max-height: 8rem;
+  overflow-y: auto;
+}
+.list-article-container::-webkit-scrollbar {
+  width: 5px;
+}
+.list-article-container::-webkit-scrollbar-track {
+  background-color: #515151;
+  border-radius: 3px;
+}
+.list-article-container::-webkit-scrollbar-thumb {
+  background-color: #8e8e8e;
+}
+.list-article-container:hover {
+  transform: scale(1.02);
+  background-color: #7878783e;
+}
+.list-search-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#list-search-input {
+  width: 80%;
+  font-size: 1.2rem;
+  background-color: var(--content-msg-itme-color);
+  color: var(--text-color);
+  border: none;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+#list-search-input:focus {
+  outline: none;
+  font-size: 1.2rem;
+  background-color: var(--content-msg-itme-color);
+  color: var(--text-color);
+}
+#list-articles-container {
+  height: 80%;
+  overflow-y: auto;
+}
+#list-articles-container::-webkit-scrollbar {
+  width: 5px;
+}
+#list-articles-container::-webkit-scrollbar-track {
+  background-color: #515151;
+  border-radius: 3px;
+}
+#list-articles-container::-webkit-scrollbar-thumb {
+  background-color: #8e8e8e;
+}
+.list-article-tags-container {
+  text-align: center;
+  font-family: "Dingding";
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list-article-time-container {
+  text-align: center;
+  font-family: "Dingding";
+  height: fit-content;
+  font-size: 0.8rem;
+  margin: 5px 0;
+}
+.list-article-terms-container {
+  text-align: center;
+  font-family: "Dingding";
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 0;
+}
+.list-article-term {
+  font-size: 1.4rem;
+  margin-right: 3px;
+}
+
+.list-article-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  font-family: "Dingding";
+}
+.list-article-tag-card {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  background-color: #7878786f;
+  padding: 2px 3px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin: 3px;
+}
+.list-article-description {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}

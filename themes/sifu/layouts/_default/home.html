@@ -1,0 +1,38 @@
+{{ define "main" }} {{- with resources.Get "css/home.css" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />
+{{- end}} {{- $archive := "" -}}{{- $profile := "" -}} {{- $lang :=
+.Site.Language -}} {{- range site.Menus.main -}} {{- if eq .Identifier "Archive"
+-}} {{- $archive = printf "/%s/%s" $lang .URL -}} {{- end -}} {{- if eq
+.Identifier "Profile" -}} {{- $profile = printf "/%s/%s" $lang .URL -}} {{- end
+-}}{{- end -}}
+<div class="home-container">
+  <img class="home-img" src="{{ .Site.Params.avatar }}" />
+  <a href="{{ $profile }}" target="_parent" class="home-author"
+    >{{- .Site.Params.author.name -}}
+  </a>
+  <span id="home-author-description" class="home-author-description"
+    >{{ .Site.Params.author.description }}
+  </span>
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    "
+  >
+    <a class="home-jump-link" href="{{ $archive }}" target="_parent">
+      <i class="iconfont icon-enter" style="font-size: 2rem"></i>
+    </a>
+    {{- if .Site.Params.rss -}}
+    <a
+      class="home-jump-link rss-link"
+      href="{{- .Site.BaseURL -}}{{- .Site.Language -}}/index.xml"
+      target="_parent"
+    >
+      <i class="iconfont icon-RSS" style="font-size: 2rem"></i>
+    </a>
+    {{- end -}}
+  </div>
+</div>
+{{ end }}

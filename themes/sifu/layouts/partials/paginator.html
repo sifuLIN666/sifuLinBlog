@@ -1,0 +1,119 @@
+<style>
+  .paginator-list-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .paginator-buttons-container {
+    display: flex;
+    width: 3.5rem;
+  }
+  .paginator-button {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 0.1rem;
+    font-size: 1.5rem;
+  }
+  .paginator-pages-list-container {
+    display: flex;
+    width: 8rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .paginator-pages-num {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin: 0 0.2rem;
+  }
+  [pageActive="true"] {
+    color: #0073ff;
+  }
+</style>
+{{ $paginator := .paginatorMsg }} {{ $paginatorNum := .paginatorNum }}
+{{$startPage := 1}} {{ $halfPage := (div $paginatorNum 2) | int }} {{$endPage :=
+$paginator.TotalPages}} {{- if ge $paginator.PageNumber (add $halfPage 1) -}}
+{{$startPage = (sub $paginator.PageNumber $halfPage)}} {{- end -}} {{- if le
+$paginator.PageNumber (sub $paginator.TotalPages (add $halfPage 1)) -}}
+{{$endPage = (add $paginator.PageNumber $halfPage )}} {{- end -}}
+<div class="paginator-list-container">
+  <span class="paginator-buttons-container">
+    <a class="paginator-button" id="paginator-first-page">
+      <i class="bi bi-chevron-double-left"></i>
+    </a>
+    {{- if $paginator.HasPrev -}}
+    <a class="paginator-button" id="paginator-prev-page">
+      <i class="bi bi-chevron-left"></i>
+    </a>
+    {{- end -}}
+  </span>
+  <span
+    class="paginator-pages-list-container"
+    totalPages="{{$paginator.TotalPages}}"
+    id="paginator-pages-list-container"
+  >
+    {{- range seq $startPage $endPage -}}
+    <a class="paginator-pages-num">{{.}}</a>
+    {{- end -}}
+  </span>
+  <span class="paginator-buttons-container">
+    {{- if $paginator.HasNext -}}
+    <a class="paginator-button" id="paginator-next-page">
+      <i class="bi bi-chevron-right"></i>
+    </a>
+    {{- end -}}
+    <a class="paginator-button" id="paginator-last-page">
+      <i class="bi bi-chevron-double-right"></i>
+    </a>
+  </span>
+</div>
+<script>
+  const totalPages = document
+    .getElementById("paginator-pages-list-container")
+    .getAttribute("totalPages");
+  // 获取当前页数
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.split("/").includes("page")
+    ? currentPath.split("/")[4]
+    : "1";
+  // 设置首页按钮链接
+  // 获取首页按钮元素
+  const paginatorFirstPage = document.getElementById("paginator-first-page");
+  paginatorFirstPage.href = `${currentPath.split("/").slice(0, 3).join("/")}`;
+  // 设置上一页按钮链接
+  const paginatorPrevPage =
+    currentPage !== 1 && document.getElementById("paginator-prev-page");
+  paginatorPrevPage &&
+    paginatorPrevPage.setAttribute(
+      "href",
+      `${currentPath.split("/").slice(0, 4).join("/")}/${currentPage - 1}/`
+    );
+
+  // 设置尾页按钮链接
+  // 获取尾页按钮元素
+  const paginatorLastPage = document.getElementById("paginator-last-page");
+  paginatorLastPage.href = `${currentPath
+    .split("/")
+    .slice(0, 3)
+    .join("/")}/page/${totalPages}/`;
+  // 设置下一页按钮链接
+  const paginatorNextPage =
+    currentPage !== totalPages &&
+    document.getElementById("paginator-next-page");
+  paginatorNextPage &&
+    paginatorNextPage.setAttribute(
+      "href",
+      `${currentPath.split("/").slice(0, 3).join("/")}/page/${
+        +currentPage + 1
+      }/`
+    );
+  const numLinks = document.getElementsByClassName("paginator-pages-num");
+  Object.entries(numLinks).forEach((link) => {
+    link[1].href = `${currentPath.split("/").slice(0, 3).join("/")}/page/${
+      link[1].innerText
+    }/`;
+
+    link[1].innerText === currentPage &&
+      link[1].setAttribute("pageActive", "true");
+  });
+</script>

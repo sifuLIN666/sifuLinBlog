@@ -1,0 +1,46 @@
+{{ define "main" }} {{- with resources.Get "css/list.css" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />
+{{- end}} {{- with resources.Get "js/fuseSearch.js" }}
+<script src="{{ .RelPermalink }}" defer></script>
+{{- end}}
+<h1 class="list-title">{{i18n .Title}}</h1>
+<form class="list-search-form">
+  <input type="search" id="list-search-input" placeholder="Search..." />
+</form>
+<div id="list-articles-container">
+  {{ range .Paginator.Pages }}
+  <a href="{{ .RelPermalink }}" class="list-article-container">
+    <div>
+      <span class="list-article-title"> {{ .LinkTitle }} </span>
+      <p class="list-article-time-container">
+        <i class="bi bi-calendar3"></i>
+        <span style="margin: 0 2px">{{ .Date | dateFormat "2006-01-02" }}</span>
+      </p>
+      {{- with .Params.tags -}}
+      <p class="list-article-tags-container">
+        <i class="iconfont icon-Tags list-article-term"></i>
+        {{- range . -}}
+        <span class="list-article-tag-card">{{ . }}</span>
+        {{- end -}}
+      </p>
+      {{- end -}} {{- with .Params.categories -}}
+      <p class="list-article-terms-container">
+        <i class="iconfont icon-Category list-article-term"></i>
+        {{- range . -}}
+        <span class="list-article-tag-card"> {{ . }} </span>
+        {{- end -}}
+      </p>
+      {{- end -}} {{- with .Params.series -}}
+      <p class="list-article-terms-container">
+        <i class="iconfont icon-Series list-article-term"></i>{{- range . -}}
+        <span class="list-article-tag-card"> {{ . }} </span>{{- end -}}
+      </p>
+      {{- end -}}
+      <span class="list-article-description">{{ .Summary }}</span>
+    </div>
+  </a>
+  {{ end }}
+</div>
+{{- if gt .Paginator.TotalPages 1 -}} {{- partial "paginator.html" (dict
+"paginatorMsg" .Paginator "paginatorNum" .Site.Params.paginatorNums) -}} {{- end
+-}}{{ end }}

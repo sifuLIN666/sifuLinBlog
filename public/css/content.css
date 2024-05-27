@@ -1,0 +1,85 @@
+.content-title {
+  text-align: center;
+  margin: 1.5rem 0;
+  font-family: "Dingding";
+  font-weight: 1000;
+}
+.content-msg {
+  display: flex;
+  margin: 0.5rem auto;
+  width: 80%;
+  flex-wrap: wrap;
+}
+.content-msg-item {
+  margin: 0.2rem 0.5rem;
+  background-color: var(--content-msg-itme-color);
+  font-family: "Dingding";
+  padding: 3px 5px;
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+  user-select: none;
+}
+.post-container article h2,
+.post-container article h3 {
+  margin: 0.5rem 0;
+  border-left: 5px solid #a1a1a1;
+  padding: 3px;
+}
+.post-container article h4,
+.post-container article h5,
+.post-container article h6 {
+  margin: 0.3rem 0;
+  padding: 3px;
+}
+.post-container article p {
+  text-indent: 2rem;
+  margin: 0.3rem 0;
+}
+.post-container > article > table {
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+  outline: 1.5px solid var(--text-color);
+  overflow: auto;
+}
+.post-container > article > table::-webkit-scrollbar {
+  height: 10px;
+}
+.post-container > article > table::-webkit-scrollbar-track {
+  background-color: #535353;
+}
+.post-container > article > table::-webkit-scrollbar-thumb {
+  background-color: #a2a2a2;
+}
+.post-container > article > table > thead {
+  border-bottom: 2px solid var(--text-color);
+}
+.post-container > article > table > tbody > tr > td {
+  text-align: center;
+  min-width: 3rem;
+}
+.code-head {
+  width: calc(100% - 10px);
+  background-color: #172028;
+  padding: 3px 5px;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+.code-lang {
+  font-family: "Dingding";
+  font-size: 1rem;
+  color: #b9c0c6;
+}
+.code-copy-button {
+  background-color: #535353;
+  padding: 3px 2px 1px 2px;
+  border: none;
+  border-radius: 3px;
+}
+.code-copy-button > svg {
+  fill: #d8eee1;
+}
+.code-copy-button:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,48 @@
+{{ define "main" }} {{ $dateMachine := .Date | time.Format
+"2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date | time.Format ":date_long"
+}} {{- with resources.Get "css/code.css" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- if
+.Params.math -}}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
+  integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww"
+  crossorigin="anonymous"
+/>{{- partial "math.html" -}} {{- end -}}
+<div class="post-container">
+  <div
+    class="post-title"
+    style="display: flex; flex-direction: column; width: 100%"
+  >
+    <h1 style="text-align: center">{{ .Title }}</h1>
+    <time datetime="{{ $dateMachine }}" style="margin: 0 auto">
+      <i class="bi bi-calendar3" style="margin-right: 3px"></i>
+      <span>{{- $dateHuman -}}</span>
+    </time>
+  </div>
+  <article style="width: 100%; word-break: break-word">{{ .Content }}</article>
+  {{- if .Params.comments -}}{{- partial "comment.html" . -}}{{- end -}} {{- if
+  .Params.categories -}}
+  <p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-tags-fill"></i>{{ partial "tags.html" (dict "taxonomy"
+      "tags" "page" .) }}
+    </span>
+  </p>
+  {{- end -}} {{- if .Params.categories -}}
+  <p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-grid-fill"></i>{{ partial "tags.html" (dict "taxonomy"
+      "categories" "page" .) }}
+    </span>
+  </p>
+  {{- end -}} {{- if .Params.tags -}}
+  <p style="margin-top: 0.5rem">
+    {{ partial "series.html" (dict "taxonomy" "series" "page" .) }}
+  </p>
+  {{- end -}} {{- if .Params.toc -}} {{- partial "toc.html" (dict "toc"
+  .TableOfContents) -}} {{- end -}}
+</div>
+{{ if (findRE "<code" .Content 1) }} {{- with resources.Get "js/codeCopy.js" }}
+<script src="{{ .RelPermalink }}" defer></script>
+{{- end}} {{ end }} {{ end }}

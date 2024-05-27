@@ -1,0 +1,167 @@
+baseURL = "http://example.com"
+theme = "sifu"
+preserveTaxonomyNames = true
+paginate = 5 #frontpage pagination
+defaultContentLanguage = "zh-cn"
+defaultContentLanguageInSubdir = true
+hasCJKLanguage = true
+[languages]
+    [languages.en]
+        languageName = "fi fi-us"
+        weight = 1
+        title = "sifulin's Den"
+        contentDir = "content/en"
+        [languages.en.params]
+            description = "Suffering so hard that I wanna die!"
+            [[languages.en.params.links]]
+                name = "RainYun"
+                description = "Affordable VPS Hosting Provider with Discount Code: MTI2OTkw"
+                url = "https://www.rainyun.com/MTI2OTkw_"
+                img = "https://app.rainyun.com/img/logo.d193755d.png"
+            [[languages.en.params.links]]
+                name = "Lime"
+                description = "Affordable IPLC Dedicated Line VPN Solution"
+                url = "https://ykxqn.com/#/register?code=2Rvn9pVw"
+                img = "/links/Lime.jpg"
+
+            [languages.en.params.author]
+                name = "sifulin"
+                description = "Computer novice, communication novice, internet nerd, bug writer out of interest~"
+    
+    [languages.zh-cn]
+        languageName = "fi fi-cn"
+        weight = 2
+        title = "林师傅的贼窝"
+        contentDir = "content/zh-cn"
+        [languages.zh-cn.params]
+            description = "每天都被折磨的想死"
+            [[languages.zh-cn.params.links]]
+                name = "雨云"
+                description = "雨云是一家性价比超高的VPS提供商,优惠码: MTI2OTkw"
+                url = "https://www.rainyun.com/MTI2OTkw_"
+                img = "https://app.rainyun.com/img/logo.d193755d.png"
+            [[languages.zh-cn.params.links]]
+                name = "Lime"
+                description = "有性价比的IPLC专线机场"
+                url = "https://ykxqn.com/#/register?code=2Rvn9pVw"
+                img = "/links/Lime.jpg"
+
+            [languages.zh-cn.params.author]
+                name = "林师傅"
+                description = "兴趣使然的计算机菜鸟、通信小白、网络呆子、bug写手~"
+
+
+[menus]
+    [[menus.main]]
+        identifier = "Home"
+        Name = "Home"
+        url = ""
+        weight = 1
+    [[menus.main]]
+        identifier = "Category"
+        name = "Categories"
+        url = "categories"
+        weight = 2
+    [[menus.main]]
+        identifier = "Archive"
+        name = "Archives"
+        url = "posts"
+        weight = 3
+    [[menus.main]]
+        identifier = "Series"
+        name = "Series"
+        url = "series"
+        weight = 4
+    [[menus.main]]
+        identifier = "Tags"
+        name = "Tags"
+        url = "tags"
+        weight = 5
+    [[menus.main]]
+        identifier = "Profile"
+        name = "Profile"
+        url = "profile"
+        weight = 6
+    [[menus.main]]
+        identifier = "Attachment"
+        name = "Link"
+        url = "link"
+        weight = 7
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+[permalinks]
+    posts = ":year/:month/:day/:slug"
+[params]
+defaultThemeMode = "dark"
+avatar = "/avatar.jpg" 
+rss = true
+footerRss = true
+paginatorNums = 6
+[params.waline]
+enable = false
+walineServerURL = "https://sifulinblog-comments.vercel.app"
+walinePlaceholder = "请填写正确的昵称和邮箱，方便接收评论回复信息哦。"  #留言框占位提示文字
+walineAvatar = "mp"
+walineMeta = ["nick", "mail", "link"]
+walinePageSize = 10
+walineLang = "zh-cn"
+walineHighlight = true
+walineAvatarCDN = "https://cdn.v2ex.com/gravatar/"
+walineRequiredFields = ["nick", "mail"]
+[params.disqus]
+enable = false
+disqusShortnameUrl = "https://sifulin.disqus.com/embed.js"
+## 配置 utteranc评论,教程参考 https://utteranc.es/
+[params.utterances]
+  enable = false
+  repo = "sifuLIN666/utteranceBlog" ##换成自己得
+  issueTerm = "pathname"
+  theme = "github-dark"    
+[params.giscus]
+  enable = true
+  repo = "sifuLIN666/giscusBlog" ##换成自己得
+  repoID = "R_kgDOMAvdcA"
+  mapping = "pathname"
+  category = "General"
+  categoryID = "DIC_kwDOMAvdcM4Cfngc"
+  lang = "zh-CN"
+  theme = "github-dark"  
+
+[[params.social]]
+name = "bilibili"
+url = "https://space.bilibili.com/8337954"
+icon = "bilibili.svg"
+
+[[params.social]]
+name = "gitHub"
+url = "https://github.com/ProjechAnonym"
+icon = "github.svg"
+
+[[params.social]]
+name = "telegram"
+url = "https://t.me/+5yh2rgXjWBlmMDk1"
+icon = "telegram.svg"
+
+[[params.social]]
+name = "qq"
+url = "https://qm.qq.com/q/lLbgOB31sW"
+icon = "qq.svg"
+
+[[params.social]]
+name = "youtube"
+url = "https://www.youtube.com/channel/UCXiiRClqjDLrqzMbq2Kqb4A"
+icon = "youtube.svg"
+
+
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+series = "series"
+[markup]
+    [markup.highlight]
+        codeFences = true
+        lineNos = true
+        lineNumbersInTable = true
+        noClasses = false
+        enable = true

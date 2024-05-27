@@ -1,0 +1,26 @@
+<div class="footer-content">
+  <div class="footer-social-container">
+    {{- if .Site.Params.footerRss -}}
+    <a
+      class="footer-social-link rss-link"
+      id="footer-social-rss.svg"
+      href="{{- .Site.BaseURL -}}{{- .Site.Language -}}/index.xml"
+    >
+      <span class="footer-social-text">RSS</span>
+    </a>
+    {{- end -}} {{ with .Site.Params.social }} {{- range $social := . }}
+    <a
+      href="{{ $social.url }}"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-{{ $social.icon }}"
+    >
+      <span class="footer-social-text">{{ $social.name }}</span>
+    </a>
+    {{ end }} {{ end }}
+  </div>
+  <span class="footer-text"
+    >Copyright © {{ now.Year }}. All rights reserved.
+  </span>
+  <span class="footer-text">Powerd by hugo | Theme is sifu</span>
+</div>
