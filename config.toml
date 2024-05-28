@@ -23,7 +23,6 @@ hasCJKLanguage = true
                 description = "Affordable IPLC Dedicated Line VPN Solution"
                 url = "https://ykxqn.com/#/register?code=2Rvn9pVw"
                 img = "/links/Lime.jpg"
-
             [languages.en.params.author]
                 name = "sifulin"
                 description = "Computer novice, communication novice, internet nerd, bug writer out of interest~"
@@ -98,7 +97,7 @@ rss = true
 footerRss = true
 paginatorNums = 6
 [params.waline]
-enable = false
+enable = true
 walineServerURL = "https://sifulinblog-comments.vercel.app"
 walinePlaceholder = "请填写正确的昵称和邮箱，方便接收评论回复信息哦。"  #留言框占位提示文字
 walineAvatar = "mp"
