@@ -1,4 +1,4 @@
-baseURL = "https://sifu-lin-blog.vercel.app"
+baseURL = "https://blog.sifulin.top"
 theme = "sifu"
 preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
