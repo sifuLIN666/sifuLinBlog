@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>林师傅的贼窝</title>
+    <link>http://localhost:1313/zh-cn/</link>
+    <description>Recent content on 林师傅的贼窝</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/zh-cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>将废弃电脑变成软路由</title>
+      <link>http://localhost:1313/zh-cn/2024/06/05/home-gateway/</link>
+      <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/2024/06/05/home-gateway/</guid>
+      <description>给电脑刷上debian系统，然后安装openwrttttttt~~~个鬼!直接手搓命令行完成一个DNS,自动分流的家庭网关</description>
+    </item>
+    <item>
+      <title>关于我</title>
+      <link>http://localhost:1313/zh-cn/profile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/profile/</guid>
+      <description>这里是个人简介的正文内容&amp;hellip; 666 测试测试</description>
+    </item>
+    <item>
+      <title>友链</title>
+      <link>http://localhost:1313/zh-cn/link/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/link/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

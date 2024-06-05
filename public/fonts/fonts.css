@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "FangSong";
+  src: url("./FangSong.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Dingding";
+  src: url("./DingTalk-JinBuTi.ttf") format("truetype");
+  src: url("./DingTalk-JinBuTi.woff") format("woff");
+  src: url("./DingTalk-JinBuTi.woff2") format("woff2");
+}

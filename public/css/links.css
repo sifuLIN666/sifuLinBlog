@@ -1,0 +1,66 @@
+@media screen and (max-width: 768px) {
+  .links-container {
+    display: block;
+  }
+}
+@media screen and (min-width: 769px) {
+  .links-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.links-title {
+  font-weight: 1000;
+  margin: 0.8rem;
+  font-family: Dingding;
+  font-size: 2rem;
+}
+.links-card {
+  display: block;
+  padding: 10px;
+  background-color: var(--card-background-color);
+  background: linear-gradient(
+    to left,
+    var(--card-background-color-from),
+    var(--card-background-color-to)
+  );
+  border-radius: 15px;
+  width: 16rem;
+  height: 6rem;
+  margin: 10px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.links-card:hover {
+  transform: scale(1.05);
+}
+.links-card-item-container {
+  display: flex;
+  justify-content: space-between;
+}
+.links-card-text-container {
+  display: flex;
+  flex-direction: column;
+}
+.links-card-name {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: 0.5s;
+  font-family: "Dingding";
+  margin: 3px;
+}
+.links-card-description {
+  color: var(--text-color);
+  font-size: 0.8rem;
+  font-family: "Dingding";
+}
+.links-card-img-container {
+  display: flex;
+  justify-content: end;
+}
+.links-card-img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 5px;
+}

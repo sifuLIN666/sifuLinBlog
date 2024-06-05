@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 林师傅的贼窝</title>
+    <link>http://localhost:1313/zh-cn/categories/</link>
+    <description>Recent content in Categories on 林师傅的贼窝</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/zh-cn/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>软路由部署</title>
+      <link>http://localhost:1313/zh-cn/categories/%E8%BD%AF%E8%B7%AF%E7%94%B1%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/categories/%E8%BD%AF%E8%B7%AF%E7%94%B1%E9%83%A8%E7%BD%B2/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
