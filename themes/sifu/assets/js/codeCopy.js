@@ -15,6 +15,7 @@ const addCopyButtons = (clipboard) => {
       const code = codeBlock[1].querySelectorAll("pre > code");
       if (code) {
         const codeHead = document.createElement("div");
+        codeHead.style.marginTop = "0.5rem";
         codeHead.innerHTML = `<span class="code-lang">${code[1].getAttribute(
           "data-lang"
         )}</span>`;

@@ -152,7 +152,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim /etc/network/interfaces
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>把原本的内容变为
+</div><p>把原本的内容
 <div
   style="
     background-color: #444444;
@@ -171,6 +171,7 @@ allow-hotplug ens35<br>
 iface ens35 inet dhcp<br>
 
 </div></p>
+<p>变为
 <div
   style="
     background-color: #444444;
@@ -183,15 +184,15 @@ iface ens35 inet dhcp<br>
 >
   
 
-iface ens35 inet static
-address 192.168.1.100
-netmask 255.255.255.0
-gateway 192.168.1.1
+iface ens35 inet static<br>
+address 192.168.1.100<br>
+netmask 255.255.255.0<br>
+gateway 192.168.1.1<br>
 
-使用 ipv6
-iface ens35 inet6 dhcp
+使用 ipv6<br>
+iface ens35 inet6 dhcp<br>
 
-</div>
+</div></p>
 <h3 id="开启-ipv4-转发">开启 ipv4 转发</h3>
 <span style="color: rgb(255, 0, 72); font-weight: 1000"
   >不开的话是没有办法代理分流的哦
@@ -260,7 +261,10 @@ iface ens35 inet6 dhcp
 </span></span><span class="line"><span class="cl">sudo apt update
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>添加软件源主要是 v2raya 的源不在官方源所以需要手动加一下 2. 安装</p>
+</div><p>添加软件源主要是 v2raya 的源不在官方源所以需要手动加一下</p>
+<ol start="2">
+<li>安装</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
