@@ -6,8 +6,15 @@
     <description>Recent content on 林师傅的贼窝</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 05 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/zh-cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>初识singbox</title>
+      <link>http://localhost:1313/zh-cn/2024/06/07/introduce-singbox-part1/</link>
+      <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/2024/06/07/introduce-singbox-part1/</guid>
+      <description>前言 前段时间几乎&amp;quot;大地震&amp;quot;,clash 归档的归档,删库的删库。只能在此给大佬祝好! 但是,失去了 clash,我们还能用什么</description>
+    </item>
     <item>
       <title>将废弃电脑变成软路由</title>
       <link>http://localhost:1313/zh-cn/2024/06/05/home-gateway/</link>

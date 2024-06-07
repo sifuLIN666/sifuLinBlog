@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  初识singbox | 林师傅的贼窝
+</title>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/><link rel="stylesheet" href="/css/root.css" /><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+/><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff2" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.ttf" /><link rel="stylesheet" href="/fonts/fonts.css" /><link rel="stylesheet" href="/icons/iconfont.ttf" /><link rel="stylesheet" href="/icons/iconfont.woff" /><link rel="stylesheet" href="/icons/iconfont.woff2" /><link rel="stylesheet" href="/icons/iconfont.css" /><link rel="stylesheet" href="/css/header.css" /><link rel="stylesheet" href="/css/content.css" /><link rel="stylesheet" href="/css/footer.css" />
+ <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+;
+<script src="/js/themeColors.js" defer></script>
+<script src="/js/mobile/headerNav.js" defer></script>
+<script src="/js/langSwitch.js" defer></script>
+<script src="/js/footer/footerStyle.js" defer></script>
+<script src="/js/rssCopy.js" defer></script>
+
+
+  </head>
+  <body
+    class="dark-mode"
+    
+  >
+    <header class="header-container"><div class="header-title">
+  <div class="header-nav-container" id="header-nav-container">
+    
+  <nav class="header-nav" id="header-nav">
+    <a class="header-nav-item" href="/zh-cn//">
+      <i class="iconfont icon-Home"></i>首页
+    </a>
+    <a class="header-nav-item" href="/zh-cn/categories/">
+      <i class="iconfont icon-Category"></i>分类
+    </a>
+    <a class="header-nav-item" href="/zh-cn/posts/">
+      <i class="iconfont icon-Archive"></i>归档
+    </a>
+    <a class="header-nav-item" href="/zh-cn/series/">
+      <i class="iconfont icon-Series"></i>系列
+    </a>
+    <a class="header-nav-item" href="/zh-cn/tags/">
+      <i class="iconfont icon-Tags"></i>标签
+    </a>
+    <a class="header-nav-item" href="/zh-cn/profile/">
+      <i class="iconfont icon-Profile"></i>简介
+    </a>
+    <a class="header-nav-item" href="/zh-cn/link/">
+      <i class="iconfont icon-Attachment"></i>友链
+    </a>  
+  </nav>
+
+  </div>
+
+  <p class="header-author-msg">
+    <span class="header-author-title">林师傅的贼窝</span>
+    <span class="header-author-description">每天都被折磨的想死</span>
+  </p>
+  <span class="header-buttons">
+    <span class="header-button-container">
+      <button id="lang-switch" class="header-button">
+        <i class="bi bi-translate"></i>
+      </button>
+      <div class="header-language" id="header-language-container"><span class="header-language-item" id="en">
+          <i class="fi fi-us"></i>
+        </span>
+        <span class="header-language-item" id="zh-cn">
+          <i class="fi fi-cn"></i>
+        </span>
+        
+      </div>
+    </span>
+    <span class="header-button-container">
+      <button id="theme-toggle" class="header-button">
+        <i class="iconfont icon-Sun" id="header-theme-button-icon"></i>
+      </button>
+    </span>
+  </span>
+</div>
+</header>
+    <div class="main-container">
+      <main>  <link rel="stylesheet" href="/css/code.css" /><style>
+  .post-container article a {
+    color: var(--text-color);
+    font-weight: 1000;
+  }
+  .post-container article li {
+    font-weight: 1000;
+    font-style: oblique;
+  }
+</style>
+<div class="post-container">
+  <div
+    class="post-title"
+    style="display: flex; flex-direction: column; width: 100%"
+  >
+    <h1 style="text-align: center">初识singbox</h1>
+    <time datetime="2024-06-07T00:00:00&#43;00:00" style="margin: 0 auto">
+      <i class="bi bi-calendar3" style="margin-right: 3px"></i>
+      <span>June 7, 2024</span>
+    </time>
+  </div>
+  <article style="width: 100%; word-break: break-word">
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/oQP44BdSsl8?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+<h2 id="前言">前言</h2>
+<p>前段时间几乎&quot;大地震&quot;,clash 归档的归档,删库的删库。只能在此给大佬祝好!</p>
+<p>但是,失去了 clash,我们还能用什么连接到世界呢？<del>当然是把你现在有的 clash 软件归档存好啦</del></p>
+<p>好吧,其实 clash 删库影响没有那么大,各个平台都有非常好用的软件,比如 windows,mac 还可以用<a href="https://www.v2ray.com/">v2ray</a>,<a href="https://github.com/MatsuriDayo/nekoray">nekoray</a>这些软件,但真正苦的其实是像我这种垃圾佬,我们这些人饱受换源之苦,代理之痛,可又经常换设备折腾,搞新系统蹂躏,所以我就<del>妄图一次配置就能享受坐上来自己动的极致舒爽</del>。也就是透明代理啦~</p>
+<p>之前我出过在 debian 部署<a href="https://v2raya.org/">v2raya</a>的教程,但是当时我正好出了我自用的 j1800,购入了<del>性能极为强悍的 j1900</del>(主要是为了多网口才换的),而 clash 删库正好发生在我卖出了 j1800,等待 j1900 的空挡期</p>
+<p>哈哈笑死,不存档的后果。</p>
+<p>拿到手之后我第一时间配置 v2raya,结果那时候他的软件源直接失效了</p>
+<p>哈哈笑死,不存档的后果</p>
+<p>虽然最后还是去 git 上直接下了源代码上传配置好了。</p>
+<p>但为了不重蹈&quot;哈哈笑死,不存档的后果&quot;,我决定养成存档的习惯,同时 clash 删库让我明白<del>自古专一没结局,终是海王赢天下</del>,所以我顺便研究了一下最近超强内核<a href="https://sing-box.sagernet.org/zh/">sing-box</a>的使用方法。</p>
+<p>结果发现这玩意直接把我之前的方案干碎了,<del>废话,手搓玩家基本都是要啥自己建啥</del>,居然说了这么多废话&hellip;现在开始教程吧</p>
+<h2 id="由我提供的一站式部署教程">由我提供的一站式部署教程</h2>
+<h3 id="开个-ip-转发先">开个 ip 转发先</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;net.ipv4.ip_forward=1&#34;</span> &gt;&gt; /etc/sysctl.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="配置文件指南">配置文件指南  </h3>
+<p><a href="https://wwxc.lanzouy.com/i2K8r1eenpwf">配置文件链接</a></p>
+<p>下载后在里面的&quot;singboxONE&quot;的配置文件&quot;config.json&quot;添加你自己的代理配置,我在文件夹里面已经有 ss,vmess,trojan 的模板。</p>
+<h3 id="注意事项">注意事项</h3>
+<p>有时代理节点是域名,结果域名在 geosite 里面属于国外域名,会被 dns 分流到代理出站,但是此时 singbox 并不知道代理节点的 IP,于是就会死循环,解决这个问题需要在 dns 配置下添加一条规则</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"> <span class="s2">&#34;dns&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;servers&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rules&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span> <span class="nt">&#34;outbound&#34;</span><span class="p">:</span> <span class="s2">&#34;any&#34;</span><span class="p">,</span> <span class="nt">&#34;server&#34;</span><span class="p">:</span> <span class="s2">&#34;local&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;strategy&#34;</span><span class="p">:</span> <span class="s2">&#34;prefer_ipv4&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;final&#34;</span><span class="p">:</span> <span class="s2">&#34;google&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;disable_cache&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;disable_expire&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;independent_cache&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;reverse_mapping&#34;</span><span class="p">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span><span class="err">,</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>根据测试结果,dns 配置文件的规则是没有像 clash 那样的先后顺序的(可能不对,希望懂哥来解释一下这个 any 的机制)</p>
+<h3 id="常见代理配置模板">常见代理配置模板</h3>
+<ol>
+<li>ss 模板</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;shadowsocks&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;proxy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;server&#34;</span><span class="p">:</span> <span class="s2">&#34;自己的&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;server_port&#34;</span><span class="p">:</span> <span class="mi">45144</span><span class="p">,</span> <span class="c1">//自己的端口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;method&#34;</span><span class="p">:</span> <span class="s2">&#34;自己的&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;自己的&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span><span class="err">,</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>vmes 模板</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;vmess&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;proxy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;server&#34;</span><span class="p">:</span> <span class="s2">&#34;换你自己的&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;server_port&#34;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="c1">//自己的端口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nt">&#34;uuid&#34;</span><span class="p">:</span> <span class="s2">&#34;换你自己的&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;security&#34;</span><span class="p">:</span> <span class="s2">&#34;auto&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;transport&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;ws&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;/&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;early_data_header_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Sec-WebSocket-Protocol&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>trojan 模板</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;trojan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;proxy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;server&#34;</span><span class="p">:</span> <span class="s2">&#34;自己的&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;server_port&#34;</span><span class="p">:</span> <span class="mi">4203</span><span class="p">,</span> <span class="c1">//自己的端口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nt">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;自己的&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;tls&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;disable_sni&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;server_name&#34;</span><span class="p">:</span> <span class="s2">&#34;自己的&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;insecure&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>完成之后确保 singboxONE 有如下文件</p>
+<ol>
+<li>config.json</li>
+<li>geoip.db</li>
+<li>geosite.db</li>
+<li>sing-box</li>
+<li>sing-box.service</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 创建日志和配置文件夹以及存放geo数据库</span>
+</span></span><span class="line"><span class="cl">mkdir -p /var/singbox
+</span></span><span class="line"><span class="cl">mkdir -p /var/lib/sing-box
+</span></span><span class="line"><span class="cl">mkdir -p /usr/local/etc/sing-box
+</span></span><span class="line"><span class="cl">chmod -R +w /var/singbox
+</span></span><span class="line"><span class="cl"><span class="c1"># 将软件以及配置还有geo数据库移动到对应文件夹</span>
+</span></span><span class="line"><span class="cl">mv singboxONE/sing-box /usr/local/bin
+</span></span><span class="line"><span class="cl">mv singboxONE/sing-box.service /etc/systemd/system
+</span></span><span class="line"><span class="cl">mv singboxONE/config.json /usr/local/etc/sing-box
+</span></span><span class="line"><span class="cl">mv singboxONE/geoip.db /var/lib/sing-box
+</span></span><span class="line"><span class="cl">mv singboxONE/geosite.db /var/lib/sing-box
+</span></span><span class="line"><span class="cl"><span class="c1"># 赋予singbox二进制文件可执行权限</span>
+</span></span><span class="line"><span class="cl">chmod +x /usr/local/bin/sing-box
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重载系统服务并开启 sing-box</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 重载systemctl配置否则下面开启singbox的命令是无效的</span>
+</span></span><span class="line"><span class="cl">systemctl daemon-reload
+</span></span><span class="line"><span class="cl"><span class="c1"># 开启sing-box</span>
+</span></span><span class="line"><span class="cl">systemctl start sing-box.service
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> sing-box.service
+</span></span><span class="line"><span class="cl">systemctl status sing-box.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="singbox-劫持-host">singbox 劫持 host</h2>
+<h3 id="singbox-中设置-host-劫持">singbox 中设置 host 劫持</h3>
+<p>sing-box 劫持 host 需要在 route 配置中添加域名规则并结合出站配置使用</p>
+<p>并且注意!!!</p>
+<span style="color: rgb(255, 0, 72); font-weight: 1000"
+  >route 模块的规则有先后顺序,先匹配到先出站
+</span>
+
+<p>具体操作很简单,在出站设置一个直连出站并覆写 IP 地址和端口,最后在路由的规则中添加一条域名规则,匹配到这条规则就走自定义的出站</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;log&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;disabled&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;level&#34;</span><span class="p">:</span> <span class="s2">&#34;info&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;output&#34;</span><span class="p">:</span> <span class="s2">&#34;/var/singbox/box.log&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;timestamp&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;dns&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;servers&#34;</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rules&#34;</span><span class="p">:</span> <span class="p">[{</span> <span class="nt">&#34;outbound&#34;</span><span class="p">:</span> <span class="s2">&#34;any&#34;</span><span class="p">,</span> <span class="nt">&#34;server&#34;</span><span class="p">:</span> <span class="s2">&#34;local&#34;</span> <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;strategy&#34;</span><span class="p">:</span> <span class="s2">&#34;prefer_ipv4&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;final&#34;</span><span class="p">:</span> <span class="s2">&#34;google&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;disable_cache&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;disable_expire&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;independent_cache&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;reverse_mapping&#34;</span><span class="p">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;inbounds&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;tun&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;tun-in&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;inet4_address&#34;</span><span class="p">:</span> <span class="s2">&#34;172.19.0.1/30&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;mtu&#34;</span><span class="p">:</span> <span class="mi">1400</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;auto_route&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;strict_route&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;stack&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;sniff&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;sniff_override_destination&#34;</span><span class="p">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;outbounds&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;direct&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;direct&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;direct&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;hosthijack&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;override_address&#34;</span><span class="p">:</span> <span class="s2">&#34;192.168.234.3&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;override_port&#34;</span><span class="p">:</span> <span class="mi">9093</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;block&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;block&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;dns&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;dns-out&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;route&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;geoip&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;download_url&#34;</span><span class="p">:</span> <span class="s2">&#34;https://github.com/soffchen/sing-geoip/releases/latest/download/geoip.db&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;download_detour&#34;</span><span class="p">:</span> <span class="s2">&#34;proxy&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;geosite&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;download_url&#34;</span><span class="p">:</span> <span class="s2">&#34;https://github.com/soffchen/sing-geosite/releases/latest/download/geosite.db&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;download_detour&#34;</span><span class="p">:</span> <span class="s2">&#34;proxy&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rules&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;protocol&#34;</span><span class="p">:</span> <span class="s2">&#34;dns&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;outbound&#34;</span><span class="p">:</span> <span class="s2">&#34;dns-out&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;protocol&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;quic&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;outbound&#34;</span><span class="p">:</span> <span class="s2">&#34;block&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span> <span class="nt">&#34;domain&#34;</span><span class="p">:</span> <span class="s2">&#34;自定义域名&#34;</span><span class="p">,</span> <span class="nt">&#34;outbound&#34;</span><span class="p">:</span> <span class="s2">&#34;hosthijack&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;auto_detect_interface&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></article><link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+<div id="waline"></div>
+<script type="module">
+  import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+  init({
+    el: "#waline",
+    serverURL: "https:\/\/sifulinblog-comments.vercel.app",
+    placeholder: "请填写正确的昵称和邮箱，方便接收评论回复信息哦。",
+    avatar: "mp",
+    avatarCDN: "https:\/\/cdn.v2ex.com\/gravatar\/",
+    pageSize:  10 ,
+    meta: ["nick","mail","link"],
+    lang: 'zh-cn',
+    highlight:  true ,
+    requiredFields: ["nick","mail"]
+  });
+</script>
+<p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-tags-fill"></i>
+<a
+  href="/zh-cn/tags/singbox/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Singbox
+</a>
+<a
+  href="/zh-cn/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  科学上网
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-grid-fill"></i>
+<a
+  href="/zh-cn/categories/singbox%E5%8D%81%E7%82%B9%E4%B8%8D%E9%80%9A/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Singbox十点不通
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    
+<style>
+  .series-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    height: fit-content;
+    width: 100%;
+  }
+  .series-link {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 0.2rem;
+    background: linear-gradient(
+      to right,
+      var(--header-background-color-from),
+      var(--header-background-color-to)
+    );
+    width: 6rem;
+    height: fit-content;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 10px;
+    font-family: "Dingding";
+    margin: 3px 2px;
+    transition: 0.5s;
+  }
+  .series-link:hover {
+    transform: scale(1.05);
+  }
+</style>
+<div class="series-container">
+  <span style="font-size: 1.2rem; font-family: Dingding">
+    Singbox:从入门到clash<i class="bi bi-three-dots"></i>
+  </span>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center"><a href="/zh-cn/2024/06/07/introduce-singbox-part1/" class="series-link">初识singbox</a></div>
+</div>
+
+  </p>
+<style>
+  #toc-button {
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 3px;
+    padding: 0 2px;
+  }
+  #toc-button:hover {
+    cursor: pointer;
+  }
+  #toc-button svg {
+     
+    height: 1.5rem;
+    width: 1.5rem;
+     
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line {
+    fill: none;
+    stroke: var(--text-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+     
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  [toc-expanded="open"] svg {
+    transform: rotate(-45deg);
+  }
+  [toc-expanded="open"] svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  #toc-items-container {
+    background-color: #72727242;
+    padding: 2px 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    max-height: 8rem;
+  }
+  #toc-items-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  #toc-items-container::-webkit-scrollbar-track {
+    background-color: #313131;
+    border-radius: 2px;
+  }
+  #toc-items-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff6f;
+  }
+  #toc-items-container a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 5px 0;
+    word-wrap: break-word;
+    background-color: #ffffff2b;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px 0;
+  }
+  [toc-expanded="open"] + #toc-items-container {
+    animation: toc-show 0.5s;
+  }
+  [toc-expanded="closed"] + #toc-items-container {
+    animation: toc-close 0.5s;
+  }
+  @keyframes toc-show {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes toc-close {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+  }
+   
+  #toc-items-container ul li {
+    width: 7rem;
+    font-size: 1rem;
+    font-family: "Dingding";
+  }
+   
+  #toc-items-container ul li ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  #toc-items-container ul li ul li {
+    width: 5rem;
+    font-size: 0.8rem;
+    font-family: "Dingding";
+  }
+</style>
+<div style="position: fixed; left: 10px; top: 20%">
+  <button id="toc-button" toc-expanded="open">
+    <svg viewBox="0 0 32 32">
+      <path
+        class="line line-top-bottom"
+        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+      ></path>
+      <path class="line" d="M7 16 27 16"></path>
+    </svg>
+  </button>
+
+  <div id="toc-items-container"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#由我提供的一站式部署教程">由我提供的一站式部署教程</a>
+      <ul>
+        <li><a href="#开个-ip-转发先">开个 ip 转发先</a></li>
+        <li><a href="#配置文件指南">配置文件指南  </a></li>
+        <li><a href="#注意事项">注意事项</a></li>
+        <li><a href="#常见代理配置模板">常见代理配置模板</a></li>
+      </ul>
+    </li>
+    <li><a href="#singbox-劫持-host">singbox 劫持 host</a>
+      <ul>
+        <li><a href="#singbox-中设置-host-劫持">singbox 中设置 host 劫持</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</div>
+<script>
+  const tocButton = document.getElementById("toc-button");
+  const tocItemsContainer = document.getElementById("toc-items-container");
+  tocButton.addEventListener("click", () => {
+    const expanded = tocButton.getAttribute("toc-expanded");
+    if (expanded === "open") {
+      tocButton.setAttribute("toc-expanded", "closed");
+    } else {
+      tocButton.setAttribute("toc-expanded", "open");
+      tocItemsContainer.style.display = "block";
+    }
+  });
+  tocItemsContainer.addEventListener("animationend", () => {
+    if (tocButton.getAttribute("toc-expanded") === "closed") {
+      tocItemsContainer.style.display = "none";
+    }
+  });
+</script>
+</div>
+
+<script src="/js/codeCopy.js" defer></script>  </main>
+      <footer class="footer-container" id="footer-container">
+        <div class="footer-content">
+  <div class="footer-social-container"><a
+      class="footer-social-link rss-link"
+      id="footer-social-rss.svg"
+      href="http://localhost:1313/zh-cn/index.xml"
+    >
+      <span class="footer-social-text">RSS</span>
+    </a>
+    <a
+      href="https://space.bilibili.com/8337954"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-bilibili.svg"
+    >
+      <span class="footer-social-text">bilibili</span>
+    </a>
+    
+    <a
+      href="https://github.com/ProjechAnonym"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-github.svg"
+    >
+      <span class="footer-social-text">gitHub</span>
+    </a>
+    
+    <a
+      href="https://t.me/&#43;5yh2rgXjWBlmMDk1"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-telegram.svg"
+    >
+      <span class="footer-social-text">telegram</span>
+    </a>
+    
+    <a
+      href="https://qm.qq.com/q/lLbgOB31sW"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-qq.svg"
+    >
+      <span class="footer-social-text">qq</span>
+    </a>
+    
+    <a
+      href="https://www.youtube.com/channel/UCXiiRClqjDLrqzMbq2Kqb4A"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-youtube.svg"
+    >
+      <span class="footer-social-text">youtube</span>
+    </a>
+     
+  </div>
+  <span class="footer-text"
+    >Copyright © 2024. All rights reserved.
+  </span>
+  <span class="footer-text">Powerd by hugo | Theme is sifu</span>
+</div>
+
+      </footer>
+    </div>
+  </body>
+</html>
