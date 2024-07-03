@@ -25,6 +25,12 @@
   border-left: 5px solid #a1a1a1;
   padding: 3px;
 }
+.post-container article h2 {
+  font-size: 1.8rem;
+}
+.post-container article h3 {
+  font-size: 1.5rem;
+}
 .post-container article h4,
 .post-container article h5,
 .post-container article h6 {
@@ -34,6 +40,10 @@
 .post-container article p {
   text-indent: 2rem;
   margin: 0.3rem 0;
+  font-size: 1.2rem;
+}
+.post-container article ol {
+  font-size: 1rem;
 }
 .post-container > article > table {
   display: block;

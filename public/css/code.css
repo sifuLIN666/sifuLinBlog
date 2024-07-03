@@ -8,6 +8,16 @@
   color: #d8dee9;
   background-color: #2e3440;
   border-radius: 0 0 5px 5px;
+  overflow-x: auto;
+}
+.chroma::-webkit-scrollbar {
+  height: 5px;
+}
+.chroma::-webkit-scrollbar-track {
+  background-color: #2e3440;
+}
+.chroma::-webkit-scrollbar-thumb {
+  background-color: #535353;
 }
 /* Other */
 .chroma .x {
@@ -64,6 +74,7 @@
 /* Line */
 .chroma .line {
   display: flex;
+  font-size: 1rem;
 }
 /* Keyword */
 .chroma .k {
