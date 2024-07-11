@@ -14,17 +14,35 @@ comments = true
 
 ## 首先要先把房间布置的暧昧一点,这样 yua 和 eimi 才能~~接客~~
 
+首先要安装必要的软件以及系统的配置
+
+1. 安装必要的软件
+
 ```bash
 apt-get update
 # 安装必要的软件
 apt-get install -y sudo vim tar unzip resolvconf
+```
+
+2. 开启 ipv4 转发
+
+```bash
 echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
-# *.*.*.*为你的本机ip
-echo "nameserver *.*.*.*" >> /etc/resolvconf/resolv.conf.d/head
-# 让配置文件生效
 sysctl -p
+```
+
+3. 修改 dns 服务器为本机 ip
+
+```bash
+# ****为你的本机 ip
+echo "nameserver ****" >> /etc/resolvconf/resolv.conf.d/head
+# 让配置文件生效
 resolvconf -u
-# 创建文件夹
+```
+
+4. 给 eimi 和 yua 他们的房间,~~可恶的 linux 系统不让我玩露出~~
+
+```bash
 mkdir /opt/mosdns
 mkdir -p /opt/singbox/lib
 ```
@@ -32,8 +50,10 @@ mkdir -p /opt/singbox/lib
 ## ~~爱巢~~筑好了,接下来要去邀请 yua 和 emi 了
 
 首先去网站下载对应的软件
-[sing-box 链接](https://github.com/SagerNet/sing-box/releases)
-[mosdns 链接](https://github.com/IrineSistiana/mosdns/releases)
+
+- [sing-box 链接](https://github.com/SagerNet/sing-box/releases)
+
+* [mosdns 链接](https://github.com/IrineSistiana/mosdns/releases)
 
 ```bash
 # 上传压缩包到 root 目录下,非 root 用户改为绝对路径
@@ -203,5 +223,11 @@ systemctl enable mosdns.service
 systemctl start sing-box.service
 systemctl start mosdns.service
 ```
+
+## yua 和 eimi 的一番赛高使用方式
+
+由于 singbox 的似乎不具备 host 劫持的能力,反正我没看到,所以在此引入了 mosdns 作为 host 劫持的服务,内网设备将 dns 服务器指向本方案主机,由于是内网的 ip 段,singbox 不会劫持该 dns 请求,而 mosdns 则正常监听 53 端口,所以会接收到 dns 请求,之后 mosdns 根据 host 列表决定是否向上级 dns 查询,如果命中 host 列表,则返回 host 对应的 ip,否则向上级查询 dns,但是发出的 dns 请求是像公网请求的,此时会被 sing-box 的 dns 模块劫持,之后会根据 sing-box 的配置,将请求转发到指定的服务器,mosdns 在这个方案中只是补全了 sing-box 没有的 host 劫持能力
+
+## 结束
 
 这样就可以愉快的让 yua 和 eimi 坐上来自己动了
