@@ -12,7 +12,7 @@ toc = true
 comments = true
 +++
 
-## 首先要先把房间布置的暧昧一点,这样 yua 和 eimi 才能~~接客~~
+## 首先配置系统环境
 
 首先要安装必要的软件以及系统的配置
 
@@ -40,14 +40,14 @@ echo "nameserver ****" >> /etc/resolvconf/resolv.conf.d/head
 resolvconf -u
 ```
 
-4. 给 eimi 和 yua 他们的房间,~~可恶的 linux 系统不让我玩露出~~
+4. 创建文件夹
 
 ```bash
 mkdir /opt/mosdns
 mkdir -p /opt/singbox/lib
 ```
 
-## ~~爱巢~~筑好了,接下来要去邀请 yua 和 emi 了
+## 下载软件
 
 首先去网站下载对应的软件
 
