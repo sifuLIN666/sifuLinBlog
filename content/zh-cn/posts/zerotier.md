@@ -12,6 +12,10 @@ toc = true
 comments = true
 +++
 
+## B 站视频链接
+
+{{< bilibili "BV1K34y1u79n" >}}
+
 ## 在云服务器上安装 zerotier
 
 ### 前言,先开个 IP 转发先
