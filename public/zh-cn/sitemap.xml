@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/zh-cn/categories/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,10 +16,10 @@
                 />
   </url><url>
     <loc>http://localhost:1313/zh-cn/posts/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/zh-cn/series/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -31,17 +31,8 @@
                 href="http://localhost:1313/zh-cn/series/"
                 />
   </url><url>
-    <loc>http://localhost:1313/zh-cn/tags/singbox/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/zh-cn/series/singbox%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0clash/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/zh-cn/categories/singbox%E5%8D%81%E7%82%B9%E4%B8%8D%E9%80%9A/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/zh-cn/tags/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -53,14 +44,17 @@
                 href="http://localhost:1313/zh-cn/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/zh-cn/2024/06/07/introduce-singbox-part1/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/zh-cn/tags/zerotier/</loc>
+    <lastmod>2024-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/zh-cn/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/zh-cn/categories/zerotier%E4%B8%80%E7%82%B9%E9%80%9A/</loc>
+    <lastmod>2024-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/zh-cn/2024/08/18/zerotier/</loc>
+    <lastmod>2024-08-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/zh-cn/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -71,6 +65,36 @@
                 hreflang="zh-cn"
                 href="http://localhost:1313/zh-cn/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/zh-cn/tags/%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/</loc>
+    <lastmod>2024-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/zh-cn/series/%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/</loc>
+    <lastmod>2024-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/zh-cn/tags/host%E5%8A%AB%E6%8C%81/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/zh-cn/tags/mosdns/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/zh-cn/tags/singbox/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/zh-cn/series/singbox%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0clash/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/zh-cn/categories/singbox%E5%8D%81%E7%82%B9%E4%B8%8D%E9%80%9A/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/zh-cn/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/zh-cn/2024/07/11/two-sexy-bitches-singbox-and-mosdns/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/zh-cn/2024/06/07/introduce-singbox-part1/</loc>
+    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/zh-cn/tags/debian/</loc>
     <lastmod>2024-06-05T00:00:00+00:00</lastmod>

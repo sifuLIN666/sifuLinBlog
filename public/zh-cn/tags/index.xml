@@ -6,8 +6,36 @@
     <description>Recent content in Tags on 林师傅的贼窝</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 07 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/zh-cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zerotier</title>
+      <link>http://localhost:1313/zh-cn/tags/zerotier/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/zerotier/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>异地组网</title>
+      <link>http://localhost:1313/zh-cn/tags/%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Host劫持</title>
+      <link>http://localhost:1313/zh-cn/tags/host%E5%8A%AB%E6%8C%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/host%E5%8A%AB%E6%8C%81/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mosdns</title>
+      <link>http://localhost:1313/zh-cn/tags/mosdns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/mosdns/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Singbox</title>
       <link>http://localhost:1313/zh-cn/tags/singbox/</link>
