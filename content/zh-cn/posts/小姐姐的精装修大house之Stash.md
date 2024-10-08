@@ -1,5 +1,5 @@
 +++
-title = '小姐姐的精装修大house-Stash'
+title = '小姐姐的精装修大house之Stash'
 date = 2024-10-08
 draft = false
 slug = 'stash'
@@ -11,6 +11,12 @@ math = false
 toc = true
 comments = true
 +++
+
+## 介绍
+
+在搜索 ios 翻墙软件中无意中发现了这个神奇的应用...真的是无意中发现的...
+[github 项目地址](https://github.com/stashapp/stash)
+[wiki 地址](https://docs.stashapp.cc/)
 
 ## 安装
 
@@ -58,4 +64,4 @@ systemctl daemon-reload
 systemctl enable --now stash.service
 ```
 
-之后进入自行设置一下就好了,软件支持中文,默认监听 9999 端口
+之后进入自行设置一下就好了,软件支持中文,默认监听 9999 端口,因为这种媒体海报墙很多教程并且这个 stash 实在有违我正人君子~~老色批~~的形象,就不详细介绍配置过程了

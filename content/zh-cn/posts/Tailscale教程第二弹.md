@@ -1,10 +1,10 @@
 +++
-title = 'Tailscale第二弹'
+title = 'Tailscale教程第二弹'
 date = 2024-10-08
 draft = false
 slug = 'tailscale-tutorial-2'
 summary = '欲火焚身身在外,2T资源隔天涯,打洞穿透又失败,不如全都自己搞'
-tags = ["内网穿透","tailscale"]
+tags = ["内网穿透","tailscale","derper中继服务器"]
 categories = ["内网穿透","tailscale"]
 series = ["tailscale一点通"]
 math = false
