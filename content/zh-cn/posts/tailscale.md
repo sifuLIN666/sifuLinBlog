@@ -43,6 +43,8 @@ curl -fsSL https://tailscale.com/install.sh | sh
 # --accept-dns: 启用魔法DNS,会覆写/etc/resolv.conf文件,配置不好容易查不到dns断网
 # --netfilter-mode: 这个选项效果类似iptables的功能,不熟这个可以关掉然后用iptables或者nftables配置四表五链
 tailscale up --netfilter-mode=off --advertise-routes=192.168.50.0/24 --accept-routes --accept-dns=false
+# 设置自动启动
+tailscale set --auto-update
 ```
 
 启动之后会出现一个网址,把那个网址在浏览器中打开按照提示操作即可,之后进入 tailscale 的控制界面,把 key expire 关掉,不然这个节点会被自动踢出网络,然后在开启子网路由
