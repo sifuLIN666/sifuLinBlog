@@ -59,6 +59,7 @@ tailscale set --auto-update
 没配置放行规则,所以需要配置一下
 
 ```bash
+# 开启ipv4转发,不然会默认丢包
 echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 sysctl -p #查看配置是否生效
 
