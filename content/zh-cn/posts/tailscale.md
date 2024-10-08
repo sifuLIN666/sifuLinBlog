@@ -49,7 +49,7 @@ tailscale set --auto-update
 
 启动之后会出现一个网址,把那个网址在浏览器中打开按照提示操作即可,之后进入 tailscale 的控制界面,把 key expire 关掉,不然这个节点会被自动踢出网络,然后在开启子网路由
 
-![tailscale的ACL控制界面](https://gitee.com/Linsifu/pic-embed/raw/master/images/tailscale-steps.png)
+<img src="https://gitee.com/Linsifu/pic-embed/raw/master/images/tailscale-steps.png" />
 
 这样之后就可以访问到内网了
 
