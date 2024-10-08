@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>内网穿透 on 林师傅的贼窝</title>
+    <link>http://localhost:1313/zh-cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+    <description>Recent content in 内网穿透 on 林师傅的贼窝</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 07 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/zh-cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tailscale教程第一弹</title>
+      <link>http://localhost:1313/zh-cn/2024/10/07/tailscale-tutorial-1/</link>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/2024/10/07/tailscale-tutorial-1/</guid>
+      <description>欲火焚身身在外,2T资源隔天涯,域名绑定终不便,唯有穿透合我意</description>
+    </item>
+  </channel>
+</rss>

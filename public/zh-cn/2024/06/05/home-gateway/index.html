@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  将废弃电脑变成软路由 | 林师傅的贼窝
+</title>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/><link rel="stylesheet" href="/css/root.css" /><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+/><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff2" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.ttf" /><link rel="stylesheet" href="/fonts/fonts.css" /><link rel="stylesheet" href="/icons/iconfont.ttf" /><link rel="stylesheet" href="/icons/iconfont.woff" /><link rel="stylesheet" href="/icons/iconfont.woff2" /><link rel="stylesheet" href="/icons/iconfont.css" /><link rel="stylesheet" href="/css/header.css" /><link rel="stylesheet" href="/css/content.css" /><link rel="stylesheet" href="/css/footer.css" />
+ <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+;
+<script src="/js/themeColors.js" defer></script>
+<script src="/js/mobile/headerNav.js" defer></script>
+<script src="/js/langSwitch.js" defer></script>
+<script src="/js/footer/footerStyle.js" defer></script>
+<script src="/js/rssCopy.js" defer></script>
+
+
+  </head>
+  <body
+    class="dark-mode"
+    
+  >
+    <header class="header-container"><div class="header-title">
+  <div class="header-nav-container" id="header-nav-container">
+    
+  <nav class="header-nav" id="header-nav">
+    <a class="header-nav-item" href="/zh-cn//">
+      <i class="iconfont icon-Home"></i>首页
+    </a>
+    <a class="header-nav-item" href="/zh-cn/categories/">
+      <i class="iconfont icon-Category"></i>分类
+    </a>
+    <a class="header-nav-item" href="/zh-cn/posts/">
+      <i class="iconfont icon-Archive"></i>归档
+    </a>
+    <a class="header-nav-item" href="/zh-cn/series/">
+      <i class="iconfont icon-Series"></i>系列
+    </a>
+    <a class="header-nav-item" href="/zh-cn/tags/">
+      <i class="iconfont icon-Tags"></i>标签
+    </a>
+    <a class="header-nav-item" href="/zh-cn/profile/">
+      <i class="iconfont icon-Profile"></i>简介
+    </a>
+    <a class="header-nav-item" href="/zh-cn/link/">
+      <i class="iconfont icon-Attachment"></i>友链
+    </a>  
+  </nav>
+
+  </div>
+
+  <p class="header-author-msg">
+    <span class="header-author-title">林师傅的贼窝</span>
+    <span class="header-author-description">每天都被折磨的想死</span>
+  </p>
+  <span class="header-buttons">
+    <span class="header-button-container">
+      <button id="lang-switch" class="header-button">
+        <i class="bi bi-translate"></i>
+      </button>
+      <div class="header-language" id="header-language-container"><span class="header-language-item" id="en">
+          <i class="fi fi-us"></i>
+        </span>
+        <span class="header-language-item" id="zh-cn">
+          <i class="fi fi-cn"></i>
+        </span>
+        
+      </div>
+    </span>
+    <span class="header-button-container">
+      <button id="theme-toggle" class="header-button">
+        <i class="iconfont icon-Sun" id="header-theme-button-icon"></i>
+      </button>
+    </span>
+  </span>
+</div>
+</header>
+    <div class="main-container">
+      <main>  <link rel="stylesheet" href="/css/code.css" /><style>
+  .post-container article a {
+    color: var(--text-color);
+    font-weight: 1000;
+  }
+  .post-container article li {
+    font-weight: 1000;
+    font-style: oblique;
+  }
+</style>
+<div class="post-container">
+  <div
+    class="post-title"
+    style="display: flex; flex-direction: column; width: 100%"
+  >
+    <h1 style="text-align: center">将废弃电脑变成软路由</h1>
+    <time datetime="2024-06-05T00:00:00&#43;00:00" style="margin: 0 auto">
+      <i class="bi bi-calendar3" style="margin-right: 3px"></i>
+      <span>June 5, 2024</span>
+    </time>
+  </div>
+  <article style="width: 100%; word-break: break-word">
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/jGR1LE7Bdf0?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+<h2 id="前期准备工作">前期准备工作</h2>
+<p>首先刷好 debian,这个有手就行,唯一的问题是镜像源比较慢,不管是国内源还是官方源,建议烧香拜佛之后再装,或者<del>打电话给运营商通知他们要出国一下让他们取消你的墙</del></p>
+<h3 id="装好系统之后先更新软件源">装好系统之后先更新软件源</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">apt-get update
+</span></span><span class="line"><span class="cl">apt-get install -y vim wget curl tar zip sudo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="启动-ssh-连接">启动 ssh 连接</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;PermitRootLogin yes&#34;</span> &gt;&gt; /etc/ssh/sshd_config
+</span></span><span class="line"><span class="cl">/etc/init.d/ssh restart
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="修改固定-ip">修改固定 ip</h3>
+<p>这步很关键,不然 DHCP 到期换 ip ,<span style="color: rgb(255, 0, 72); font-weight: 1000; font-size: 1.2rem"
+  >所有以这个为网关的设备都会成为孤儿
+</span>
+</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim /etc/network/interfaces
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>把原本的内容
+<div
+  style="
+    background-color: #444444;
+    padding: 0 5px;
+    border-radius: 3px;
+    width: 96%;
+    overflow-wrap: break-word;
+    color: #f0f8ff;
+    font-size: 1.2rem;
+  "
+>
+  
+
+auto lo<br>
+iface lo inet loopback<br>
+allow-hotplug ens35<br>
+iface ens35 inet dhcp<br>
+
+</div></p>
+<p>变为
+<div
+  style="
+    background-color: #444444;
+    padding: 0 5px;
+    border-radius: 3px;
+    width: 96%;
+    overflow-wrap: break-word;
+    color: #f0f8ff;
+    font-size: 1.2rem;
+  "
+>
+  
+
+iface ens35 inet static<br>
+address 192.168.1.100<br>
+netmask 255.255.255.0<br>
+gateway 192.168.1.1<br>
+
+使用 ipv6<br>
+iface ens35 inet6 dhcp<br>
+
+</div></p>
+<h3 id="开启-ipv4-转发">开启 ipv4 转发</h3>
+<span style="color: rgb(255, 0, 72); font-weight: 1000; font-size: 1.2rem"
+  >不开的话是没有办法代理分流的哦
+</span>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 填写如下内容开启ipv4转发,并关闭ipv6</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;net.ipv4.ip_forward=1
+</span></span></span><span class="line"><span class="cl"><span class="s2">net.ipv6.conf.all.disable_ipv6 = 1&#34;</span> &gt;&gt; /etc/sysctl.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果你像我一样没有公网ipv4还想顺畅外网访问家中服务,就要把ipv6开启填这个</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;net.ipv4.ip_forward=1&#34;</span> &gt;&gt; /etc/sysctl.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查</span>
+</span></span><span class="line"><span class="cl">sysctl -p
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 清DNS缓存（debian12不需要）</span>
+</span></span><span class="line"><span class="cl">systemctl restart systemd-resolved.service
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启</span>
+</span></span><span class="line"><span class="cl">reboot
+</span></span><span class="line"><span class="cl"><span class="c1"># 检测ip</span>
+</span></span><span class="line"><span class="cl">ip addr
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="上传文件">上传文件</h3>
+<p>将我提供的<a href="https://wwf.lanzouo.com/iWBZN1buibzc">文件</a>中的 clash 文件夹和 mosdns 文件夹上传到 root 目录下</p>
+<h2 id="安装代理软件">安装代理软件</h2>
+<h3 id="安装-v2raya">安装 v2raya</h3>
+<ol>
+<li>添加公钥和软件源</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 报错的话可以试试逐条复制</span>
+</span></span><span class="line"><span class="cl">wget -qO - https://apt.v2raya.org/key/public-key.asc <span class="p">|</span> sudo tee /etc/apt/keyrings/v2raya.asc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;deb [signed-by=/etc/apt/keyrings/v2raya.asc] https://apt.v2raya.org/ v2raya main&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/v2raya.list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo apt update
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>添加软件源主要是 v2raya 的源不在官方源所以需要手动加一下</p>
+<ol start="2">
+<li>安装</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install v2raya v2ray <span class="c1">#v2ray内核</span>
+</span></span><span class="line"><span class="cl">sudo apt install v2raya xray  <span class="c1">#xray内核</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动并设置自启</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start v2raya.service
+</span></span><span class="line"><span class="cl"><span class="c1"># 开机自启</span>
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> v2raya.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="clash-永不为奴">clash 永不为奴!!</h3>
+<ol>
+<li>添加 clash 的配置文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget -O config.yaml <span class="s1">&#39;你机场的订阅链接&amp;flag=clash&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载Country.mmdb文件(去github上下载最新)</span>
+</span></span><span class="line"><span class="cl">wget https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载yacd面板(去github上找最新)</span>
+</span></span><span class="line"><span class="cl">wget https://github.com/haishanh/yacd/releases/download/v0.3.8/yacd.tar.xz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>解压并移动到指定目录</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tar -xf yacd.tar.xz
+</span></span><span class="line"><span class="cl">mkdir /etc/clash
+</span></span><span class="line"><span class="cl">mv public /etc/clash/yacd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>下载 clash pre,ium</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2023.08.17.gz
+</span></span><span class="line"><span class="cl">gzip -d clash-linux-amd64-2023.08.17.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>移动到指定目录</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mv  clash-linux-amd64-2023.08.17 /usr/local/bin/clash
+</span></span><span class="line"><span class="cl">mkdir /etc/clash
+</span></span><span class="line"><span class="cl">mv config.yaml /etc/clash/
+</span></span><span class="line"><span class="cl">mv Country.mmdb /etc/clash/
+</span></span><span class="line"><span class="cl">mv clash/template.yaml /etc/clash
+</span></span><span class="line"><span class="cl"><span class="c1"># 赋予执行权限</span>
+</span></span><span class="line"><span class="cl">chmod +x /usr/local/bin/clash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>启动 systemd 守护进程服务
+这个步骤主要防暴毙</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[Unit]
+</span></span></span><span class="line"><span class="cl"><span class="s2">Description=Clash daemon, A rule-based proxy in Go.
+</span></span></span><span class="line"><span class="cl"><span class="s2">After=network-online.target
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Service]
+</span></span></span><span class="line"><span class="cl"><span class="s2">Type=simple
+</span></span></span><span class="line"><span class="cl"><span class="s2">Restart=always
+</span></span></span><span class="line"><span class="cl"><span class="s2">ExecStart=/usr/local/bin/clash -d /etc/clash
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">[Install]
+</span></span></span><span class="line"><span class="cl"><span class="s2">WantedBy=multi-user.target&#34;</span> &gt;&gt; /etc/systemd/system/clash.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>重新加载测试</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl daemon-reload
+</span></span><span class="line"><span class="cl"><span class="c1"># 将系统DNS服务器指定为本地的IP192.168.234.3</span>
+</span></span><span class="line"><span class="cl">vim /etc/resolved.conf
+</span></span><span class="line"><span class="cl">systemctl start clash
+</span></span><span class="line"><span class="cl"><span class="c1"># 开机自启</span>
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> clash
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果失败就不要用V3指令集的了</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dns-部分">DNS 部分</h2>
+<h3 id="安装-mosdns">安装 mosdns</h3>
+<ol>
+<li>下载 mosdns</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 报错的话可以试试把梯子关了</span>
+</span></span><span class="line"><span class="cl">wget https://github.com/IrineSistiana/mosdns/releases/download/v5.1.3/mosdns-linux-amd64.zip
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mkdir /etc/mosdns
+</span></span><span class="line"><span class="cl">mkdir /var/mosdns
+</span></span><span class="line"><span class="cl">touch /var/disable-ads.txt
+</span></span><span class="line"><span class="cl">mv mosdns/etc/mosdns/* /etc/mosdns
+</span></span><span class="line"><span class="cl">mv mosdns/var/mosdns/* /var/mosdns
+</span></span><span class="line"><span class="cl">mv mosdns/v2dat /opt
+</span></span><span class="line"><span class="cl">chmod +x /opt/v2dat
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>康康你的 53 端口有没有被<del>后入</del></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lsof -i :53
+</span></span><span class="line"><span class="cl"><span class="c1"># 根据你占用53端口的进程名字来修改stop后面的参数</span>
+</span></span><span class="line"><span class="cl">systemctl stop systemd-resolved.service
+</span></span><span class="line"><span class="cl"><span class="c1"># 别忘了移除开机自启</span>
+</span></span><span class="line"><span class="cl">systemctl disable systemd-resolved.service
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查一下</span>
+</span></span><span class="line"><span class="cl">lsof -i :53
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>mosdns:我要进来咯~</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 解压</span>
+</span></span><span class="line"><span class="cl">unzip -o -d mosdns mosdns-xxx-xxx.zip
+</span></span><span class="line"><span class="cl"><span class="c1"># 把mosdns软件移到绝对工作目录</span>
+</span></span><span class="line"><span class="cl">mv /root/mosdns/mosdns /usr/bin/
+</span></span><span class="line"><span class="cl">chmod +x /usr/bin/mosdns
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># mosdns service install -d 工作目录绝对路径 -c 配置文件路径</span>
+</span></span><span class="line"><span class="cl">mosdns service install -d /usr/bin -c /etc/mosdns/config.yaml
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动mosdns并设置开机自启</span>
+</span></span><span class="line"><span class="cl">mosdns service start
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> mosdns.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查状态</span>
+</span></span><span class="line"><span class="cl">systemctl status mosdns.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-adguardhome">安装 adguardhome</h3>
+<p><span style="color: rgb(255, 0, 72); font-weight: 1000; font-size: 1.2rem"
+  >DNS 拦截广告只能欺负野鸡网站
+</span>
+,面对 youtube 以及国内的爱优腾都是被<del>操的走不动路的</del>,此外 <span style="color: rgb(255, 0, 72); font-weight: 1000; font-size: 1.2rem"
+  >DNS 规则也很难找
+</span>
+,博主本人已经变成了<del>广告的形状</del>(不是)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 下载AdGuardHome到本机,三选一都是安装脚本,能用就行</span>
+</span></span><span class="line"><span class="cl">curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh <span class="p">|</span> sh -s -- -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wget --no-verbose -O - https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh <span class="p">|</span> sh -s -- -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fetch -o - https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh <span class="p">|</span> sh -s -- -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动</span>
+</span></span><span class="line"><span class="cl">systemctl start AdGuardHome
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 状态</span>
+</span></span><span class="line"><span class="cl">systemctl status AdGuardHome
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 开机自启</span>
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> AdGuardHome
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启</span>
+</span></span><span class="line"><span class="cl">systemctl restart AdGuardHome
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 停止</span>
+</span></span><span class="line"><span class="cl">systemctl stop AdGuardHome
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后访问 <code>http://你的ip:3000</code>设置 adguardhome 就行了</p>
+<h2 id="终于结束了">终于结束了</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim /etc/resolv.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将dns服务器设置为旁路由ip</span>
+</span></span><span class="line"><span class="cl">nameserver 192.168.50.5
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 编辑cron</span>
+</span></span><span class="line"><span class="cl">mkdir /etc/mycron
+</span></span><span class="line"><span class="cl">mv /clash/clash_update.sh /etc/mycron
+</span></span><span class="line"><span class="cl">mv /mosdns/mosdns_update.sh /etc/mycron
+</span></span><span class="line"><span class="cl">chmod +x /etc/mycron/clash_update.sh
+</span></span><span class="line"><span class="cl">chmod +x /etc/mycron/mosdns_update.sh
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;30 4 * * * root /etc/mycron/mosdns_update.sh
+</span></span></span><span class="line"><span class="cl"><span class="s2">35 4 * * * root /etc/mycron/clash_update.sh&#34;</span> &gt;&gt; /etc/crontab
+</span></span></code></pre></td></tr></table>
+</div>
+</div></article><link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+<div id="waline"></div>
+<script type="module">
+  import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+  init({
+    el: "#waline",
+    serverURL: "https:\/\/sifulinblog-comments.vercel.app",
+    placeholder: "请填写正确的昵称和邮箱，方便接收评论回复信息哦。",
+    avatar: "mp",
+    avatarCDN: "https:\/\/cdn.v2ex.com\/gravatar\/",
+    pageSize:  10 ,
+    meta: ["nick","mail","link"],
+    lang: 'zh-cn',
+    highlight:  true ,
+    requiredFields: ["nick","mail"]
+  });
+</script>
+<p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-tags-fill"></i>
+<a
+  href="/zh-cn/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  软路由
+</a>
+<a
+  href="/zh-cn/tags/debian/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Debian
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-grid-fill"></i>
+<a
+  href="/zh-cn/categories/%E8%BD%AF%E8%B7%AF%E7%94%B1%E9%83%A8%E7%BD%B2/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  软路由部署
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    
+
+  </p>
+<style>
+  #toc-button {
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 3px;
+    padding: 0 2px;
+  }
+  #toc-button:hover {
+    cursor: pointer;
+  }
+  #toc-button svg {
+     
+    height: 1.5rem;
+    width: 1.5rem;
+     
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line {
+    fill: none;
+    stroke: var(--text-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+     
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  [toc-expanded="open"] svg {
+    transform: rotate(-45deg);
+  }
+  [toc-expanded="open"] svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  #toc-items-container {
+    background-color: #72727242;
+    padding: 2px 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    max-height: 8rem;
+  }
+  #toc-items-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  #toc-items-container::-webkit-scrollbar-track {
+    background-color: #313131;
+    border-radius: 2px;
+  }
+  #toc-items-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff6f;
+  }
+  #toc-items-container a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 5px 0;
+    word-wrap: break-word;
+    background-color: #ffffff2b;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px 0;
+  }
+  [toc-expanded="open"] + #toc-items-container {
+    animation: toc-show 0.5s;
+  }
+  [toc-expanded="closed"] + #toc-items-container {
+    animation: toc-close 0.5s;
+  }
+  @keyframes toc-show {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes toc-close {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+  }
+   
+  #toc-items-container ul li {
+    width: 7rem;
+    font-size: 1rem;
+    font-family: "Dingding";
+  }
+   
+  #toc-items-container ul li ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  #toc-items-container ul li ul li {
+    width: 5rem;
+    font-size: 0.8rem;
+    font-family: "Dingding";
+  }
+</style>
+<div style="position: fixed; left: 10px; top: 20%">
+  <button id="toc-button" toc-expanded="open">
+    <svg viewBox="0 0 32 32">
+      <path
+        class="line line-top-bottom"
+        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+      ></path>
+      <path class="line" d="M7 16 27 16"></path>
+    </svg>
+  </button>
+
+  <div id="toc-items-container"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前期准备工作">前期准备工作</a>
+      <ul>
+        <li><a href="#装好系统之后先更新软件源">装好系统之后先更新软件源</a></li>
+        <li><a href="#启动-ssh-连接">启动 ssh 连接</a></li>
+        <li><a href="#修改固定-ip">修改固定 ip</a></li>
+        <li><a href="#开启-ipv4-转发">开启 ipv4 转发</a></li>
+        <li><a href="#上传文件">上传文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#安装代理软件">安装代理软件</a>
+      <ul>
+        <li><a href="#安装-v2raya">安装 v2raya</a></li>
+        <li><a href="#clash-永不为奴">clash 永不为奴!!</a></li>
+      </ul>
+    </li>
+    <li><a href="#dns-部分">DNS 部分</a>
+      <ul>
+        <li><a href="#安装-mosdns">安装 mosdns</a></li>
+        <li><a href="#安装-adguardhome">安装 adguardhome</a></li>
+      </ul>
+    </li>
+    <li><a href="#终于结束了">终于结束了</a></li>
+  </ul>
+</nav></div>
+</div>
+<script>
+  const tocButton = document.getElementById("toc-button");
+  const tocItemsContainer = document.getElementById("toc-items-container");
+  tocButton.addEventListener("click", () => {
+    const expanded = tocButton.getAttribute("toc-expanded");
+    if (expanded === "open") {
+      tocButton.setAttribute("toc-expanded", "closed");
+    } else {
+      tocButton.setAttribute("toc-expanded", "open");
+      tocItemsContainer.style.display = "block";
+    }
+  });
+  tocItemsContainer.addEventListener("animationend", () => {
+    if (tocButton.getAttribute("toc-expanded") === "closed") {
+      tocItemsContainer.style.display = "none";
+    }
+  });
+</script>
+</div>
+
+<script src="/js/codeCopy.js" defer></script>  </main>
+      <footer class="footer-container" id="footer-container">
+        <div class="footer-content">
+  <div class="footer-social-container"><a
+      class="footer-social-link rss-link"
+      id="footer-social-rss.svg"
+      href="http://localhost:1313/zh-cn/index.xml"
+    >
+      <span class="footer-social-text">RSS</span>
+    </a>
+    <a
+      href="https://space.bilibili.com/8337954"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-bilibili.svg"
+    >
+      <span class="footer-social-text">bilibili</span>
+    </a>
+    
+    <a
+      href="https://github.com/ProjechAnonym"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-github.svg"
+    >
+      <span class="footer-social-text">gitHub</span>
+    </a>
+    
+    <a
+      href="https://t.me/&#43;5yh2rgXjWBlmMDk1"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-telegram.svg"
+    >
+      <span class="footer-social-text">telegram</span>
+    </a>
+    
+    <a
+      href="https://qm.qq.com/q/lLbgOB31sW"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-qq.svg"
+    >
+      <span class="footer-social-text">qq</span>
+    </a>
+    
+    <a
+      href="https://www.youtube.com/channel/UCXiiRClqjDLrqzMbq2Kqb4A"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-youtube.svg"
+    >
+      <span class="footer-social-text">youtube</span>
+    </a>
+     
+  </div>
+  <span class="footer-text"
+    >Copyright © 2024. All rights reserved.
+  </span>
+  <span class="footer-text">Powerd by hugo | Theme is sifu</span>
+</div>
+
+      </footer>
+    </div>
+  </body>
+</html>
