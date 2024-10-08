@@ -9,10 +9,12 @@ categories = ["aria2"]
 series = []
 math = false
 toc = true
-comments = false
+comments = true
 +++
 
 ## Aria2 下载器介绍
+
+友情提示: bt 做种的时候别人会连接你的服务器,强烈建议配置好 vlan 或者防火墙进行下载
 
 [Aria2](https://aria2.github.io/) 是一款非常强大的开源多协议命令行下载工具，它支持 HTTP、HTTPS、FTP 以及 BitTorrent 等协议，适用于多种操作系统，包括 Windows、Linux 和 macOS。Aria2 的设计目标是为了提高下载速度和灵活性，具备以下主要特点：
 
