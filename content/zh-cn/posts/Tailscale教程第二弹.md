@@ -158,6 +158,9 @@ sudo apt-get install tailscale
 tailscale set --auto-update
 # 因为没有子网路由需要配置,所以直接启动
 tailscale up
+# 启动一下ip转发不然只能打洞没法中继
+echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+sysctl -p
 # 启动derper服务器
 systemctl start derper.service
 ```
