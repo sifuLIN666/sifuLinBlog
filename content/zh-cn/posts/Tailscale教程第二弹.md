@@ -70,7 +70,10 @@ chmod +x /opt/derp/bin/derper
 # 设置acme自动更新证书
 acme.sh --upgrade --auto-upgrade
 # 导入cloudflare的token,不建议使用全局API Token,这里根据情况自己设置
-echo "CF_Token="****************"" >> /root/.bashrc
+# 使用cat获取内容,用>>追加,>会覆盖原文件,不要打错了
+cat >> /root/.bashrc << EOF
+CF_Token="****************"
+EOF
 # 设置默认的证书签发机构,根据情况选择
 acme.sh --set-default-ca --server letsencrypt
 # 申请证书,这里我的是泛域名证书,可以根据情况换成比如derp.example.com
