@@ -14,7 +14,7 @@ comments = true
 
 ## 安装
 
-1. debian 安装
+debian 安装,其他版本以及更详细教程请看[官网](<https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer)>)
 
 ```bash
 apt-get install qbittorrent-nox
