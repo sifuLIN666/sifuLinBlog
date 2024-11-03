@@ -15,8 +15,16 @@ comments = true
 ## 介绍
 
 在搜索 ios 翻墙软件中无意中发现了这个神奇的应用...真的是无意中发现的...
+
 [github 项目地址](https://github.com/stashapp/stash)
+
 [wiki 地址](https://docs.stashapp.cc/)
+
+## 一个小tips
+
+该软件会自动识别当前所在的路径并在该路径生成配置文件,可以利用这点找到配置文件位置
+
+需要注意如果作权限划分的,一定要确保设置的目录是有访问权限的,不过是媒体文件夹还是自动生成的缓存文件夹
 
 ## 安装
 
@@ -25,6 +33,7 @@ apt-get install -y ffmpeg
 # 小姐姐数据库所在位置
 mkdir /mnt/samsung/medias/stash
 # 小姐姐缩略图所在位置
+
 mkdir /mnt/samsung/medias/stash/generated
 # 小姐姐缓存位置
 mkdir /mnt/samsung/medias/stash/cache
@@ -36,7 +45,10 @@ mkdir /opt/stash/scrapers
 mkdir /opt/stash/bin
 # 配置文件位置
 mkdir /opt/stash/config
-
+# 运行之后记得把数据库设置一下权限
+# R是递归,d是子文件夹自动继承相同的访问权限
+setfacl -dR -m u:stash:rw /mnt/samsung/medias/stash
+setfacl -m u:stash:rw stash.sqlite
 cat > /etc/systemd/system/stash.service <<EOF
 [Unit]
 Description=StashApp Service
@@ -44,8 +56,8 @@ After=network.target
 
 [Service]
 Type=simple
-
-
+User=stash
+Group=stash
 # 运行 StashApp 的命令
 ExecStart=/opt/stash/bin/stash -c /opt/stash/config/config.yml  # 请确保这个路径是正确的
 
