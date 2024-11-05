@@ -21,9 +21,27 @@ apt-get install qbittorrent-nox
 # 创建配置目录
 mkdir /opt/qBittorrent
 # 创建一个用户实现权限隔离
-sudo adduser qbtuser
-# 更改文件夹用户
-chown -R qbtuser /opt/qBittorrent
+sudo useradd -r -s /usr/sbin/nologin qbtuser
+# 给文件夹设置可访问权限
+setfacl -m  d:u:username:rw filename
+# 查看文件夹权限
+getfacl 
+```
+* useradd命令详解
+
+|                -r                |            -s             |       /user/sbin/nologin        |
+| :------------------------------: | :-----------------------: | :-----------------------------: |
+| 创建系统用户,即UID小于1000的用户 | 设置该用户的shell交互逻辑 | 此为该用户不允许访问交互式shell |
+
+* setfacl命令详解
+
+|       -m        |    -R    |                              d                              |
+| :-------------: | :------: | :---------------------------------------------------------: |
+| 修改acl访问权限 | 递归设置 | 设置默认权限,这意味着新创建的子文件夹也会继承父文件夹的权限 |
+
+## 设置守护进程
+
+```bash
 # 创建系统服务
 cat  > /etc/systemd/system/qbittorrent.service << EOF
 [Unit]
@@ -62,7 +80,9 @@ systemdctl start qbittorrent
 
 修改账户密码以及语言
 如果需要配置反向代理请按图中操作
+
 ![634a61fa82a24e97db054b5860f343c.png](https://s2.loli.net/2024/10/19/2p3GPjlNdLF6IUk.png)
+
 **配置反向代理请求头需要设置 HOST,在 lucky 中如下操作**
 ![2752340442dea2dbac77523b9933d74.png](https://s2.loli.net/2024/10/19/KBa4RQjOoeCb35V.png)
 
