@@ -67,7 +67,7 @@ StandardError=journal
 
 # 自动重启服务
 Restart=on-failure
-
+RestartSec=5
 [Install]
 WantedBy=multi-user.target
 EOF
