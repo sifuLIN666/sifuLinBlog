@@ -46,10 +46,6 @@
   font-size: 1rem;
 }
 .post-container > article > table {
-  display: block;
-  width: 100%;
-  border-radius: 3px;
-  border: 1.5px solid var(--text-color);
   overflow: auto;
   border-collapse: collapse;
 }
@@ -62,15 +58,26 @@
 .post-container > article > table::-webkit-scrollbar-thumb {
   background-color: #a2a2a2;
 }
+.post-container > article > table > thead > tr {
+  border: 2px solid var(--text-color);
+}
+.post-container > article > table > tbody > tr {
+  border: 2px solid var(--text-color);
+}
 .post-container > article > table > thead > tr > th {
   text-align: center;
   min-width: 3rem;
-  border: 2px solid var(--text-color);
+  border-left: 2px solid var(--text-color);
+  border-right: 2px solid var(--text-color);
+  border-radius: 5px;
+  padding: 5px;
 }
 .post-container > article > table > tbody > tr > td {
   text-align: center;
   min-width: 3rem;
-  border: 2px solid var(--text-color);
+  border-left: 2px solid var(--text-color);
+  border-right: 2px solid var(--text-color);
+  padding: 5px;
 }
 .post-container > article > p > img {
   width: 100%;
