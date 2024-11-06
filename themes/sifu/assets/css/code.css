@@ -19,6 +19,10 @@
 .chroma::-webkit-scrollbar-thumb {
   background-color: #535353;
 }
+pre > code {
+  font-size: 1rem;
+  font-weight: bolder;
+}
 /* Other */
 .chroma .x {
 }
@@ -60,7 +64,6 @@
   -webkit-user-select: none;
   user-select: none;
   margin-right: 0.4em;
-  padding: 1px 0.4em;
   color: #6c6f74;
   font-size: 1rem;
 }
