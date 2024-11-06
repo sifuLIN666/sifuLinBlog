@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313"
+baseURL = "https://vercel-blog.sifulin.top"
 theme = "sifu"
 preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
