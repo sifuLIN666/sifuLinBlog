@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  全能下载器Aria2 | 林师傅的贼窝
+</title>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/><link rel="stylesheet" href="/css/root.css" /><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+/><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff2" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.ttf" /><link rel="stylesheet" href="/fonts/fonts.css" /><link rel="stylesheet" href="/icons/iconfont.ttf" /><link rel="stylesheet" href="/icons/iconfont.woff" /><link rel="stylesheet" href="/icons/iconfont.woff2" /><link rel="stylesheet" href="/icons/iconfont.css" /><link rel="stylesheet" href="/css/header.css" /><link rel="stylesheet" href="/css/content.css" /><link rel="stylesheet" href="/css/footer.css" />
+ <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+;
+<script src="/js/themeColors.js" defer></script>
+<script src="/js/mobile/headerNav.js" defer></script>
+<script src="/js/langSwitch.js" defer></script>
+<script src="/js/footer/footerStyle.js" defer></script>
+<script src="/js/rssCopy.js" defer></script>
+
+
+  </head>
+  <body
+    class="dark-mode"
+    
+  >
+    <header class="header-container"><div class="header-title">
+  <div class="header-nav-container" id="header-nav-container">
+    
+  <nav class="header-nav" id="header-nav">
+    <a class="header-nav-item" href="/zh-cn//">
+      <i class="iconfont icon-Home"></i>首页
+    </a>
+    <a class="header-nav-item" href="/zh-cn/categories/">
+      <i class="iconfont icon-Category"></i>分类
+    </a>
+    <a class="header-nav-item" href="/zh-cn/posts/">
+      <i class="iconfont icon-Archive"></i>归档
+    </a>
+    <a class="header-nav-item" href="/zh-cn/series/">
+      <i class="iconfont icon-Series"></i>系列
+    </a>
+    <a class="header-nav-item" href="/zh-cn/tags/">
+      <i class="iconfont icon-Tags"></i>标签
+    </a>
+    <a class="header-nav-item" href="/zh-cn/profile/">
+      <i class="iconfont icon-Profile"></i>简介
+    </a>
+    <a class="header-nav-item" href="/zh-cn/link/">
+      <i class="iconfont icon-Attachment"></i>友链
+    </a>  
+  </nav>
+
+  </div>
+
+  <p class="header-author-msg">
+    <span class="header-author-title">林师傅的贼窝</span>
+    <span class="header-author-description">每天都被折磨的想死</span>
+  </p>
+  <span class="header-buttons">
+    <span class="header-button-container">
+      <button id="lang-switch" class="header-button">
+        <i class="bi bi-translate"></i>
+      </button>
+      <div class="header-language" id="header-language-container"><span class="header-language-item" id="en">
+          <i class="fi fi-us"></i>
+        </span>
+        <span class="header-language-item" id="zh-cn">
+          <i class="fi fi-cn"></i>
+        </span>
+        
+      </div>
+    </span>
+    <span class="header-button-container">
+      <button id="theme-toggle" class="header-button">
+        <i class="iconfont icon-Sun" id="header-theme-button-icon"></i>
+      </button>
+    </span>
+  </span>
+</div>
+</header>
+    <div class="main-container">
+      <main>  <link rel="stylesheet" href="/css/code.css" /><style>
+  .post-container article a {
+    color: var(--text-color);
+    font-weight: 1000;
+  }
+  .post-container article li {
+    font-weight: 1000;
+    font-style: oblique;
+  }
+</style>
+<div class="post-container">
+  <div
+    class="post-title"
+    style="display: flex; flex-direction: column; width: 100%"
+  >
+    <h1 style="text-align: center">全能下载器Aria2</h1>
+    <time datetime="2024-10-08T00:00:00&#43;00:00" style="margin: 0 auto">
+      <i class="bi bi-calendar3" style="margin-right: 3px"></i>
+      <span>October 8, 2024</span>
+    </time>
+  </div>
+  <article style="width: 100%; word-break: break-word"><h2 id="aria2-下载器介绍">Aria2 下载器介绍</h2>
+<p>友情提示: bt 做种的时候别人会连接你的服务器,强烈建议配置好 vlan 或者防火墙进行下载</p>
+<p><a href="https://aria2.github.io/">Aria2</a> 是一款非常强大的开源多协议命令行下载工具，它支持 HTTP、HTTPS、FTP 以及 BitTorrent 等协议，适用于多种操作系统，包括 Windows、Linux 和 macOS。Aria2 的设计目标是为了提高下载速度和灵活性，具备以下主要特点：</p>
+<ul>
+<li>
+<p>多线程下载：
+Aria2 支持多线程下载，可以从多个源同时下载同一个文件，显著提高了下载速度。这对于大文件下载尤其有用，因为它可以利用带宽的全部潜力。</p>
+</li>
+<li>
+<p>断点续传：
+支持断点续传功能，这意味着即使下载过程中断，也可以从上次中断的地方继续下载，而不必重新开始整个下载过程。</p>
+</li>
+<li>
+<p>多协议支持：
+Aria2 支持多种网络协议，包括 HTTP、HTTPS、FTP、SFTP、BitTorrent (BT) 和 Metalink。这使得它成为一个非常通用的下载工具，几乎可以处理任何类型的下载任务。</p>
+</li>
+<li>
+<p>轻量级和灵活：
+Aria2 本身是一个很小的应用程序，但它提供了丰富的命令行选项，允许用户进行详细的配置。此外，Aria2 可以通过 Web 界面、图形用户界面(GUI)或其他工具来管理，增加了使用的灵活性。</p>
+</li>
+<li>
+<p>后台下载和静默模式：
+Aria2 支持后台下载，用户可以在启动下载任务后关闭控制台窗口，而下载任务仍将继续执行。此外，它还支持静默模式，可以在没有用户交互的情况下工作。</p>
+</li>
+</ul>
+<h2 id="安装-aria2">安装 aria2</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># debian的 apt 包管理器已经包含aria2,但是没有systemctl服务</span>
+</span></span><span class="line"><span class="cl">apt-get install -y aria2
+</span></span><span class="line"><span class="cl">mkdir -p /opt/aria2
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置systemctl服务</span>
+</span></span><span class="line"><span class="cl">cat &gt; /etc/systemd/system/aria2.service <span class="s">&lt;&lt; EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">[Unit]
+</span></span></span><span class="line"><span class="cl"><span class="s">Description=aria2 Daemon
+</span></span></span><span class="line"><span class="cl"><span class="s">After=network.target
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">[Service]
+</span></span></span><span class="line"><span class="cl"><span class="s">Type=forking
+</span></span></span><span class="line"><span class="cl"><span class="s">ExecStart=/opt/aria2/aria2.sh start
+</span></span></span><span class="line"><span class="cl"><span class="s">ExecStop=/opt/aria2/aria2.sh stop
+</span></span></span><span class="line"><span class="cl"><span class="s">ExecRestart=/opt/aria2/aria2.sh restart
+</span></span></span><span class="line"><span class="cl"><span class="s">Restart=on-failure
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">[Install]
+</span></span></span><span class="line"><span class="cl"><span class="s">WantedBy=multi-user.target
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 这个systemctl服务是通过脚本来控制的,现在把脚本补上</span>
+</span></span><span class="line"><span class="cl">cat &gt; /opt/aria2/aria2.sh <span class="s">&lt;&lt; EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="s">stop(){
+</span></span></span><span class="line"><span class="cl"><span class="s">    pid=$(pidof &#39;aria2c&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">    if [ -n &#34;$pid&#34; ]; then
+</span></span></span><span class="line"><span class="cl"><span class="s">        kill $pid
+</span></span></span><span class="line"><span class="cl"><span class="s">    else
+</span></span></span><span class="line"><span class="cl"><span class="s">        echo &#34;没有找到 aria2c 的进程&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">    fi
+</span></span></span><span class="line"><span class="cl"><span class="s">}
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">case &#34;$1&#34; in
+</span></span></span><span class="line"><span class="cl"><span class="s">start)
+</span></span></span><span class="line"><span class="cl"><span class="s">    aria2c --conf-path=/opt/aria2/aria2.conf -D
+</span></span></span><span class="line"><span class="cl"><span class="s">;;
+</span></span></span><span class="line"><span class="cl"><span class="s">stop)
+</span></span></span><span class="line"><span class="cl"><span class="s">    stop
+</span></span></span><span class="line"><span class="cl"><span class="s">;;
+</span></span></span><span class="line"><span class="cl"><span class="s">restart)
+</span></span></span><span class="line"><span class="cl"><span class="s">    stop
+</span></span></span><span class="line"><span class="cl"><span class="s">    sleep 2
+</span></span></span><span class="line"><span class="cl"><span class="s">    aria2c --conf-path=/opt/aria2/aria2.conf -D
+</span></span></span><span class="line"><span class="cl"><span class="s">;;
+</span></span></span><span class="line"><span class="cl"><span class="s">esac
+</span></span></span><span class="line"><span class="cl"><span class="s">exit
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">chmod +x /opt/aria2/aria2.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 这个脚本中设置了配置文件路径,可以自行修改</span>
+</span></span><span class="line"><span class="cl">cat &gt; /opt/aria2/aria2.conf <span class="s">&lt;&lt; EOF
+</span></span></span><span class="line"><span class="cl"><span class="s"># 下载路径
+</span></span></span><span class="line"><span class="cl"><span class="s">dir=/mnt/samsung/aria2
+</span></span></span><span class="line"><span class="cl"><span class="s"># 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
+</span></span></span><span class="line"><span class="cl"><span class="s">#disk-cache=32M
+</span></span></span><span class="line"><span class="cl"><span class="s">#disk-cache=32M
+</span></span></span><span class="line"><span class="cl"><span class="s"># 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
+</span></span></span><span class="line"><span class="cl"><span class="s"># 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc
+</span></span></span><span class="line"><span class="cl"><span class="s"># falloc和trunc则需要文件系统和内核支持
+</span></span></span><span class="line"><span class="cl"><span class="s"># NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项
+</span></span></span><span class="line"><span class="cl"><span class="s">file-allocation=trunc
+</span></span></span><span class="line"><span class="cl"><span class="s"># 断点续传
+</span></span></span><span class="line"><span class="cl"><span class="s">continue=true
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">## 下载连接相关 ##
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 最大同时下载任务数, 运行时可修改, 默认:5
+</span></span></span><span class="line"><span class="cl"><span class="s">max-concurrent-downloads=5
+</span></span></span><span class="line"><span class="cl"><span class="s"># 同一服务器连接数, 添加时可指定, 默认:1
+</span></span></span><span class="line"><span class="cl"><span class="s">max-connection-per-server=5
+</span></span></span><span class="line"><span class="cl"><span class="s"># 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
+</span></span></span><span class="line"><span class="cl"><span class="s"># 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
+</span></span></span><span class="line"><span class="cl"><span class="s">min-split-size=10M
+</span></span></span><span class="line"><span class="cl"><span class="s"># 单个任务最大线程数, 添加时可指定, 默认:5
+</span></span></span><span class="line"><span class="cl"><span class="s">split=5
+</span></span></span><span class="line"><span class="cl"><span class="s"># 整体下载速度限制, 运行时可修改, 默认:0
+</span></span></span><span class="line"><span class="cl"><span class="s">#max-overall-download-limit=0
+</span></span></span><span class="line"><span class="cl"><span class="s"># 单个任务下载速度限制, 默认:0
+</span></span></span><span class="line"><span class="cl"><span class="s">#max-download-limit=0
+</span></span></span><span class="line"><span class="cl"><span class="s"># 整体上传速度限制, 运行时可修改, 默认:0
+</span></span></span><span class="line"><span class="cl"><span class="s">#max-overall-upload-limit=0
+</span></span></span><span class="line"><span class="cl"><span class="s"># 单个任务上传速度限制, 默认:0
+</span></span></span><span class="line"><span class="cl"><span class="s">#max-upload-limit=0
+</span></span></span><span class="line"><span class="cl"><span class="s"># 禁用IPv6, 默认:false
+</span></span></span><span class="line"><span class="cl"><span class="s">disable-ipv6=true
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">## 进度保存相关 ##
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 从会话文件中读取下载任务
+</span></span></span><span class="line"><span class="cl"><span class="s">input-file=/opt/aria2/aria2.session
+</span></span></span><span class="line"><span class="cl"><span class="s"># 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
+</span></span></span><span class="line"><span class="cl"><span class="s">save-session=/opt/aria2/aria2.session
+</span></span></span><span class="line"><span class="cl"><span class="s"># 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
+</span></span></span><span class="line"><span class="cl"><span class="s">save-session-interval=60
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">## RPC相关设置,可以搭配webUI使用 ##
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 启用RPC, 默认:false
+</span></span></span><span class="line"><span class="cl"><span class="s">enable-rpc=true
+</span></span></span><span class="line"><span class="cl"><span class="s"># 允许所有来源, 默认:false
+</span></span></span><span class="line"><span class="cl"><span class="s">rpc-allow-origin-all=true
+</span></span></span><span class="line"><span class="cl"><span class="s"># 允许非外部访问, 默认:false
+</span></span></span><span class="line"><span class="cl"><span class="s">rpc-listen-all=true
+</span></span></span><span class="line"><span class="cl"><span class="s"># 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
+</span></span></span><span class="line"><span class="cl"><span class="s">#event-poll=select
+</span></span></span><span class="line"><span class="cl"><span class="s"># RPC监听端口, 端口被占用时可以修改, 默认:6800
+</span></span></span><span class="line"><span class="cl"><span class="s">rpc-listen-port=6800
+</span></span></span><span class="line"><span class="cl"><span class="s"># 设置的RPC授权令牌, v1.18.4新增功能, 取代 --rpc-user 和 --rpc-passwd 选项
+</span></span></span><span class="line"><span class="cl"><span class="s">rpc-secure=false
+</span></span></span><span class="line"><span class="cl"><span class="s">rpc-secret=wsr19990902
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">## BT/PT下载相关 ##
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
+</span></span></span><span class="line"><span class="cl"><span class="s">#follow-torrent=true
+</span></span></span><span class="line"><span class="cl"><span class="s"># BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
+</span></span></span><span class="line"><span class="cl"><span class="s">listen-port=51413
+</span></span></span><span class="line"><span class="cl"><span class="s"># 单个种子最大连接数, 默认:55
+</span></span></span><span class="line"><span class="cl"><span class="s">#bt-max-peers=55
+</span></span></span><span class="line"><span class="cl"><span class="s"># 打开DHT功能, PT需要禁用, 默认:true
+</span></span></span><span class="line"><span class="cl"><span class="s">enable-dht=true
+</span></span></span><span class="line"><span class="cl"><span class="s"># 打开IPv6 DHT功能, PT需要禁用
+</span></span></span><span class="line"><span class="cl"><span class="s">#enable-dht6=false
+</span></span></span><span class="line"><span class="cl"><span class="s"># DHT网络监听端口, 默认:6881-6999
+</span></span></span><span class="line"><span class="cl"><span class="s">#dht-listen-port=6881-6999
+</span></span></span><span class="line"><span class="cl"><span class="s"># 本地节点查找, PT需要禁用, 默认:false
+</span></span></span><span class="line"><span class="cl"><span class="s">bt-enable-lpd=true
+</span></span></span><span class="line"><span class="cl"><span class="s"># 种子交换, PT需要禁用, 默认:true
+</span></span></span><span class="line"><span class="cl"><span class="s">enable-peer-exchange=false
+</span></span></span><span class="line"><span class="cl"><span class="s"># 每个种子限速, 对少种的PT很有用, 默认:50K
+</span></span></span><span class="line"><span class="cl"><span class="s">#bt-request-peer-speed-limit=50K
+</span></span></span><span class="line"><span class="cl"><span class="s"># 客户端伪装, PT需要
+</span></span></span><span class="line"><span class="cl"><span class="s">#peer-id-prefix=-TR2770-
+</span></span></span><span class="line"><span class="cl"><span class="s">user-agent=Transmission/2.92
+</span></span></span><span class="line"><span class="cl"><span class="s">#user-agent=netdisk;4.4.0.6;PC;PC-Windows;6.2.9200;WindowsBaiduYunGuanJia
+</span></span></span><span class="line"><span class="cl"><span class="s"># 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">seed-ratio=1.0
+</span></span></span><span class="line"><span class="cl"><span class="s">#作种时间大于30分钟，则停止作种
+</span></span></span><span class="line"><span class="cl"><span class="s">seed-time=30
+</span></span></span><span class="line"><span class="cl"><span class="s"># 强制保存会话, 话即使任务已经完成, 默认:false
+</span></span></span><span class="line"><span class="cl"><span class="s"># 较新的版本开启后会在任务完成后依然保留.aria2文件
+</span></span></span><span class="line"><span class="cl"><span class="s">#force-save=false
+</span></span></span><span class="line"><span class="cl"><span class="s"># BT校验相关, 默认:true
+</span></span></span><span class="line"><span class="cl"><span class="s">bt-hash-check-seed=true
+</span></span></span><span class="line"><span class="cl"><span class="s"># 继续之前的BT任务时, 无需再次校验, 默认:false
+</span></span></span><span class="line"><span class="cl"><span class="s">bt-seed-unverified=false
+</span></span></span><span class="line"><span class="cl"><span class="s"># 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
+</span></span></span><span class="line"><span class="cl"><span class="s">bt-save-metadata=true
+</span></span></span><span class="line"><span class="cl"><span class="s">#下载完成后删除.ara2的同名文件
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动aria2服务,此处为后台启动</span>
+</span></span><span class="line"><span class="cl">systemctl daemon-reload
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> --now aria2.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="命令行未免太抽象来个-gui-吧">命令行未免太抽象,来个 GUI 吧</h2>
+<p>aira2 开启 rpc 之后支持很多种 GUI,我这里推荐一个<a href="https://ariang.mayswind.net/zh_Hans/">ariaNG</a>,由于这是一个纯前端的 GUI 框架,目前我没有配置 nginx 这些 web 服务器,所以这个部署过程不作演示,部署好之后访问 <code>http://ip:port/jsonrpc</code> 即可</p>
+</article><link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+<div id="waline"></div>
+<script type="module">
+  import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+  init({
+    el: "#waline",
+    serverURL: "https:\/\/sifulinblog-comments.vercel.app",
+    placeholder: "请填写正确的昵称和邮箱，方便接收评论回复信息哦。",
+    avatar: "mp",
+    avatarCDN: "https:\/\/cdn.v2ex.com\/gravatar\/",
+    pageSize:  10 ,
+    meta: ["nick","mail","link"],
+    lang: 'zh-cn',
+    highlight:  true ,
+    requiredFields: ["nick","mail"]
+  });
+</script>
+<p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-tags-fill"></i>
+<a
+  href="/zh-cn/tags/aria2/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Aria2
+</a>
+<a
+  href="/zh-cn/tags/bt%E4%B8%8B%E8%BD%BD/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Bt下载
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-grid-fill"></i>
+<a
+  href="/zh-cn/categories/linux%E4%B8%8B%E8%BD%BD%E5%99%A8/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Linux下载器
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    
+<style>
+  .series-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    height: fit-content;
+    width: 100%;
+  }
+  .series-link {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 0.2rem;
+    background: linear-gradient(
+      to right,
+      var(--header-background-color-from),
+      var(--header-background-color-to)
+    );
+    width: 6rem;
+    height: fit-content;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 10px;
+    font-family: "Dingding";
+    margin: 3px 2px;
+    transition: 0.5s;
+  }
+  .series-link:hover {
+    transform: scale(1.05);
+  }
+</style>
+<div class="series-container">
+  <span style="font-size: 1.2rem; font-family: Dingding">
+    Aria2<i class="bi bi-three-dots"></i>
+  </span>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center"><a href="/zh-cn/2024/10/08/aria/" class="series-link">全能下载器Aria2</a></div>
+</div>
+
+  </p>
+<style>
+  #toc-button {
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 3px;
+    padding: 0 2px;
+  }
+  #toc-button:hover {
+    cursor: pointer;
+  }
+  #toc-button svg {
+     
+    height: 1.5rem;
+    width: 1.5rem;
+     
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line {
+    fill: none;
+    stroke: var(--text-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+     
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  [toc-expanded="open"] svg {
+    transform: rotate(-45deg);
+  }
+  [toc-expanded="open"] svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  #toc-items-container {
+    background-color: #72727242;
+    padding: 2px 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    max-height: 8rem;
+  }
+  #toc-items-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  #toc-items-container::-webkit-scrollbar-track {
+    background-color: #313131;
+    border-radius: 2px;
+  }
+  #toc-items-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff6f;
+  }
+  #toc-items-container a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 5px 0;
+    word-wrap: break-word;
+    background-color: #ffffff2b;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px 0;
+  }
+  [toc-expanded="open"] + #toc-items-container {
+    animation: toc-show 0.5s;
+  }
+  [toc-expanded="closed"] + #toc-items-container {
+    animation: toc-close 0.5s;
+  }
+  @keyframes toc-show {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes toc-close {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+  }
+   
+  #toc-items-container ul li {
+    width: 7rem;
+    font-size: 1rem;
+    font-family: "Dingding";
+  }
+   
+  #toc-items-container ul li ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  #toc-items-container ul li ul li {
+    width: 5rem;
+    font-size: 0.8rem;
+    font-family: "Dingding";
+  }
+</style>
+<div style="position: fixed; left: 10px; top: 20%">
+  <button id="toc-button" toc-expanded="open">
+    <svg viewBox="0 0 32 32">
+      <path
+        class="line line-top-bottom"
+        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+      ></path>
+      <path class="line" d="M7 16 27 16"></path>
+    </svg>
+  </button>
+
+  <div id="toc-items-container"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#aria2-下载器介绍">Aria2 下载器介绍</a></li>
+    <li><a href="#安装-aria2">安装 aria2</a></li>
+    <li><a href="#命令行未免太抽象来个-gui-吧">命令行未免太抽象,来个 GUI 吧</a></li>
+  </ul>
+</nav></div>
+</div>
+<script>
+  const tocButton = document.getElementById("toc-button");
+  const tocItemsContainer = document.getElementById("toc-items-container");
+  tocButton.addEventListener("click", () => {
+    const expanded = tocButton.getAttribute("toc-expanded");
+    if (expanded === "open") {
+      tocButton.setAttribute("toc-expanded", "closed");
+    } else {
+      tocButton.setAttribute("toc-expanded", "open");
+      tocItemsContainer.style.display = "block";
+    }
+  });
+  tocItemsContainer.addEventListener("animationend", () => {
+    if (tocButton.getAttribute("toc-expanded") === "closed") {
+      tocItemsContainer.style.display = "none";
+    }
+  });
+</script>
+</div>
+
+<script src="/js/codeCopy.js" defer></script>  </main>
+      <footer class="footer-container" id="footer-container">
+        <div class="footer-content">
+  <div class="footer-social-container"><a
+      class="footer-social-link rss-link"
+      id="footer-social-rss.svg"
+      href="http://localhost:1313/zh-cn/index.xml"
+    >
+      <span class="footer-social-text">RSS</span>
+    </a>
+    <a
+      href="https://space.bilibili.com/8337954"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-bilibili.svg"
+    >
+      <span class="footer-social-text">bilibili</span>
+    </a>
+    
+    <a
+      href="https://github.com/ProjechAnonym"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-github.svg"
+    >
+      <span class="footer-social-text">gitHub</span>
+    </a>
+    
+    <a
+      href="https://t.me/&#43;5yh2rgXjWBlmMDk1"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-telegram.svg"
+    >
+      <span class="footer-social-text">telegram</span>
+    </a>
+    
+    <a
+      href="https://qm.qq.com/q/lLbgOB31sW"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-qq.svg"
+    >
+      <span class="footer-social-text">qq</span>
+    </a>
+    
+    <a
+      href="https://www.youtube.com/channel/UCXiiRClqjDLrqzMbq2Kqb4A"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-youtube.svg"
+    >
+      <span class="footer-social-text">youtube</span>
+    </a>
+     
+  </div>
+  <span class="footer-text"
+    >Copyright © 2024. All rights reserved.
+  </span>
+  <span class="footer-text">Powerd by hugo | Theme is sifu</span>
+</div>
+
+      </footer>
+    </div>
+  </body>
+</html>

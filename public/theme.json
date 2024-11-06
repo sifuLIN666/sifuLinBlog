@@ -1,0 +1,22 @@
+{
+  "dark": {
+    "--button-color": "#760096",
+    "--window-background-color": "#16171d",
+    "--header-background-color-from": "#211a37",
+    "--header-background-color-to": "#261217",
+    "--text-color": "#f1fcff",
+    "--content-msg-itme-color": "#625e5993",
+    "--card-background-color-from": "#8f64c1",
+    "--card-background-color-to": "#b6cff1"
+  },
+  "light": {
+    "--button-color": "#ffa14f",
+    "--window-background-color": "#f0f0f0",
+    "--header-background-color-from": "#faf6e5",
+    "--header-background-color-to": "#ffe0d7",
+    "--text-color": "#28292a",
+    "--content-msg-itme-color": "#c8c8c893",
+    "--card-background-color-from": "#7ce5ff",
+    "--card-background-color-to": "#d2ceff"
+  }
+}
