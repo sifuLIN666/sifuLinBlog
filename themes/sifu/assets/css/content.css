@@ -49,8 +49,9 @@
   display: block;
   width: 100%;
   border-radius: 3px;
-  outline: 1.5px solid var(--text-color);
+  border: 1.5px solid var(--text-color);
   overflow: auto;
+  border-collapse: collapse;
 }
 .post-container > article > table::-webkit-scrollbar {
   height: 10px;
@@ -61,12 +62,20 @@
 .post-container > article > table::-webkit-scrollbar-thumb {
   background-color: #a2a2a2;
 }
-.post-container > article > table > thead {
-  border-bottom: 2px solid var(--text-color);
+.post-container > article > table > thead > tr > th {
+  text-align: center;
+  min-width: 3rem;
+  border: 2px solid var(--text-color);
 }
 .post-container > article > table > tbody > tr > td {
   text-align: center;
   min-width: 3rem;
+  border: 2px solid var(--text-color);
+}
+.post-container > article > p > img {
+  width: 100%;
+  object-fit: contain;
+  margin: 0.5rem 0;
 }
 .code-head {
   width: calc(100% - 10px);
