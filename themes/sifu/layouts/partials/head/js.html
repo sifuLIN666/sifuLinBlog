@@ -12,10 +12,3 @@
 {{- end}} {{- with resources.Get "js/typed.js" }}
 <script src="{{ .RelPermalink }}" defer></script>
 {{- end}}
-<script defer>
-  const viewHeight = window.innerHeight;
-  document.documentElement.style.setProperty(
-    "--view-height",
-    viewHeight - 80 + "px"
-  );
-</script>
