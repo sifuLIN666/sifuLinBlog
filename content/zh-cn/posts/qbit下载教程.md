@@ -28,39 +28,6 @@ setfacl -m  d:u:username:rw /mnt/qBittorrent
 getfacl /mnt/qBittorrent
 ```
 
-```
-E:.
-├─archetypes
-├─assets
-│  ├─css
-│  ├─fonts
-│  ├─icons
-│  └─js
-│      ├─footer
-│      └─mobile
-├─content
-├─data
-├─example
-│  ├─archetypes
-│  └─content
-│      ├─en
-│      │  └─posts
-│      └─zh-cn
-│          └─posts
-├─i18n
-├─layouts
-│  ├─link
-│  ├─partials
-│  │  ├─components
-│  │  └─head
-│  ├─profile
-│  ├─shortcodes
-│  └─_default
-└─static
-    ├─links
-    └─social
-```
-
 - useradd 命令详解
 
 |                  -r                  |             -s              |        /usr/sbin/nologin         |
