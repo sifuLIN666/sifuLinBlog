@@ -19,10 +19,6 @@
 .chroma::-webkit-scrollbar-thumb {
   background-color: #535353;
 }
-pre > code {
-  font-size: 1rem;
-  font-weight: bolder;
-}
 /* Other */
 .chroma .x {
 }
