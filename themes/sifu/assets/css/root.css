@@ -4,7 +4,7 @@ body {
 }
 .main-container {
   /* 4rem:header 1rem:footer-padding 90dvh,手机端浏览器有地址栏会莫名其妙占掉位置*/
-  height: calc(100dvh- 4rem - 1rem);
+  height: calc(100dvh - 4rem - 1rem);
   /* 这个margin是因为他似乎不是定位在顶部,莫名其妙被占了2rem需要再补充剩下的2rem */
   margin-top: 2rem;
   color: var(--text-color);
