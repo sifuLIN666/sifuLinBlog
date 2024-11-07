@@ -23,9 +23,42 @@ mkdir /opt/qBittorrent
 # 创建一个用户实现权限隔离
 sudo useradd -r -s /usr/sbin/nologin qbtuser
 # 给文件夹设置可访问权限
-setfacl -m  d:u:username:rw filename
+setfacl -m  d:u:username:rw /mnt/qBittorrent
 # 查看文件夹权限
-getfacl
+getfacl /mnt/qBittorrent
+```
+
+```
+E:.
+├─archetypes
+├─assets
+│  ├─css
+│  ├─fonts
+│  ├─icons
+│  └─js
+│      ├─footer
+│      └─mobile
+├─content
+├─data
+├─example
+│  ├─archetypes
+│  └─content
+│      ├─en
+│      │  └─posts
+│      └─zh-cn
+│          └─posts
+├─i18n
+├─layouts
+│  ├─link
+│  ├─partials
+│  │  ├─components
+│  │  └─head
+│  ├─profile
+│  ├─shortcodes
+│  └─_default
+└─static
+    ├─links
+    └─social
 ```
 
 - useradd 命令详解

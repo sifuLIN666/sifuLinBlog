@@ -1,14 +1,7 @@
 {{ define "main" }} {{ $dateMachine := .Date | time.Format
 "2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date | time.Format ":date_long"
-}} {{- with resources.Get "css/code.css" -}}
-<link rel="stylesheet" href="{{ .RelPermalink }}" />{{- end -}} {{- if
-.Params.math -}}
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
-  integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww"
-  crossorigin="anonymous"
-/>{{- partial "math.html" -}} {{- end -}}
+}} {{- if .Params.math -}} {{- partial "math.html" -}} {{- end -}} {{- partial
+"highlightCode.html" -}}
 <style>
   .post-container article a {
     color: var(--text-color);

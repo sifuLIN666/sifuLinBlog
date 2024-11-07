@@ -10,13 +10,13 @@ const svgError = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 </svg>`;
 // add button function
 const addCopyButtons = (clipboard) => {
-  Object.entries(document.querySelectorAll("div.chroma")).forEach(
+  Object.entries(document.querySelectorAll("div.highlight")).forEach(
     (codeBlock) => {
       const code = codeBlock[1].querySelectorAll("pre > code");
       if (code) {
         const codeHead = document.createElement("div");
         codeHead.style.marginTop = "0.5rem";
-        codeHead.innerHTML = `<span class="code-lang">${code[1].getAttribute(
+        codeHead.innerHTML = `<span class="code-lang">${code[0].getAttribute(
           "data-lang"
         )}</span>`;
         const copyButton = document.createElement("button");
@@ -27,7 +27,7 @@ const addCopyButtons = (clipboard) => {
         copyButton.innerHTML = svgCopy;
         copyButton.addEventListener("click", () => {
           clipboard
-            .writeText(code[1].innerText)
+            .writeText(code[0].innerText)
             .then(() => {
               copyButton.blur();
               copyButton.innerHTML = svgCheck;

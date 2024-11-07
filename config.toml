@@ -157,10 +157,10 @@ icon = "youtube.svg"
 tag = "tags"
 category = "categories"
 series = "series"
-[markup]
-    [markup.highlight]
-        codeFences = true
-        lineNos = true
-        lineNumbersInTable = true
-        noClasses = false
-        enable = true
+# [markup]
+#     [markup.highlight]
+#         codeFences = true
+#         lineNos = true
+#         lineNumbersInTable = true
+#         noClasses = false
+#         enable = true
