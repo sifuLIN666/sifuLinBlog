@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cmake on 林师傅的贼窝</title>
+    <link>http://localhost:1313/zh-cn/tags/cmake/</link>
+    <description>Recent content in Cmake on 林师傅的贼窝</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 03 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/zh-cn/tags/cmake/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;编译指南</title>
+      <link>http://localhost:1313/zh-cn/2024/12/03/c-%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/2024/12/03/c-%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97/</guid>
+      <description>Article Description</description>
+    </item>
+  </channel>
+</rss>

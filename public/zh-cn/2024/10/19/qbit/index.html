@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  Qbit下载教程 | 林师傅的贼窝
+</title>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/><link rel="stylesheet" href="/css/root.css" /><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+/><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff2" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.ttf" /><link rel="stylesheet" href="/fonts/fonts.css" /><link rel="stylesheet" href="/icons/iconfont.ttf" /><link rel="stylesheet" href="/icons/iconfont.woff" /><link rel="stylesheet" href="/icons/iconfont.woff2" /><link rel="stylesheet" href="/icons/iconfont.css" /><link rel="stylesheet" href="/css/header.css" /><link rel="stylesheet" href="/css/content.css" /><link rel="stylesheet" href="/css/footer.css" />
+ <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+;
+<script src="/js/themeColors.js" defer></script>
+<script src="/js/mobile/headerNav.js" defer></script>
+<script src="/js/langSwitch.js" defer></script>
+<script src="/js/footer/footerStyle.js" defer></script>
+<script src="/js/rssCopy.js" defer></script>
+
+
+  </head>
+  <body
+    class="dark-mode"
+    
+  >
+    <header class="header-container"><div class="header-title">
+  <div class="header-nav-container" id="header-nav-container">
+    
+  <nav class="header-nav" id="header-nav">
+    <a class="header-nav-item" href="/zh-cn//">
+      <i class="iconfont icon-Home"></i>首页
+    </a>
+    <a class="header-nav-item" href="/zh-cn/categories/">
+      <i class="iconfont icon-Category"></i>分类
+    </a>
+    <a class="header-nav-item" href="/zh-cn/posts/">
+      <i class="iconfont icon-Archive"></i>归档
+    </a>
+    <a class="header-nav-item" href="/zh-cn/series/">
+      <i class="iconfont icon-Series"></i>系列
+    </a>
+    <a class="header-nav-item" href="/zh-cn/tags/">
+      <i class="iconfont icon-Tags"></i>标签
+    </a>
+    <a class="header-nav-item" href="/zh-cn/profile/">
+      <i class="iconfont icon-Profile"></i>简介
+    </a>
+    <a class="header-nav-item" href="/zh-cn/link/">
+      <i class="iconfont icon-Attachment"></i>友链
+    </a>  
+  </nav>
+
+  </div>
+
+  <p class="header-author-msg">
+    <span class="header-author-title">林师傅的贼窝</span>
+    <span class="header-author-description">每天都被折磨的想死</span>
+  </p>
+  <span class="header-buttons">
+    <span class="header-button-container">
+      <button id="lang-switch" class="header-button">
+        <i class="bi bi-translate"></i>
+      </button>
+      <div class="header-language" id="header-language-container"><span class="header-language-item" id="en">
+          <i class="fi fi-us"></i>
+        </span>
+        <span class="header-language-item" id="zh-cn">
+          <i class="fi fi-cn"></i>
+        </span>
+        
+      </div>
+    </span>
+    <span class="header-button-container">
+      <button id="theme-toggle" class="header-button">
+        <i class="iconfont icon-Sun" id="header-theme-button-icon"></i>
+      </button>
+    </span>
+  </span>
+</div>
+</header>
+    <div class="main-container">
+      <main>  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dark.min.css"
+/>
+<link rel="stylesheet" href="/code.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+<script>
+  hljs.highlightAll();
+  hljs.initLineNumbersOnLoad();
+</script>
+<style>
+  .post-container article a {
+    color: var(--text-color);
+    font-weight: 1000;
+  }
+  .post-container article li {
+    font-weight: 1000;
+    font-style: oblique;
+  }
+</style>
+<div class="post-container">
+  <div
+    class="post-title"
+    style="display: flex; flex-direction: column; width: 100%"
+  >
+    <h1 style="text-align: center">Qbit下载教程</h1>
+    <time datetime="2024-10-19T00:00:00&#43;00:00" style="margin: 0 auto">
+      <i class="bi bi-calendar3" style="margin-right: 3px"></i>
+      <span>October 19, 2024</span>
+    </time>
+  </div>
+  <article style="width: 100%; word-break: break-word"><h2 id="安装">安装</h2>
+<p>debian 安装,其他版本以及更详细教程请看<a href="https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer)">官网</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install qbittorrent-nox
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建配置目录</span>
+</span></span><span style="display:flex;"><span>mkdir /opt/qBittorrent
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建一个用户实现权限隔离</span>
+</span></span><span style="display:flex;"><span>sudo useradd -r -s /usr/sbin/nologin qbtuser
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 给文件夹设置可访问权限</span>
+</span></span><span style="display:flex;"><span>setfacl -m  d:u:username:rw /mnt/qBittorrent
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看文件夹权限</span>
+</span></span><span style="display:flex;"><span>getfacl /mnt/qBittorrent
+</span></span></code></pre></div><ul>
+<li>useradd 命令详解</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-r</th>
+<th style="text-align:center">-s</th>
+<th style="text-align:center">/usr/sbin/nologin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">创建系统用户,即 UID 小于 1000 的用户</td>
+<td style="text-align:center">设置该用户的 shell 交互逻辑</td>
+<td style="text-align:center">此为该用户不允许访问交互式 shell</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>setfacl 命令详解</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-m</th>
+<th style="text-align:center">-R</th>
+<th style="text-align:center">d</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">修改 acl 访问权限</td>
+<td style="text-align:center">递归设置</td>
+<td style="text-align:center">设置默认权限,这意味着新创建的子文件夹也会继承父文件夹的权限</td>
+</tr>
+</tbody>
+</table>
+<h2 id="设置守护进程">设置守护进程</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 创建系统服务</span>
+</span></span><span style="display:flex;"><span>cat  &gt; /etc/systemd/system/qbittorrent.service <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Unit]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Description=qBittorrent-nox service
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Documentation=man:qbittorrent-nox(1)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Wants=network-online.target
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">After=network-online.target nss-lookup.target
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Service]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># if you have systemd &lt; 240 (Ubuntu 18.10 and earlier, for example), you probably want to use Type=simple instead
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Type=exec
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># change user as needed
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">User=qbtuser
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The -d flag should not be used in this setup
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ExecStart=/usr/bin/qbittorrent-nox --profile=/opt --webui-port=8081
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># uncomment this for versions of qBittorrent &lt; 4.2.0 to set the maximum number of open files to unlimited
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#LimitNOFILE=infinity
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># uncomment this to use &#34;Network interface&#34; and/or &#34;Optional IP address to bind to&#34; options
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># without this binding will fail and qBittorrent&#39;s traffic will go through the default route
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># AmbientCapabilities=CAP_NET_RAW
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Install]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WantedBy=multi-user.target
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><h2 id="启动-qbittorrent">启动 qbittorrent</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemdctl daemon-reload
+</span></span><span style="display:flex;"><span>systemdctl enable qbittorrent
+</span></span><span style="display:flex;"><span>systemdctl start qbittorrent
+</span></span></code></pre></div><p>之后浏览器访问 http://ip:8081 端口,输入账户 admin,密码 adminadmin 即可</p>
+<p>修改账户密码以及语言
+如果需要配置反向代理请按图中操作
+<img alt="634a61fa82a24e97db054b5860f343c.png" src="https://s2.loli.net/2024/10/19/2p3GPjlNdLF6IUk.png"></p>
+<p><strong>配置反向代理请求头需要设置 HOST,在 lucky 中如下操作</strong>
+<img alt="2752340442dea2dbac77523b9933d74.png" src="https://s2.loli.net/2024/10/19/KBa4RQjOoeCb35V.png"></p>
+<h2 id="注意事项">注意事项</h2>
+<p>如果需要在不同的文件夹下载保存数据,记得设置用户权限,否则会下载失败的</p>
+</article><link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+<div id="waline"></div>
+<script type="module">
+  import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+  init({
+    el: "#waline",
+    serverURL: "https:\/\/sifulinblog-comments.vercel.app",
+    placeholder: "请填写正确的昵称和邮箱，方便接收评论回复信息哦。",
+    avatar: "mp",
+    avatarCDN: "https:\/\/cdn.v2ex.com\/gravatar\/",
+    pageSize:  10 ,
+    meta: ["nick","mail","link"],
+    lang: 'zh-cn',
+    highlight:  true ,
+    requiredFields: ["nick","mail"]
+  });
+</script>
+<p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-tags-fill"></i>
+<a
+  href="/zh-cn/tags/bt/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Bt
+</a>
+<a
+  href="/zh-cn/tags/qbit/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Qbit
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-grid-fill"></i>
+<a
+  href="/zh-cn/categories/linux%E4%B8%8B%E8%BD%BD%E5%99%A8/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Linux下载器
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    
+<style>
+  .series-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    height: fit-content;
+    width: 100%;
+  }
+  .series-link {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 0.2rem;
+    background: linear-gradient(
+      to right,
+      var(--header-background-color-from),
+      var(--header-background-color-to)
+    );
+    width: 6rem;
+    height: fit-content;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 10px;
+    font-family: "Dingding";
+    margin: 3px 2px;
+    transition: 0.5s;
+  }
+  .series-link:hover {
+    transform: scale(1.05);
+  }
+</style>
+<div class="series-container">
+  <span style="font-size: 1.2rem; font-family: Dingding">
+    Qbit<i class="bi bi-three-dots"></i>
+  </span>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center"><a href="/zh-cn/2024/10/19/qbit/" class="series-link">Qbit下载教程</a></div>
+</div>
+
+  </p>
+<style>
+  #toc-button {
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 3px;
+    padding: 0 2px;
+  }
+  #toc-button:hover {
+    cursor: pointer;
+  }
+  #toc-button svg {
+     
+    height: 1.5rem;
+    width: 1.5rem;
+     
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line {
+    fill: none;
+    stroke: var(--text-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+     
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  [toc-expanded="open"] svg {
+    transform: rotate(-45deg);
+  }
+  [toc-expanded="open"] svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  #toc-items-container {
+    background-color: #72727242;
+    padding: 2px 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    max-height: 8rem;
+  }
+  #toc-items-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  #toc-items-container::-webkit-scrollbar-track {
+    background-color: #313131;
+    border-radius: 2px;
+  }
+  #toc-items-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff6f;
+  }
+  #toc-items-container a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 5px 0;
+    word-wrap: break-word;
+    background-color: #ffffff2b;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px 0;
+  }
+  [toc-expanded="open"] + #toc-items-container {
+    animation: toc-show 0.5s;
+  }
+  [toc-expanded="closed"] + #toc-items-container {
+    animation: toc-close 0.5s;
+  }
+  @keyframes toc-show {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes toc-close {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+  }
+   
+  #toc-items-container ul li {
+    width: 7rem;
+    font-size: 1rem;
+    font-family: "Dingding";
+  }
+   
+  #toc-items-container ul li ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  #toc-items-container ul li ul li {
+    width: 5rem;
+    font-size: 0.8rem;
+    font-family: "Dingding";
+  }
+</style>
+<div style="position: fixed; left: 10px; top: 20%">
+  <button id="toc-button" toc-expanded="open">
+    <svg viewBox="0 0 32 32">
+      <path
+        class="line line-top-bottom"
+        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+      ></path>
+      <path class="line" d="M7 16 27 16"></path>
+    </svg>
+  </button>
+
+  <div id="toc-items-container"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#设置守护进程">设置守护进程</a></li>
+    <li><a href="#启动-qbittorrent">启动 qbittorrent</a></li>
+    <li><a href="#注意事项">注意事项</a></li>
+  </ul>
+</nav></div>
+</div>
+<script>
+  const tocButton = document.getElementById("toc-button");
+  const tocItemsContainer = document.getElementById("toc-items-container");
+  tocButton.addEventListener("click", () => {
+    const expanded = tocButton.getAttribute("toc-expanded");
+    if (expanded === "open") {
+      tocButton.setAttribute("toc-expanded", "closed");
+    } else {
+      tocButton.setAttribute("toc-expanded", "open");
+      tocItemsContainer.style.display = "block";
+    }
+  });
+  tocItemsContainer.addEventListener("animationend", () => {
+    if (tocButton.getAttribute("toc-expanded") === "closed") {
+      tocItemsContainer.style.display = "none";
+    }
+  });
+</script>
+</div>
+
+<script src="/js/codeCopy.js" defer></script>  </main>
+      <footer class="footer-container" id="footer-container">
+        <div class="footer-content">
+  <div class="footer-social-container"><a
+      class="footer-social-link rss-link"
+      id="footer-social-rss.svg"
+      href="http://localhost:1313/zh-cn/index.xml"
+    >
+      <span class="footer-social-text">RSS</span>
+    </a>
+    <a
+      href="https://space.bilibili.com/8337954"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-bilibili.svg"
+    >
+      <span class="footer-social-text">bilibili</span>
+    </a>
+    
+    <a
+      href="https://github.com/ProjechAnonym"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-github.svg"
+    >
+      <span class="footer-social-text">gitHub</span>
+    </a>
+    
+    <a
+      href="https://t.me/&#43;5yh2rgXjWBlmMDk1"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-telegram.svg"
+    >
+      <span class="footer-social-text">telegram</span>
+    </a>
+    
+    <a
+      href="https://qm.qq.com/q/lLbgOB31sW"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-qq.svg"
+    >
+      <span class="footer-social-text">qq</span>
+    </a>
+    
+    <a
+      href="https://www.youtube.com/channel/UCXiiRClqjDLrqzMbq2Kqb4A"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-youtube.svg"
+    >
+      <span class="footer-social-text">youtube</span>
+    </a>
+     
+  </div>
+  <span class="footer-text"
+    >Copyright © 2024. All rights reserved.
+  </span>
+  <span class="footer-text">Powerd by hugo | Theme is sifu</span>
+</div>
+
+      </footer>
+    </div>
+  </body>
+</html>

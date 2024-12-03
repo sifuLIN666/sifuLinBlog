@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Singbox十点不通 on 林师傅的贼窝</title>
+    <link>http://localhost:1313/zh-cn/categories/singbox%E5%8D%81%E7%82%B9%E4%B8%8D%E9%80%9A/</link>
+    <description>Recent content in Singbox十点不通 on 林师傅的贼窝</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/zh-cn/categories/singbox%E5%8D%81%E7%82%B9%E4%B8%8D%E9%80%9A/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>双飞singbox和mosdns</title>
+      <link>http://localhost:1313/zh-cn/2024/07/11/two-sexy-bitches-singbox-and-mosdns/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/2024/07/11/two-sexy-bitches-singbox-and-mosdns/</guid>
+      <description>在上期介绍的singbox配置中,singbox的host是重定向,而不是返回目的域名的ip,这就像你想找mikami,但是他返回给你fukada,中间的过程都不知道,虽然最后都爽了但是蒙在鼓里的感觉并不好,所以需要一个中间人,本方案使用mosdns作host劫持的服务器</description>
+    </item>
+    <item>
+      <title>初识singbox</title>
+      <link>http://localhost:1313/zh-cn/2024/06/07/introduce-singbox-part1/</link>
+      <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/2024/06/07/introduce-singbox-part1/</guid>
+      <description>撑着油纸伞,独自彷徨在悠长,悠长又寂寥的墙内,我希望逢着一个丁香一样地水多活好singbox</description>
+    </item>
+  </channel>
+</rss>

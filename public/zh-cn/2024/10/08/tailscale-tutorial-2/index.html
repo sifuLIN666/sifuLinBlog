@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  Tailscale教程第二弹 | 林师傅的贼窝
+</title>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/><link rel="stylesheet" href="/css/root.css" /><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+/><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff2" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.ttf" /><link rel="stylesheet" href="/fonts/fonts.css" /><link rel="stylesheet" href="/icons/iconfont.ttf" /><link rel="stylesheet" href="/icons/iconfont.woff" /><link rel="stylesheet" href="/icons/iconfont.woff2" /><link rel="stylesheet" href="/icons/iconfont.css" /><link rel="stylesheet" href="/css/header.css" /><link rel="stylesheet" href="/css/content.css" /><link rel="stylesheet" href="/css/footer.css" />
+ <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+;
+<script src="/js/themeColors.js" defer></script>
+<script src="/js/mobile/headerNav.js" defer></script>
+<script src="/js/langSwitch.js" defer></script>
+<script src="/js/footer/footerStyle.js" defer></script>
+<script src="/js/rssCopy.js" defer></script>
+
+
+  </head>
+  <body
+    class="dark-mode"
+    
+  >
+    <header class="header-container"><div class="header-title">
+  <div class="header-nav-container" id="header-nav-container">
+    
+  <nav class="header-nav" id="header-nav">
+    <a class="header-nav-item" href="/zh-cn//">
+      <i class="iconfont icon-Home"></i>首页
+    </a>
+    <a class="header-nav-item" href="/zh-cn/categories/">
+      <i class="iconfont icon-Category"></i>分类
+    </a>
+    <a class="header-nav-item" href="/zh-cn/posts/">
+      <i class="iconfont icon-Archive"></i>归档
+    </a>
+    <a class="header-nav-item" href="/zh-cn/series/">
+      <i class="iconfont icon-Series"></i>系列
+    </a>
+    <a class="header-nav-item" href="/zh-cn/tags/">
+      <i class="iconfont icon-Tags"></i>标签
+    </a>
+    <a class="header-nav-item" href="/zh-cn/profile/">
+      <i class="iconfont icon-Profile"></i>简介
+    </a>
+    <a class="header-nav-item" href="/zh-cn/link/">
+      <i class="iconfont icon-Attachment"></i>友链
+    </a>  
+  </nav>
+
+  </div>
+
+  <p class="header-author-msg">
+    <span class="header-author-title">林师傅的贼窝</span>
+    <span class="header-author-description">每天都被折磨的想死</span>
+  </p>
+  <span class="header-buttons">
+    <span class="header-button-container">
+      <button id="lang-switch" class="header-button">
+        <i class="bi bi-translate"></i>
+      </button>
+      <div class="header-language" id="header-language-container"><span class="header-language-item" id="en">
+          <i class="fi fi-us"></i>
+        </span>
+        <span class="header-language-item" id="zh-cn">
+          <i class="fi fi-cn"></i>
+        </span>
+        
+      </div>
+    </span>
+    <span class="header-button-container">
+      <button id="theme-toggle" class="header-button">
+        <i class="iconfont icon-Sun" id="header-theme-button-icon"></i>
+      </button>
+    </span>
+  </span>
+</div>
+</header>
+    <div class="main-container">
+      <main>  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dark.min.css"
+/>
+<link rel="stylesheet" href="/code.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+<script>
+  hljs.highlightAll();
+  hljs.initLineNumbersOnLoad();
+</script>
+<style>
+  .post-container article a {
+    color: var(--text-color);
+    font-weight: 1000;
+  }
+  .post-container article li {
+    font-weight: 1000;
+    font-style: oblique;
+  }
+</style>
+<div class="post-container">
+  <div
+    class="post-title"
+    style="display: flex; flex-direction: column; width: 100%"
+  >
+    <h1 style="text-align: center">Tailscale教程第二弹</h1>
+    <time datetime="2024-10-08T00:00:00&#43;00:00" style="margin: 0 auto">
+      <i class="bi bi-calendar3" style="margin-right: 3px"></i>
+      <span>October 8, 2024</span>
+    </time>
+  </div>
+  <article style="width: 100%; word-break: break-word"><h2 id="前言">前言</h2>
+<p>上回介绍了如何使用 tailscale 进行内网穿透，但是官方的中继服务器都在国外,直接导致打洞时间很长,而且万一没打成,官方的 2Mbps 的小水管真的会让人想死,于是就有了本期的自建 derp 服务器教程</p>
+<p><a href="https://vercel-blog.sifulin.top/zh-cn/2024/10/07/tailscale-tutorial-1/">上期链接</a></p>
+<h2 id="准备工作">准备工作</h2>
+<p>首先准备一个域名,比如 derp.example.com,还有一个 VPS,然后把域名解析到 VPS 的公网 IP 上,这里我 VPS 的系统选择 Debian12</p>
+<h3 id="编译-derper-服务器">编译 derper 服务器</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 更新软件源并安装必要软件</span>
+</span></span><span style="display:flex;"><span>apt-get update
+</span></span><span style="display:flex;"><span>apt-get curl wget vim sudo tar
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建目录</span>
+</span></span><span style="display:flex;"><span>mkdir /opt/derp/bin
+</span></span><span style="display:flex;"><span>mkdir /opt/derp/config
+</span></span><span style="display:flex;"><span>mkdir /opt/derp/cert
+</span></span><span style="display:flex;"><span>mkdir /opt/go
+</span></span></code></pre></div><p>因为 derper 服务器是需要由 go 语言编译的,所以需要安装<a href="https://go.dev/dl/">go</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 根据情况换新版本的go</span>
+</span></span><span style="display:flex;"><span>wget https://go.dev/dl/go1.23.2.linux-amd64.tar.gz
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 还需要配置ssl证书,安装acme</span>
+</span></span><span style="display:flex;"><span>curl https://get.acme.sh | sh -s email<span style="color:#f92672">=</span>1982209396@qq.com
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 解压go的压缩包</span>
+</span></span><span style="display:flex;"><span>tar -zxvf go*.tar.gz -C /opt
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 临时环境变量</span>
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:/opt/go/bin
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 永久环境变量添加</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;PATH=</span>$PATH<span style="color:#e6db74">:/opt/go/bin&#34;</span> &gt;&gt; /root/.bashrc
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 加载环境变量</span>
+</span></span><span style="display:flex;"><span>source /root/.bashrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go version
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 出现go version go1.23.2 linux/amd64说明成功了</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 确认编译目录</span>
+</span></span><span style="display:flex;"><span>go env
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 找到GOPATH=&#39;/root/go&#39;,说明编译后的二进制文件会放在这个目录下</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 编译</span>
+</span></span><span style="display:flex;"><span>go install tailscale.com/cmd/derper@latest
+</span></span><span style="display:flex;"><span>mv go/bin/derper /opt/derp/bin
+</span></span><span style="display:flex;"><span>chmod +x /opt/derp/bin/derper
+</span></span></code></pre></div><h3 id="申请-ssl-证书">申请 ssl 证书</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 设置acme自动更新证书</span>
+</span></span><span style="display:flex;"><span>acme.sh --upgrade --auto-upgrade
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 导入cloudflare的token,不建议使用全局API Token,这里根据情况自己设置</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用cat获取内容,用&gt;&gt;追加,&gt;会覆盖原文件,不要打错了</span>
+</span></span><span style="display:flex;"><span>cat &gt;&gt; /root/.bashrc <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">CF_Token=&#34;****************&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置默认的证书签发机构,根据情况选择</span>
+</span></span><span style="display:flex;"><span>acme.sh --set-default-ca --server letsencrypt
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 申请证书,这里我的是泛域名证书,可以根据情况换成比如derp.example.com</span>
+</span></span><span style="display:flex;"><span>acme.sh --issue --dns dns_cf -d example.com -d *.example.com --keylength ec-256
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># acme申请好的证书不要直接动,应该使用install-cert命令安装到指定位置</span>
+</span></span><span style="display:flex;"><span>acme.sh --install-cert -d sifulin.top --ecc <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--key-file       /opt/derp/cert/derp.example.com.key  <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--fullchain-file /opt/derp/cert/derp.example.com.crt
+</span></span></code></pre></div><h2 id="配置-derper-服务器">配置 derper 服务器</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/opt/derp/bin/derper -h <span style="color:#75715e">#查看命令</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -a是tls监听端口,stun-port端口主要用于测延迟,http-port为-1表示不监听http,证书存放在/opt/derp/cert目录下,且是手动更新证书,hostname则是准备好的域名</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat &gt; /etc/systemd/system/derper.service <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Unit]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Description=Tailscale Derper RelayServer
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">BindsTo=tailscaled.service
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">After=tailscaled.service network.target
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Service]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">User=root
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Restart=always
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ExecStart=/opt/derp/bin/derper -a=:4443 -stun-port=3478 -http-port=-1 -certmode=manual -hostname=derp.example.com -certdir=/opt/derp/cert -verify-clients
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">RestartSec=5
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">StartLimitInterval=0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Install]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WantedBy=multi-user.target
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>systemctl daemon-reload
+</span></span><span style="display:flex;"><span>systemctl enable derper.service
+</span></span></code></pre></div><h3 id="广播-derper-服务器">广播 derper 服务器</h3>
+<p>进入 tailscale 的控制台,找到 derpMap 后按照如下配置编辑</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;derpMap&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;OmitDefaultRegions&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 是否忽略官方服务器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;Regions&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;900&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;RegionID&#34;</span>: <span style="color:#ae81ff">900</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;RegionCode&#34;</span>: <span style="color:#e6db74">&#34;&lt;这里是Derp服务器所在城市缩写（城市代号）&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;RegionName&#34;</span>: <span style="color:#e6db74">&#34;&lt;这里是Derp服务器所在城市全称&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Nodes&#34;</span>: [
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Name&#34;</span>: <span style="color:#e6db74">&#34;&lt;Derp服务器的名称&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;RegionID&#34;</span>: <span style="color:#ae81ff">900</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;HostName&#34;</span>: <span style="color:#e6db74">&#34;derp.example.com&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;STUNPort&#34;</span>: <span style="color:#ae81ff">3478</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;IPv4&#34;</span>: <span style="color:#e6db74">&#34;0.0.0.0/0&#34;</span>, <span style="color:#75715e">// 可忽略这条
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#f92672">&#34;IPv6&#34;</span>: <span style="color:#e6db74">&#34;[::]&#34;</span>, <span style="color:#75715e">// 可忽略这条
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#f92672">&#34;DERPPort&#34;</span>: <span style="color:#ae81ff">8443</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="添加安全裤">添加安全裤</h3>
+<p>由于这个服务器没有任何鉴权配置,如果端口域名泄露之后会被白嫖,这样是个人就可以榨干她的流~量~了,所以我们用-verify-clients 这条命令限制访问,这条命令生效的话需要使用 tailscale 服务,所以安装一下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 添加tailscale源</span>
+</span></span><span style="display:flex;"><span>curl -fsSL https://pkgs.tailscale.com/stable/debian/bookworm.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg &gt;/dev/null
+</span></span><span style="display:flex;"><span>curl -fsSL https://pkgs.tailscale.com/stable/debian/bookworm.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新软件源并安装tailscale</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install tailscale
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置自动更新</span>
+</span></span><span style="display:flex;"><span>tailscale set --auto-update
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 因为没有子网路由需要配置,所以直接启动</span>
+</span></span><span style="display:flex;"><span>tailscale up
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 启动一下ip转发不然只能打洞没法中继</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;net.ipv4.ip_forward=1&#34;</span> &gt;&gt; /etc/sysctl.conf
+</span></span><span style="display:flex;"><span>sysctl -p
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 启动derper服务器</span>
+</span></span><span style="display:flex;"><span>systemctl start derper.service
+</span></span></code></pre></div><h2 id="测试">测试</h2>
+<p>随便找一个别的设备,进入终端输入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tailscale netcheck
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Report:
+</span></span><span style="display:flex;"><span>	* UDP: true
+</span></span><span style="display:flex;"><span>	* IPv4: yes, &lt;你当前这个测试主机的公网ip&gt;
+</span></span><span style="display:flex;"><span>	* IPv6: yes, <span style="color:#f92672">[</span>&lt;你当前这个测试主机的公网ipv6&gt;<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>	* MappingVariesByDestIP: true
+</span></span><span style="display:flex;"><span>	* PortMapping:
+</span></span><span style="display:flex;"><span>	* CaptivePortal: false
+</span></span><span style="display:flex;"><span>	* Nearest DERP: &lt;这里是Derp服务器所在城市全称&gt;
+</span></span><span style="display:flex;"><span>	* DERP latency:
+</span></span><span style="display:flex;"><span>		- &lt;这里是Derp服务器所在城市缩写（城市代号）&gt;: 34.2ms  <span style="color:#f92672">(</span>&lt;这里是Derp服务器所在城市全称&gt;<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- tok: 120.8ms <span style="color:#f92672">(</span>Tokyo<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- sfo: 129.3ms <span style="color:#f92672">(</span>San Francisco<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- lax: 134.4ms <span style="color:#f92672">(</span>Los Angeles<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- sea: 146.8ms <span style="color:#f92672">(</span>Seattle<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- sin: 153.9ms <span style="color:#f92672">(</span>Singapore<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- den: 155.8ms <span style="color:#f92672">(</span>Denver<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- hkg: 160.3ms <span style="color:#f92672">(</span>Hong Kong<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- ord: 173.9ms <span style="color:#f92672">(</span>Chicago<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- tor: 188.2ms <span style="color:#f92672">(</span>Toronto<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- mia: 189.6ms <span style="color:#f92672">(</span>Miami<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- nyc: 189.7ms <span style="color:#f92672">(</span>New York City<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- dfw: 190.4ms <span style="color:#f92672">(</span>Dallas<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- hnl: 192.5ms <span style="color:#f92672">(</span>Honolulu<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- fra: 211.2ms <span style="color:#f92672">(</span>Frankfurt<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- ams: 212.7ms <span style="color:#f92672">(</span>Amsterdam<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- par: 215.5ms <span style="color:#f92672">(</span>Paris<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- lhr: 222.4ms <span style="color:#f92672">(</span>London<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- waw: 234.7ms <span style="color:#f92672">(</span>Warsaw<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- mad: 263.6ms <span style="color:#f92672">(</span>Madrid<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- syd: 306.6ms <span style="color:#f92672">(</span>Sydney<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- blr: 308.2ms <span style="color:#f92672">(</span>Bangalore<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- sao: 316.2ms <span style="color:#f92672">(</span>São Paulo<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- dbi: 318.4ms <span style="color:#f92672">(</span>Dubai<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- jnb: 377.7ms <span style="color:#f92672">(</span>Johannesburg<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		- nai: 381.8ms <span style="color:#f92672">(</span>Nairobi<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>出现你的服务器就 ok 了</p>
+</article><link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+<div id="waline"></div>
+<script type="module">
+  import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+  init({
+    el: "#waline",
+    serverURL: "https:\/\/sifulinblog-comments.vercel.app",
+    placeholder: "请填写正确的昵称和邮箱，方便接收评论回复信息哦。",
+    avatar: "mp",
+    avatarCDN: "https:\/\/cdn.v2ex.com\/gravatar\/",
+    pageSize:  10 ,
+    meta: ["nick","mail","link"],
+    lang: 'zh-cn',
+    highlight:  true ,
+    requiredFields: ["nick","mail"]
+  });
+</script>
+<p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-tags-fill"></i>
+<a
+  href="/zh-cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  内网穿透
+</a>
+<a
+  href="/zh-cn/tags/tailscale/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Tailscale
+</a>
+<a
+  href="/zh-cn/tags/derper%E4%B8%AD%E7%BB%A7%E6%9C%8D%E5%8A%A1%E5%99%A8/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Derper中继服务器
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-grid-fill"></i>
+<a
+  href="/zh-cn/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  内网穿透
+</a>
+<a
+  href="/zh-cn/categories/tailscale/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Tailscale
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    
+<style>
+  .series-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    height: fit-content;
+    width: 100%;
+  }
+  .series-link {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 0.2rem;
+    background: linear-gradient(
+      to right,
+      var(--header-background-color-from),
+      var(--header-background-color-to)
+    );
+    width: 6rem;
+    height: fit-content;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 10px;
+    font-family: "Dingding";
+    margin: 3px 2px;
+    transition: 0.5s;
+  }
+  .series-link:hover {
+    transform: scale(1.05);
+  }
+</style>
+<div class="series-container">
+  <span style="font-size: 1.2rem; font-family: Dingding">
+    Tailscale一点通<i class="bi bi-three-dots"></i>
+  </span>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center"><a href="/zh-cn/2024/10/08/tailscale-tutorial-2/" class="series-link">Tailscale教程第二弹</a><a href="/zh-cn/2024/10/07/tailscale-tutorial-1/" class="series-link">Tailscale教程第一弹</a></div>
+</div>
+
+  </p>
+<style>
+  #toc-button {
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 3px;
+    padding: 0 2px;
+  }
+  #toc-button:hover {
+    cursor: pointer;
+  }
+  #toc-button svg {
+     
+    height: 1.5rem;
+    width: 1.5rem;
+     
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line {
+    fill: none;
+    stroke: var(--text-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+     
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  [toc-expanded="open"] svg {
+    transform: rotate(-45deg);
+  }
+  [toc-expanded="open"] svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  #toc-items-container {
+    background-color: #72727242;
+    padding: 2px 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    max-height: 8rem;
+  }
+  #toc-items-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  #toc-items-container::-webkit-scrollbar-track {
+    background-color: #313131;
+    border-radius: 2px;
+  }
+  #toc-items-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff6f;
+  }
+  #toc-items-container a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 5px 0;
+    word-wrap: break-word;
+    background-color: #ffffff2b;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px 0;
+  }
+  [toc-expanded="open"] + #toc-items-container {
+    animation: toc-show 0.5s;
+  }
+  [toc-expanded="closed"] + #toc-items-container {
+    animation: toc-close 0.5s;
+  }
+  @keyframes toc-show {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes toc-close {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+  }
+   
+  #toc-items-container ul li {
+    width: 7rem;
+    font-size: 1rem;
+    font-family: "Dingding";
+  }
+   
+  #toc-items-container ul li ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  #toc-items-container ul li ul li {
+    width: 5rem;
+    font-size: 0.8rem;
+    font-family: "Dingding";
+  }
+</style>
+<div style="position: fixed; left: 10px; top: 20%">
+  <button id="toc-button" toc-expanded="open">
+    <svg viewBox="0 0 32 32">
+      <path
+        class="line line-top-bottom"
+        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+      ></path>
+      <path class="line" d="M7 16 27 16"></path>
+    </svg>
+  </button>
+
+  <div id="toc-items-container"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#准备工作">准备工作</a>
+      <ul>
+        <li><a href="#编译-derper-服务器">编译 derper 服务器</a></li>
+        <li><a href="#申请-ssl-证书">申请 ssl 证书</a></li>
+      </ul>
+    </li>
+    <li><a href="#配置-derper-服务器">配置 derper 服务器</a>
+      <ul>
+        <li><a href="#广播-derper-服务器">广播 derper 服务器</a></li>
+        <li><a href="#添加安全裤">添加安全裤</a></li>
+      </ul>
+    </li>
+    <li><a href="#测试">测试</a></li>
+  </ul>
+</nav></div>
+</div>
+<script>
+  const tocButton = document.getElementById("toc-button");
+  const tocItemsContainer = document.getElementById("toc-items-container");
+  tocButton.addEventListener("click", () => {
+    const expanded = tocButton.getAttribute("toc-expanded");
+    if (expanded === "open") {
+      tocButton.setAttribute("toc-expanded", "closed");
+    } else {
+      tocButton.setAttribute("toc-expanded", "open");
+      tocItemsContainer.style.display = "block";
+    }
+  });
+  tocItemsContainer.addEventListener("animationend", () => {
+    if (tocButton.getAttribute("toc-expanded") === "closed") {
+      tocItemsContainer.style.display = "none";
+    }
+  });
+</script>
+</div>
+
+<script src="/js/codeCopy.js" defer></script>  </main>
+      <footer class="footer-container" id="footer-container">
+        <div class="footer-content">
+  <div class="footer-social-container"><a
+      class="footer-social-link rss-link"
+      id="footer-social-rss.svg"
+      href="http://localhost:1313/zh-cn/index.xml"
+    >
+      <span class="footer-social-text">RSS</span>
+    </a>
+    <a
+      href="https://space.bilibili.com/8337954"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-bilibili.svg"
+    >
+      <span class="footer-social-text">bilibili</span>
+    </a>
+    
+    <a
+      href="https://github.com/ProjechAnonym"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-github.svg"
+    >
+      <span class="footer-social-text">gitHub</span>
+    </a>
+    
+    <a
+      href="https://t.me/&#43;5yh2rgXjWBlmMDk1"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-telegram.svg"
+    >
+      <span class="footer-social-text">telegram</span>
+    </a>
+    
+    <a
+      href="https://qm.qq.com/q/lLbgOB31sW"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-qq.svg"
+    >
+      <span class="footer-social-text">qq</span>
+    </a>
+    
+    <a
+      href="https://www.youtube.com/channel/UCXiiRClqjDLrqzMbq2Kqb4A"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-youtube.svg"
+    >
+      <span class="footer-social-text">youtube</span>
+    </a>
+     
+  </div>
+  <span class="footer-text"
+    >Copyright © 2024. All rights reserved.
+  </span>
+  <span class="footer-text">Powerd by hugo | Theme is sifu</span>
+</div>
+
+      </footer>
+    </div>
+  </body>
+</html>

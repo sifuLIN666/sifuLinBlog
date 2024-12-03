@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aria2 on 林师傅的贼窝</title>
+    <link>http://localhost:1313/zh-cn/series/aria2/</link>
+    <description>Recent content in Aria2 on 林师傅的贼窝</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 08 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/zh-cn/series/aria2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>全能下载器Aria2</title>
+      <link>http://localhost:1313/zh-cn/2024/10/08/aria/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/2024/10/08/aria/</guid>
+      <description>云端数据飘渺间,千兆宽带瞬息连。BT姐姐任你看,下载神速如闪电。</description>
+    </item>
+  </channel>
+</rss>

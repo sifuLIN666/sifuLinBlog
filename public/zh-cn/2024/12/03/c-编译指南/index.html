@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  C&#43;&#43;编译指南 | 林师傅的贼窝
+</title>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/><link rel="stylesheet" href="/css/root.css" /><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+/><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff2" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.ttf" /><link rel="stylesheet" href="/fonts/fonts.css" /><link rel="stylesheet" href="/icons/iconfont.ttf" /><link rel="stylesheet" href="/icons/iconfont.woff" /><link rel="stylesheet" href="/icons/iconfont.woff2" /><link rel="stylesheet" href="/icons/iconfont.css" /><link rel="stylesheet" href="/css/header.css" /><link rel="stylesheet" href="/css/content.css" /><link rel="stylesheet" href="/css/footer.css" />
+ <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+;
+<script src="/js/themeColors.js" defer></script>
+<script src="/js/mobile/headerNav.js" defer></script>
+<script src="/js/langSwitch.js" defer></script>
+<script src="/js/footer/footerStyle.js" defer></script>
+<script src="/js/rssCopy.js" defer></script>
+
+
+  </head>
+  <body
+    class="dark-mode"
+    
+  >
+    <header class="header-container"><div class="header-title">
+  <div class="header-nav-container" id="header-nav-container">
+    
+  <nav class="header-nav" id="header-nav">
+    <a class="header-nav-item" href="/zh-cn//">
+      <i class="iconfont icon-Home"></i>首页
+    </a>
+    <a class="header-nav-item" href="/zh-cn/categories/">
+      <i class="iconfont icon-Category"></i>分类
+    </a>
+    <a class="header-nav-item" href="/zh-cn/posts/">
+      <i class="iconfont icon-Archive"></i>归档
+    </a>
+    <a class="header-nav-item" href="/zh-cn/series/">
+      <i class="iconfont icon-Series"></i>系列
+    </a>
+    <a class="header-nav-item" href="/zh-cn/tags/">
+      <i class="iconfont icon-Tags"></i>标签
+    </a>
+    <a class="header-nav-item" href="/zh-cn/profile/">
+      <i class="iconfont icon-Profile"></i>简介
+    </a>
+    <a class="header-nav-item" href="/zh-cn/link/">
+      <i class="iconfont icon-Attachment"></i>友链
+    </a>  
+  </nav>
+
+  </div>
+
+  <p class="header-author-msg">
+    <span class="header-author-title">林师傅的贼窝</span>
+    <span class="header-author-description">每天都被折磨的想死</span>
+  </p>
+  <span class="header-buttons">
+    <span class="header-button-container">
+      <button id="lang-switch" class="header-button">
+        <i class="bi bi-translate"></i>
+      </button>
+      <div class="header-language" id="header-language-container"><span class="header-language-item" id="en">
+          <i class="fi fi-us"></i>
+        </span>
+        <span class="header-language-item" id="zh-cn">
+          <i class="fi fi-cn"></i>
+        </span>
+        
+      </div>
+    </span>
+    <span class="header-button-container">
+      <button id="theme-toggle" class="header-button">
+        <i class="iconfont icon-Sun" id="header-theme-button-icon"></i>
+      </button>
+    </span>
+  </span>
+</div>
+</header>
+    <div class="main-container">
+      <main>  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dark.min.css"
+/>
+<link rel="stylesheet" href="/code.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+<script>
+  hljs.highlightAll();
+  hljs.initLineNumbersOnLoad();
+</script>
+<style>
+  .post-container article a {
+    color: var(--text-color);
+    font-weight: 1000;
+  }
+  .post-container article li {
+    font-weight: 1000;
+    font-style: oblique;
+  }
+</style>
+<div class="post-container">
+  <div
+    class="post-title"
+    style="display: flex; flex-direction: column; width: 100%"
+  >
+    <h1 style="text-align: center">C&#43;&#43;编译指南</h1>
+    <time datetime="2024-12-03T00:00:00&#43;00:00" style="margin: 0 auto">
+      <i class="bi bi-calendar3" style="margin-right: 3px"></i>
+      <span>December 3, 2024</span>
+    </time>
+  </div>
+  <article style="width: 100%; word-break: break-word"><h2 id="前言">前言</h2>
+<p>在快乐编程五年的生涯中,我越来越喜欢折磨自己,从 python 到 go,从 js 到 ts,彷佛一个语言写起来限制的越多我越喜欢,终于,在我抖 M 的编程生涯中,我觉得开始使用 C++编写项目了。</p>
+<h2 id="编译器">编译器</h2>
+<p>在编译 C++代码时,我们通常需要使用各种编译器,比如 GCC、Clang 等。但是，在某些情况下, 我们需要使用特定的编译器。</p>
+<table>
+<thead>
+<tr>
+<th>windows</th>
+<th>mac</th>
+<th>linux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gcc/msvc</td>
+<td>clang</td>
+<td>gcc</td>
+</tr>
+</tbody>
+</table>
+<p>windows 可以去<a href="https://github.com/niXman/mingw-builds-binaries/releases">这里</a>下载。
+ubuntu/debian 可以直接使用 apt 安装。
+博主家境贫寒,用不起 mac,就不瞎指导了。</p>
+<h3 id="安装">安装</h3>
+<ul>
+<li>windows 下安装</li>
+</ul>
+<p>到我提供的 git 仓库找到对应系统的 mingw64 安装包,下载后解压,之后设置环境变量<span
+  style="
+    background-color: #868686;
+    padding: 0 5px;
+    border-radius: 3px;
+    font-size: 1.2rem;
+  "
+  >minge64 所在路径/mingw64/bin
+</span>
+之后可以去 cmd 测试一下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>gcc --version
+</span></span></code></pre></div><p>有输出就对了</p>
+<ul>
+<li>ubuntu/debian下安装</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get update
+</span></span><span style="display:flex;"><span>apt-get gcc cmake gdb
+</span></span></code></pre></div><h2 id="宇宙ide-vscode配置">宇宙IDE vscode配置</h2>
+<h3 id="安装插件">安装插件</h3>
+<p>安装插件C/C++插件,<del>windows上配置vscode写C++项目就是一坨,强烈建议去ubuntu上编写</del>,以<span
+  style="
+    background-color: #868686;
+    padding: 0 5px;
+    border-radius: 3px;
+    font-size: 1.2rem;
+  "
+  >cpp_code
+</span>目录为例,讲解如何使用vscode结合cmake调试C++项目,目录结构如下</p>
+<pre tabindex="0"><code>.
+|-- CMakeLists.txt
+|-- build
+|-- include
+|   |-- httplib
+|   |   `-- httplib.h
+|   `-- student
+|       `-- student.hpp
+|--.vscode
+|  |-- tasks.json
+|  |-- launch.json 
+|  `-- c_cpp_properties.json
+`-- src
+    |-- main.cpp
+    `-- student
+        `-- student.cpp
+</code></pre><p>其中<span
+  style="
+    background-color: #868686;
+    padding: 0 5px;
+    border-radius: 3px;
+    font-size: 1.2rem;
+  "
+  >.vscode
+</span>目录为使用vscode调试C++代码的关键</p>
+<h3 id="关键文件">关键文件</h3>
+<ul>
+<li>tasks.json</li>
+</ul>
+<p>这个文件里包含的内容主要是如何编译C++代码</p>
+<ol>
+<li>${workspaceFolder}为.vscode所在的目录</li>
+<li>tasks列表包含会执行的操作</li>
+</ol>
+<p>如果是windows要调用gcc编译器cmake标签的参数应该写为&quot;args&quot;: [&quot;-G&quot;, &ldquo;MinGW Makefiles&rdquo;, &ldquo;..&rdquo;]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;options&#34;</span>: { <span style="color:#f92672">&#34;cwd&#34;</span>: <span style="color:#e6db74">&#34;${workspaceFolder}/build&#34;</span> },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;tasks&#34;</span>: [
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;shell&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;cmake&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;cmake&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;args&#34;</span>: [<span style="color:#e6db74">&#34;..&#34;</span>]
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;make&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;group&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;build&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;isDefault&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;make&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;args&#34;</span>: []
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      { <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Build&#34;</span>, <span style="color:#f92672">&#34;dependsOn&#34;</span>: [<span style="color:#e6db74">&#34;cmake&#34;</span>, <span style="color:#e6db74">&#34;make&#34;</span>] }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;2.0.0&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span></code></pre></div><ul>
+<li>launch.json</li>
+</ul>
+<ol>
+<li>name是vscode运行代码时会提示的标签</li>
+<li>program是编译后的文件</li>
+<li>miDebuggerPath是gdb所在的路径,可以用which gdb查看路径</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;configurations&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;(gdb) 启动调试&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;cppdbg&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;program&#34;</span>: <span style="color:#e6db74">&#34;${workspaceFolder}/build/main&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;args&#34;</span>: [],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;stopAtEntry&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;cwd&#34;</span>: <span style="color:#e6db74">&#34;${workspaceFolder}&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;environment&#34;</span>: [],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;externalConsole&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;MIMode&#34;</span>: <span style="color:#e6db74">&#34;gdb&#34;</span>,<span style="color:#f92672">&#34;miDebuggerPath&#34;</span>: <span style="color:#e6db74">&#34;/usr/bin/gdb&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;setupCommands&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;为 gdb 启用整齐打印&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;text&#34;</span>: <span style="color:#e6db74">&#34;-enable-pretty-printing&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;ignoreFailures&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;将反汇编风格设置为 Intel&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;text&#34;</span>: <span style="color:#e6db74">&#34;-gdb-set disassembly-flavor intel&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;ignoreFailures&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>c_cpp_properties.json</li>
+</ul>
+<ol>
+<li>includePath是头文件包含的列表,此处不仅有该项目自己的头文件,还链接了第三方库oatpp的头文件</li>
+<li>compilerPath是编译器gcc的路径,可以用which gcc查看</li>
+<li>cStandard是C++标准</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;configurations&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Win32&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;includePath&#34;</span>: <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>workspaceFolder<span style="color:#e6db74">}</span><span style="color:#e6db74">/include/**&#34;</span>,<span style="color:#e6db74">&#34;/usr/local/include/oatpp-1.4.0/oatpp/**&#34;</span><span style="color:#f92672">]</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;defines&#34;</span>: <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;_DEBUG&#34;</span>, <span style="color:#e6db74">&#34;UNICODE&#34;</span>, <span style="color:#e6db74">&#34;_UNICODE&#34;</span><span style="color:#f92672">]</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;windowsSdkVersion&#34;</span>: <span style="color:#e6db74">&#34;8.1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;compilerPath&#34;</span>: <span style="color:#e6db74">&#34;/usr/bin/gcc&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;cStandard&#34;</span>: <span style="color:#e6db74">&#34;c17&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;cppStandard&#34;</span>: <span style="color:#e6db74">&#34;c++17&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;intelliSenseMode&#34;</span>: <span style="color:#e6db74">&#34;windows-gcc-x64&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">]</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;version&#34;</span>: <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
+<li>CMakeLists.txt</li>
+</ul>
+<p>**至关重要!!!**前面错了还能命令行编译,这里错了必死</p>
+<pre tabindex="0"><code>cmake_minimum_required(VERSION 3.10)
+project(TEST)
+
+# 设置本项目cpp源代码和头文件的目录
+# ${PROJECT_SOURCE_DIR}为CMakeLists.txt所在的目录
+set(SOURCE_DIR &#34;${PROJECT_SOURCE_DIR}/src&#34;)
+set(INCLUDE_DIR &#34;${PROJECT_SOURCE_DIR}/include&#34;)
+# 将头文件包含进去
+include_directories(&#34;${INCLUDE_DIR}&#34;)
+# 使用通配符添加所有.cpp文件
+file(GLOB SOURCES &#34;${SOURCE_DIR}/*.cpp&#34;)
+file(GLOB STUDENT &#34;${SOURCE_DIR}/student/*.cpp&#34;)
+
+# 链接第三方库oatpp的目录,一般是静态库所在的目录
+link_directories(&#34;/usr/local/lib/oatpp-1.4.0&#34;)
+
+# 需要编译的文件
+add_executable(main ${SOURCES} ${STUDENT})
+
+# 链接oatpp静态库
+# PRIVATE私有链接,即该链接不会传播,比如项目A依赖项目B,项目B私有链接项目C,项目A不会因为依赖项目B而依赖项目C
+target_link_libraries(main PRIVATE oatpp)
+
+# 包含oatpp库的头文件目录
+target_include_directories(main PRIVATE &#34;/usr/local/include/oatpp-1.4.0/oatpp&#34;)
+</code></pre><h2 id="编写c程序">编写C++程序</h2>
+<ul>
+<li>student.hpp</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#75715e">#ifndef STUDENT_H
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define STUDENT_H
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">student</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>string name;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    student(std<span style="color:#f92672">::</span>string name);
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>string getName();
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span></code></pre></div><ul>
+<li>student.cpp</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#75715e">// 在CMakeLists中设置的头文件目录是${PROJECT_SOURCE_DIR}/include
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 因此可以直接找到include下的student目录中的student.hpp文件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 相当于缺省前面的路径,只需要补全后面的就行了
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 如果vscode爆红可以去看一下c_cpp_properties.json中的头文件包含路径有没错
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;student/student.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>student<span style="color:#f92672">::</span>student(std<span style="color:#f92672">::</span>string name) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">-&gt;</span>name <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>string student<span style="color:#f92672">::</span>getName(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">-&gt;</span>name;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>main.cpp</li>
+</ul>
+<p>结合了oatpp这个库和测试的student类说明程序可以运行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;oatpp/web/server/HttpConnectionHandler.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;oatpp/network/Server.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;oatpp/network/tcp/server/ConnectionProvider.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;student/student.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* Create Router for HTTP requests routing */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">auto</span> router <span style="color:#f92672">=</span> oatpp<span style="color:#f92672">::</span>web<span style="color:#f92672">::</span>server<span style="color:#f92672">::</span>HttpRouter<span style="color:#f92672">::</span>createShared();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* Create HTTP connection handler with router */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">auto</span> connectionHandler <span style="color:#f92672">=</span> oatpp<span style="color:#f92672">::</span>web<span style="color:#f92672">::</span>server<span style="color:#f92672">::</span>HttpConnectionHandler<span style="color:#f92672">::</span>createShared(router);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* Create TCP connection provider */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">auto</span> connectionProvider <span style="color:#f92672">=</span> oatpp<span style="color:#f92672">::</span>network<span style="color:#f92672">::</span>tcp<span style="color:#f92672">::</span>server<span style="color:#f92672">::</span>ConnectionProvider<span style="color:#f92672">::</span>createShared({<span style="color:#e6db74">&#34;192.168.213.128&#34;</span>, <span style="color:#ae81ff">8000</span>, oatpp<span style="color:#f92672">::</span>network<span style="color:#f92672">::</span>Address<span style="color:#f92672">::</span>IP_4});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* Create server which takes provided TCP connections and passes them to HTTP connection handler */</span>
+</span></span><span style="display:flex;"><span>  oatpp<span style="color:#f92672">::</span>network<span style="color:#f92672">::</span>Server server(connectionProvider, connectionHandler);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//   /* Print info about server port */
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  OATPP_LOGi(<span style="color:#e6db74">&#34;MyApp&#34;</span>, <span style="color:#e6db74">&#34;Server running on port %s&#34;</span>, connectionProvider<span style="color:#f92672">-&gt;</span>getProperty(<span style="color:#e6db74">&#34;port&#34;</span>).getData());
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* Run server */</span>
+</span></span><span style="display:flex;"><span>  server.run();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  student s <span style="color:#f92672">=</span> student(<span style="color:#e6db74">&#34;Mike&#34;</span>);
+</span></span><span style="display:flex;"><span>  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> s.getName() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* Init oatpp Environment */</span>
+</span></span><span style="display:flex;"><span>  oatpp<span style="color:#f92672">::</span>Environment<span style="color:#f92672">::</span>init();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* Run App */</span>
+</span></span><span style="display:flex;"><span>  run();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* Destroy oatpp Environment */</span>
+</span></span><span style="display:flex;"><span>  oatpp<span style="color:#f92672">::</span>Environment<span style="color:#f92672">::</span>destroy();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="编译">编译</h2>
+<p>进入build目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cmake ..
+</span></span><span style="display:flex;"><span>make
+</span></span></code></pre></div><p>在build目录会生成二进制可执行文件,输入路径运行,也可以通过vscode的调试去调试程序</p>
+</article><link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+<div id="waline"></div>
+<script type="module">
+  import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+  init({
+    el: "#waline",
+    serverURL: "https:\/\/sifulinblog-comments.vercel.app",
+    placeholder: "请填写正确的昵称和邮箱，方便接收评论回复信息哦。",
+    avatar: "mp",
+    avatarCDN: "https:\/\/cdn.v2ex.com\/gravatar\/",
+    pageSize:  10 ,
+    meta: ["nick","mail","link"],
+    lang: 'zh-cn',
+    highlight:  true ,
+    requiredFields: ["nick","mail"]
+  });
+</script>
+<p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-tags-fill"></i>
+<a
+  href="/zh-cn/tags/c&#43;&#43;/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  C&#43;&#43;
+</a>
+<a
+  href="/zh-cn/tags/cmake/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Cmake
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-grid-fill"></i>
+<a
+  href="/zh-cn/categories/c&#43;&#43;%E7%A0%B4%E9%98%B2%E8%AE%B0%E5%BD%95/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  C&#43;&#43;破防记录
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    
+<style>
+  .series-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    height: fit-content;
+    width: 100%;
+  }
+  .series-link {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 0.2rem;
+    background: linear-gradient(
+      to right,
+      var(--header-background-color-from),
+      var(--header-background-color-to)
+    );
+    width: 6rem;
+    height: fit-content;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 10px;
+    font-family: "Dingding";
+    margin: 3px 2px;
+    transition: 0.5s;
+  }
+  .series-link:hover {
+    transform: scale(1.05);
+  }
+</style>
+<div class="series-container">
+  <span style="font-size: 1.2rem; font-family: Dingding">
+    C&#43;&#43;从入门到入土<i class="bi bi-three-dots"></i>
+  </span>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center"><a href="/zh-cn/2024/12/03/c-%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97/" class="series-link">C&#43;&#43;编译指南</a></div>
+</div>
+
+  </p>
+<style>
+  #toc-button {
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 3px;
+    padding: 0 2px;
+  }
+  #toc-button:hover {
+    cursor: pointer;
+  }
+  #toc-button svg {
+     
+    height: 1.5rem;
+    width: 1.5rem;
+     
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line {
+    fill: none;
+    stroke: var(--text-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+     
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  [toc-expanded="open"] svg {
+    transform: rotate(-45deg);
+  }
+  [toc-expanded="open"] svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  #toc-items-container {
+    background-color: #72727242;
+    padding: 2px 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    max-height: 8rem;
+  }
+  #toc-items-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  #toc-items-container::-webkit-scrollbar-track {
+    background-color: #313131;
+    border-radius: 2px;
+  }
+  #toc-items-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff6f;
+  }
+  #toc-items-container a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 5px 0;
+    word-wrap: break-word;
+    background-color: #ffffff2b;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px 0;
+  }
+  [toc-expanded="open"] + #toc-items-container {
+    animation: toc-show 0.5s;
+  }
+  [toc-expanded="closed"] + #toc-items-container {
+    animation: toc-close 0.5s;
+  }
+  @keyframes toc-show {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes toc-close {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+  }
+   
+  #toc-items-container ul li {
+    width: 7rem;
+    font-size: 1rem;
+    font-family: "Dingding";
+  }
+   
+  #toc-items-container ul li ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  #toc-items-container ul li ul li {
+    width: 5rem;
+    font-size: 0.8rem;
+    font-family: "Dingding";
+  }
+</style>
+<div style="position: fixed; left: 10px; top: 20%">
+  <button id="toc-button" toc-expanded="open">
+    <svg viewBox="0 0 32 32">
+      <path
+        class="line line-top-bottom"
+        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+      ></path>
+      <path class="line" d="M7 16 27 16"></path>
+    </svg>
+  </button>
+
+  <div id="toc-items-container"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#编译器">编译器</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+      </ul>
+    </li>
+    <li><a href="#宇宙ide-vscode配置">宇宙IDE vscode配置</a>
+      <ul>
+        <li><a href="#安装插件">安装插件</a></li>
+        <li><a href="#关键文件">关键文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#编写c程序">编写C++程序</a></li>
+    <li><a href="#编译">编译</a></li>
+  </ul>
+</nav></div>
+</div>
+<script>
+  const tocButton = document.getElementById("toc-button");
+  const tocItemsContainer = document.getElementById("toc-items-container");
+  tocButton.addEventListener("click", () => {
+    const expanded = tocButton.getAttribute("toc-expanded");
+    if (expanded === "open") {
+      tocButton.setAttribute("toc-expanded", "closed");
+    } else {
+      tocButton.setAttribute("toc-expanded", "open");
+      tocItemsContainer.style.display = "block";
+    }
+  });
+  tocItemsContainer.addEventListener("animationend", () => {
+    if (tocButton.getAttribute("toc-expanded") === "closed") {
+      tocItemsContainer.style.display = "none";
+    }
+  });
+</script>
+</div>
+
+<script src="/js/codeCopy.js" defer></script>  </main>
+      <footer class="footer-container" id="footer-container">
+        <div class="footer-content">
+  <div class="footer-social-container"><a
+      class="footer-social-link rss-link"
+      id="footer-social-rss.svg"
+      href="http://localhost:1313/zh-cn/index.xml"
+    >
+      <span class="footer-social-text">RSS</span>
+    </a>
+    <a
+      href="https://space.bilibili.com/8337954"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-bilibili.svg"
+    >
+      <span class="footer-social-text">bilibili</span>
+    </a>
+    
+    <a
+      href="https://github.com/ProjechAnonym"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-github.svg"
+    >
+      <span class="footer-social-text">gitHub</span>
+    </a>
+    
+    <a
+      href="https://t.me/&#43;5yh2rgXjWBlmMDk1"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-telegram.svg"
+    >
+      <span class="footer-social-text">telegram</span>
+    </a>
+    
+    <a
+      href="https://qm.qq.com/q/lLbgOB31sW"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-qq.svg"
+    >
+      <span class="footer-social-text">qq</span>
+    </a>
+    
+    <a
+      href="https://www.youtube.com/channel/UCXiiRClqjDLrqzMbq2Kqb4A"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-youtube.svg"
+    >
+      <span class="footer-social-text">youtube</span>
+    </a>
+     
+  </div>
+  <span class="footer-text"
+    >Copyright © 2024. All rights reserved.
+  </span>
+  <span class="footer-text">Powerd by hugo | Theme is sifu</span>
+</div>
+
+      </footer>
+    </div>
+  </body>
+</html>
