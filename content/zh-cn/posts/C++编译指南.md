@@ -2,8 +2,8 @@
 title = 'C++编译指南'
 date = 2024-12-03
 draft = false
-slug = 'C++编译指南'
-summary = 'Article Description'
+slug = 'CPPcompileguide'
+summary = '在快乐编程五年的生涯中,我越来越喜欢折磨自己,从 python 到 go,从 js 到 ts,彷佛一个语言写起来限制的越多我越喜欢,终于,在我抖 M 的编程生涯中,我觉得开始使用 C++编写项目了。'
 tags = ["C++","Cmake"]
 categories = ["C++破防记录"]
 series = ["C++从入门到入土"]
@@ -195,6 +195,8 @@ file(GLOB STUDENT "${SOURCE_DIR}/student/*.cpp")
 link_directories("/usr/local/lib/oatpp-1.4.0")
 # 查找spdlog库文件
 link_directories("/opt/cpp/thirdpartyLib/spdlog/build")
+# 查找libconfig库文件
+link_directories("/usr/lib/x86_64-linux-gnu")
 
 # 需要编译的文件
 add_executable(main ${SOURCES} ${STUDENT})
@@ -204,11 +206,15 @@ add_executable(main ${SOURCES} ${STUDENT})
 target_link_libraries(main PRIVATE oatpp)
 # 链接spdlog库
 target_link_libraries(main PRIVATE spdlog)
+# 链接libconfig++库,这里可以指导库文件的名称
+target_link_libraries(main PRIVATE libconfig++.a)
 
 # 包含oatpp库的头文件目录
 target_include_directories(main PRIVATE "/usr/local/include/oatpp-1.4.0/oatpp")
 # 包含spdlog库的头文件目录
 target_include_directories(main PRIVATE "/opt/cpp/thirdpartyLib/spdlog/include")
+# 包含libconfig库的头文件目录
+target_include_directories(main PRIVATE "/usr/include")
 ```
 
 ## 编写C++程序
