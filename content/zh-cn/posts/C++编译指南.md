@@ -177,32 +177,38 @@ apt-get gcc cmake gdb
 
 **至关重要!!!**前面错了还能命令行编译,这里错了必死
 
-```
+```cmake
 cmake_minimum_required(VERSION 3.10)
-project(TEST)
+project(Stock)
 
 # 设置本项目cpp源代码和头文件的目录
 # ${PROJECT_SOURCE_DIR}为CMakeLists.txt所在的目录
 set(SOURCE_DIR "${PROJECT_SOURCE_DIR}/src")
 set(INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
-# 将头文件包含进去
+# 将本项目头文件包含进去
 include_directories("${INCLUDE_DIR}")
-# 使用通配符添加所有.cpp文件
+# 使用通配符添加本项目所有.cpp文件
 file(GLOB SOURCES "${SOURCE_DIR}/*.cpp")
 file(GLOB STUDENT "${SOURCE_DIR}/student/*.cpp")
 
-# 链接第三方库oatpp的目录,一般是静态库所在的目录
+# 链接第三方库oatpp的库文件,一般是静态库所在的目录
 link_directories("/usr/local/lib/oatpp-1.4.0")
+# 查找spdlog库文件
+link_directories("/opt/cpp/thirdpartyLib/spdlog/build")
 
 # 需要编译的文件
 add_executable(main ${SOURCES} ${STUDENT})
 
-# 链接oatpp静态库
+# 链接oatpp库
 # PRIVATE私有链接,即该链接不会传播,比如项目A依赖项目B,项目B私有链接项目C,项目A不会因为依赖项目B而依赖项目C
 target_link_libraries(main PRIVATE oatpp)
+# 链接spdlog库
+target_link_libraries(main PRIVATE spdlog)
 
 # 包含oatpp库的头文件目录
 target_include_directories(main PRIVATE "/usr/local/include/oatpp-1.4.0/oatpp")
+# 包含spdlog库的头文件目录
+target_include_directories(main PRIVATE "/opt/cpp/thirdpartyLib/spdlog/include")
 ```
 
 ## 编写C++程序
