@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  Zerotier异地组网 | 林师傅的贼窝
+</title>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/><link rel="stylesheet" href="/css/root.css" /><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+/><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff2" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.woff" /><link rel="stylesheet" href="/fonts/DingTalk-JinBuTi.ttf" /><link rel="stylesheet" href="/fonts/fonts.css" /><link rel="stylesheet" href="/icons/iconfont.ttf" /><link rel="stylesheet" href="/icons/iconfont.woff" /><link rel="stylesheet" href="/icons/iconfont.woff2" /><link rel="stylesheet" href="/icons/iconfont.css" /><link rel="stylesheet" href="/css/header.css" /><link rel="stylesheet" href="/css/content.css" /><link rel="stylesheet" href="/css/footer.css" />
+ <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+;
+<script src="/js/themeColors.js" defer></script>
+<script src="/js/mobile/headerNav.js" defer></script>
+<script src="/js/langSwitch.js" defer></script>
+<script src="/js/footer/footerStyle.js" defer></script>
+<script src="/js/rssCopy.js" defer></script>
+
+
+  </head>
+  <body
+    class="dark-mode"
+    
+  >
+    <header class="header-container"><div class="header-title">
+  <div class="header-nav-container" id="header-nav-container">
+    
+  <nav class="header-nav" id="header-nav">
+    <a class="header-nav-item" href="/zh-cn//">
+      <i class="iconfont icon-Home"></i>首页
+    </a>
+    <a class="header-nav-item" href="/zh-cn/categories/">
+      <i class="iconfont icon-Category"></i>分类
+    </a>
+    <a class="header-nav-item" href="/zh-cn/posts/">
+      <i class="iconfont icon-Archive"></i>归档
+    </a>
+    <a class="header-nav-item" href="/zh-cn/series/">
+      <i class="iconfont icon-Series"></i>系列
+    </a>
+    <a class="header-nav-item" href="/zh-cn/tags/">
+      <i class="iconfont icon-Tags"></i>标签
+    </a>
+    <a class="header-nav-item" href="/zh-cn/profile/">
+      <i class="iconfont icon-Profile"></i>简介
+    </a>
+    <a class="header-nav-item" href="/zh-cn/link/">
+      <i class="iconfont icon-Attachment"></i>友链
+    </a>  
+  </nav>
+
+  </div>
+
+  <p class="header-author-msg">
+    <span class="header-author-title">林师傅的贼窝</span>
+    <span class="header-author-description">每天都被折磨的想死</span>
+  </p>
+  <span class="header-buttons">
+    <span class="header-button-container">
+      <button id="lang-switch" class="header-button">
+        <i class="bi bi-translate"></i>
+      </button>
+      <div class="header-language" id="header-language-container"><span class="header-language-item" id="en">
+          <i class="fi fi-us"></i>
+        </span>
+        <span class="header-language-item" id="zh-cn">
+          <i class="fi fi-cn"></i>
+        </span>
+        
+      </div>
+    </span>
+    <span class="header-button-container">
+      <button id="theme-toggle" class="header-button">
+        <i class="iconfont icon-Sun" id="header-theme-button-icon"></i>
+      </button>
+    </span>
+  </span>
+</div>
+</header>
+    <div class="main-container">
+      <main>  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dark.min.css"
+/>
+<link rel="stylesheet" href="/code.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+<script>
+  hljs.highlightAll();
+  hljs.initLineNumbersOnLoad();
+</script>
+<style>
+  .post-container article a {
+    color: var(--text-color);
+    font-weight: 1000;
+  }
+  .post-container article li {
+    font-weight: 1000;
+    font-style: oblique;
+  }
+</style>
+<div class="post-container">
+  <div
+    class="post-title"
+    style="display: flex; flex-direction: column; width: 100%"
+  >
+    <h1 style="text-align: center">Zerotier异地组网</h1>
+    <time datetime="2024-08-18T00:00:00&#43;00:00" style="margin: 0 auto">
+      <i class="bi bi-calendar3" style="margin-right: 3px"></i>
+      <span>August 18, 2024</span>
+    </time>
+  </div>
+  <article style="width: 100%; word-break: break-word"><h2 id="b-站视频链接">B 站视频链接</h2>
+<div style="position: relative; padding-bottom: 75%; width: 100%; height: 0">
+  <iframe
+    src="//player.bilibili.com/player.html?bvid=BV1K34y1u79n&page=1"
+    scrolling="no"
+    border="0"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+    style="position: absolute; height: 100%; width: 100%"
+  >
+  </iframe>
+</div>
+
+<h2 id="在云服务器上安装-zerotier">在云服务器上安装 zerotier</h2>
+<h3 id="前言先开个-ip-转发先">前言,先开个 IP 转发先</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;net.ipv4.ip_forward=1&#34;</span> &gt;&gt; /etc/sysctl.conf
+</span></span></code></pre></div><h3 id="第一步-配置-zerotier">第一步 配置 zerotier</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s https://install.zerotier.com | sudo bash
+</span></span></code></pre></div><h3 id="第二步-将云服务器添加进网络">第二步 将云服务器添加进网络</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 加入网络 xxxxx为网络ID</span>
+</span></span><span style="display:flex;"><span>sudo zerotier-cli join xxxxxxxx
+</span></span></code></pre></div><h3 id="第三步-生成-moon-文件并修改配置">第三步 生成 moon 文件并修改配置</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 生成moon文件</span>
+</span></span><span style="display:flex;"><span>cd /var/lib/zerotier-one
+</span></span><span style="display:flex;"><span>sudo zerotier-idtool initmoon identity.public &gt;&gt; moon.json
+</span></span><span style="display:flex;"><span>sudo nano moon.json
+</span></span></code></pre></div><p>将配置文件中的“stableEndpoints”: []的[]填上[“公网 IP:9993”]
+修改完毕后生成</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 生成moon文件</span>
+</span></span><span style="display:flex;"><span>sudo zerotier-idtool genmoon moon.json
+</span></span></code></pre></div><h3 id="第四步-把-moon-文件移动到-moonsd-目录">第四步 把 moon 文件移动到 moons.d 目录</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo mkdir moons.d
+</span></span><span style="display:flex;"><span>sudo mv 000000xxxxxxxxxx.moon moons.d
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#重启服务</span>
+</span></span><span style="display:flex;"><span>sudo systemctl restart zerotier-one
+</span></span></code></pre></div><h2 id="客户端">客户端</h2>
+<h3 id="linux">linux</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>zerotier-cli join 网络id
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看状态</span>
+</span></span><span style="display:flex;"><span>zerotier-cli listpeers
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置moon服务器</span>
+</span></span><span style="display:flex;"><span>zerotier-cli orbit xxxxxxxxxx xxxxxxxxxx
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看网卡名称</span>
+</span></span><span style="display:flex;"><span>ip addr
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 开启转发</span>
+</span></span><span style="display:flex;"><span>iptables -I FORWARD -i ens192 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -I FORWARD -o ens192 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -t nat -I POSTROUTING -o ens192 -j MASQUERADE
+</span></span><span style="display:flex;"><span>iptables -I FORWARD -i ztk4jk7xov -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -I FORWARD -o ztk4jk7xov -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -t nat -I POSTROUTING -o ztk4jk7xov -j MASQUERADE
+</span></span></code></pre></div><h3 id="windows">windows</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>zerotier-cli.bat join 网络id
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看状态</span>
+</span></span><span style="display:flex;"><span>zerotier-cli.bat listpeers
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置moon服务器</span>
+</span></span><span style="display:flex;"><span>zerotier-cli.bat orbit xxxxxxxxxx xxxxxxxxxx
+</span></span></code></pre></div></article><link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+<div id="waline"></div>
+<script type="module">
+  import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+  init({
+    el: "#waline",
+    serverURL: "https:\/\/sifulinblog-comments.vercel.app",
+    placeholder: "请填写正确的昵称和邮箱，方便接收评论回复信息哦。",
+    avatar: "mp",
+    avatarCDN: "https:\/\/cdn.v2ex.com\/gravatar\/",
+    pageSize:  10 ,
+    meta: ["nick","mail","link"],
+    lang: 'zh-cn',
+    highlight:  true ,
+    requiredFields: ["nick","mail"]
+  });
+</script>
+<p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-tags-fill"></i>
+<a
+  href="/zh-cn/tags/zerotier/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Zerotier
+</a>
+<a
+  href="/zh-cn/tags/%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  异地组网
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    <span style="display: flex; flex-wrap: wrap">
+      <i class="bi bi-grid-fill"></i>
+<a
+  href="/zh-cn/categories/zerotier%E4%B8%80%E7%82%B9%E9%80%9A/"
+  style="
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #717171a2;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px 0.2rem;
+    text-align: center;
+  "
+>
+  Zerotier一点通
+</a>
+
+    </span>
+  </p><p style="margin-top: 0.5rem">
+    
+<style>
+  .series-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    height: fit-content;
+    width: 100%;
+  }
+  .series-link {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 0.2rem;
+    background: linear-gradient(
+      to right,
+      var(--header-background-color-from),
+      var(--header-background-color-to)
+    );
+    width: 6rem;
+    height: fit-content;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 10px;
+    font-family: "Dingding";
+    margin: 3px 2px;
+    transition: 0.5s;
+  }
+  .series-link:hover {
+    transform: scale(1.05);
+  }
+</style>
+<div class="series-container">
+  <span style="font-size: 1.2rem; font-family: Dingding">
+    Zerotier教程<i class="bi bi-three-dots"></i>
+  </span>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center"><a href="/zh-cn/2024/08/18/zerotier/" class="series-link">Zerotier异地组网</a></div>
+</div>
+
+  </p>
+<style>
+  #toc-button {
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 3px;
+    padding: 0 2px;
+  }
+  #toc-button:hover {
+    cursor: pointer;
+  }
+  #toc-button svg {
+     
+    height: 1.5rem;
+    width: 1.5rem;
+     
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line {
+    fill: none;
+    stroke: var(--text-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+     
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  [toc-expanded="open"] svg {
+    transform: rotate(-45deg);
+  }
+  [toc-expanded="open"] svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  #toc-items-container {
+    background-color: #72727242;
+    padding: 2px 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    max-height: 8rem;
+  }
+  #toc-items-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  #toc-items-container::-webkit-scrollbar-track {
+    background-color: #313131;
+    border-radius: 2px;
+  }
+  #toc-items-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff6f;
+  }
+  #toc-items-container a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 5px 0;
+    word-wrap: break-word;
+    background-color: #ffffff2b;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px 0;
+  }
+  [toc-expanded="open"] + #toc-items-container {
+    animation: toc-show 0.5s;
+  }
+  [toc-expanded="closed"] + #toc-items-container {
+    animation: toc-close 0.5s;
+  }
+  @keyframes toc-show {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes toc-close {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+  }
+   
+  #toc-items-container ul li {
+    width: 7rem;
+    font-size: 1rem;
+    font-family: "Dingding";
+  }
+   
+  #toc-items-container ul li ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  #toc-items-container ul li ul li {
+    width: 5rem;
+    font-size: 0.8rem;
+    font-family: "Dingding";
+  }
+</style>
+<div style="position: fixed; left: 10px; top: 20%">
+  <button id="toc-button" toc-expanded="open">
+    <svg viewBox="0 0 32 32">
+      <path
+        class="line line-top-bottom"
+        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+      ></path>
+      <path class="line" d="M7 16 27 16"></path>
+    </svg>
+  </button>
+
+  <div id="toc-items-container"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#b-站视频链接">B 站视频链接</a></li>
+    <li><a href="#在云服务器上安装-zerotier">在云服务器上安装 zerotier</a>
+      <ul>
+        <li><a href="#前言先开个-ip-转发先">前言,先开个 IP 转发先</a></li>
+        <li><a href="#第一步-配置-zerotier">第一步 配置 zerotier</a></li>
+        <li><a href="#第二步-将云服务器添加进网络">第二步 将云服务器添加进网络</a></li>
+        <li><a href="#第三步-生成-moon-文件并修改配置">第三步 生成 moon 文件并修改配置</a></li>
+        <li><a href="#第四步-把-moon-文件移动到-moonsd-目录">第四步 把 moon 文件移动到 moons.d 目录</a></li>
+      </ul>
+    </li>
+    <li><a href="#客户端">客户端</a>
+      <ul>
+        <li><a href="#linux">linux</a></li>
+        <li><a href="#windows">windows</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</div>
+<script>
+  const tocButton = document.getElementById("toc-button");
+  const tocItemsContainer = document.getElementById("toc-items-container");
+  tocButton.addEventListener("click", () => {
+    const expanded = tocButton.getAttribute("toc-expanded");
+    if (expanded === "open") {
+      tocButton.setAttribute("toc-expanded", "closed");
+    } else {
+      tocButton.setAttribute("toc-expanded", "open");
+      tocItemsContainer.style.display = "block";
+    }
+  });
+  tocItemsContainer.addEventListener("animationend", () => {
+    if (tocButton.getAttribute("toc-expanded") === "closed") {
+      tocItemsContainer.style.display = "none";
+    }
+  });
+</script>
+</div>
+
+<script src="/js/codeCopy.js" defer></script>  </main>
+      <footer class="footer-container" id="footer-container">
+        <div class="footer-content">
+  <div class="footer-social-container"><a
+      class="footer-social-link rss-link"
+      id="footer-social-rss.svg"
+      href="http://localhost:1313/zh-cn/index.xml"
+    >
+      <span class="footer-social-text">RSS</span>
+    </a>
+    <a
+      href="https://space.bilibili.com/8337954"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-bilibili.svg"
+    >
+      <span class="footer-social-text">bilibili</span>
+    </a>
+    
+    <a
+      href="https://github.com/ProjechAnonym"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-github.svg"
+    >
+      <span class="footer-social-text">gitHub</span>
+    </a>
+    
+    <a
+      href="https://t.me/&#43;5yh2rgXjWBlmMDk1"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-telegram.svg"
+    >
+      <span class="footer-social-text">telegram</span>
+    </a>
+    
+    <a
+      href="https://qm.qq.com/q/lLbgOB31sW"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-qq.svg"
+    >
+      <span class="footer-social-text">qq</span>
+    </a>
+    
+    <a
+      href="https://www.youtube.com/channel/UCXiiRClqjDLrqzMbq2Kqb4A"
+      target="_blank"
+      class="footer-social-link"
+      id="footer-social-youtube.svg"
+    >
+      <span class="footer-social-text">youtube</span>
+    </a>
+     
+  </div>
+  <span class="footer-text"
+    >Copyright © 2025. All rights reserved.
+  </span>
+  <span class="footer-text">Powerd by hugo | Theme is sifu</span>
+</div>
+
+      </footer>
+    </div>
+  </body>
+</html>

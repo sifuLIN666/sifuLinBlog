@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apt on 林师傅的贼窝</title>
+    <link>http://localhost:1313/zh-cn/tags/apt/</link>
+    <description>Recent content in Apt on 林师傅的贼窝</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/zh-cn/tags/apt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;解析配置文件库</title>
+      <link>http://localhost:1313/zh-cn/2024/12/04/cpplibconfigguide/</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/2024/12/04/cpplibconfigguide/</guid>
+      <description>Article Description</description>
+    </item>
+  </channel>
+</rss>

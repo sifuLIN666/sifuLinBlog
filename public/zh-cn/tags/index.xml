@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 林师傅的贼窝</title>
+    <link>http://localhost:1313/zh-cn/tags/</link>
+    <description>Recent content in Tags on 林师傅的贼窝</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/zh-cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debian</title>
+      <link>http://localhost:1313/zh-cn/tags/debian/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/debian/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mariadb</title>
+      <link>http://localhost:1313/zh-cn/tags/mariadb/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/mariadb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mysql</title>
+      <link>http://localhost:1313/zh-cn/tags/mysql/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/mysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Apt</title>
+      <link>http://localhost:1313/zh-cn/tags/apt/</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/apt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>http://localhost:1313/zh-cn/tags/c&#43;&#43;/</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Libconfig</title>
+      <link>http://localhost:1313/zh-cn/tags/libconfig/</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/libconfig/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cmake</title>
+      <link>http://localhost:1313/zh-cn/tags/cmake/</link>
+      <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/cmake/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bt</title>
+      <link>http://localhost:1313/zh-cn/tags/bt/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/bt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Qbit</title>
+      <link>http://localhost:1313/zh-cn/tags/qbit/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/qbit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Aria2</title>
+      <link>http://localhost:1313/zh-cn/tags/aria2/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/aria2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bind9</title>
+      <link>http://localhost:1313/zh-cn/tags/bind9/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/bind9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bt下载</title>
+      <link>http://localhost:1313/zh-cn/tags/bt%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/bt%E4%B8%8B%E8%BD%BD/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Derper中继服务器</title>
+      <link>http://localhost:1313/zh-cn/tags/derper%E4%B8%AD%E7%BB%A7%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/derper%E4%B8%AD%E7%BB%A7%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DNS</title>
+      <link>http://localhost:1313/zh-cn/tags/dns/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/dns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stash</title>
+      <link>http://localhost:1313/zh-cn/tags/stash/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/stash/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tailscale</title>
+      <link>http://localhost:1313/zh-cn/tags/tailscale/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/tailscale/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>递归DNS</title>
+      <link>http://localhost:1313/zh-cn/tags/%E9%80%92%E5%BD%92dns/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/%E9%80%92%E5%BD%92dns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>内网穿透</title>
+      <link>http://localhost:1313/zh-cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>影音服务器</title>
+      <link>http://localhost:1313/zh-cn/tags/%E5%BD%B1%E9%9F%B3%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/%E5%BD%B1%E9%9F%B3%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Zerotier</title>
+      <link>http://localhost:1313/zh-cn/tags/zerotier/</link>
+      <pubDate>Sun, 18 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/zerotier/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>异地组网</title>
+      <link>http://localhost:1313/zh-cn/tags/%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/</link>
+      <pubDate>Sun, 18 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Host劫持</title>
+      <link>http://localhost:1313/zh-cn/tags/host%E5%8A%AB%E6%8C%81/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/host%E5%8A%AB%E6%8C%81/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mosdns</title>
+      <link>http://localhost:1313/zh-cn/tags/mosdns/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/mosdns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Singbox</title>
+      <link>http://localhost:1313/zh-cn/tags/singbox/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/singbox/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>科学上网</title>
+      <link>http://localhost:1313/zh-cn/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>软路由</title>
+      <link>http://localhost:1313/zh-cn/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
