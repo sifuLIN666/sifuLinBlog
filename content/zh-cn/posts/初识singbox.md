@@ -131,7 +131,7 @@ echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 4. sing-box
 5. sing-box.service
 
-```shell
+```bash
 # 创建日志和配置文件夹以及存放geo数据库
 mkdir -p /var/singbox
 mkdir -p /var/lib/sing-box
@@ -139,7 +139,7 @@ mkdir -p /usr/local/etc/sing-box
 chmod -R +w /var/singbox
 # 将软件以及配置还有geo数据库移动到对应文件夹
 mv singboxONE/sing-box /usr/local/bin
-mv singboxONE/sing-box.service /etc/systemd/system
+mv singboxONE/sing-box.service /usr/lib/systemd/system
 mv singboxONE/config.json /usr/local/etc/sing-box
 mv singboxONE/geoip.db /var/lib/sing-box
 mv singboxONE/geosite.db /var/lib/sing-box
@@ -149,7 +149,7 @@ chmod +x /usr/local/bin/sing-box
 
 重载系统服务并开启 sing-box
 
-```shell
+```bash
 # 重载systemctl配置否则下面开启singbox的命令是无效的
 systemctl daemon-reload
 # 开启sing-box

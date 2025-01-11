@@ -180,13 +180,15 @@ EOF
 ### 配置辣种服务,方便开机坐上来自己动
 
 ```bash
-cat > /etc/systemd/system/sing-box.service << EOF
+cat > /usr/lib/systemd/system/sing-box.service << EOF
 [Unit]
 Description=sing-box service
 Documentation=https://sing-box.sagernet.org
 After=network.target nss-lookup.target network-online.target
 
 [Service]
+# 这些是systemctl权限控制的一部分,这里sing-box主要用于设置网络管理器
+
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
 ExecStart=/opt/singbox/sing-box -D /opt/singbox/lib -c /opt/singbox/config.json run
@@ -199,7 +201,42 @@ LimitNOFILE=infinity
 WantedBy=multi-user.target
 
 EOF
-cat > /etc/systemd/system/mosdns.service << EOF
+```
+
+**singbox 还提供了一种模板 systemctl 配置服务,可以根据配置文件运行多个 singbox 实例**
+
+```bash
+cat > /usr/lib/systemd/system/sing-box@.service << EOF
+[Unit]
+Description=sing-box service
+Documentation=https://sing-box.sagernet.org
+After=network.target nss-lookup.target network-online.target
+
+[Service]
+# 这些是systemctl权限控制的一部分,这里sing-box主要用于设置网络管理器
+
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
+# 此处的"%i"接受的就是"@"后面的参数
+ExecStart=/opt/singbox/sing-box -D /opt/singbox-%i/lib -c /opt/singbox/%i.json run
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=10s
+LimitNOFILE=infinity
+
+[Install]
+WantedBy=multi-user.target
+
+EOF
+# 使用方法
+cp /usr/lib/systemd/system/sing-box@.service /usr/lib/systemd/system/sing-box@instance1.service
+systemctl daemon-reload
+systemctl start sing-box@instance.service
+# 此时就会启用/opt/singbox/instance.json配置文件
+```
+
+```bash
+cat > /usr/lib/systemd/system/mosdns.service << EOF
 [Unit]
 Description=A DNS forwarder
 ConditionFileIsExecutable=/opt/mosdns/mosdns
@@ -222,6 +259,7 @@ systemctl enable sing-box.service
 systemctl enable mosdns.service
 systemctl start sing-box.service
 systemctl start mosdns.service
+
 ```
 
 ## yua 和 eimi 的一番赛高使用方式
@@ -231,3 +269,11 @@ systemctl start mosdns.service
 ## 结束
 
 这样就可以愉快的让 yua 和 eimi 坐上来自己动了
+
+```
+
+```
+
+```
+
+```
