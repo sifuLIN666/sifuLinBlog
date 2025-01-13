@@ -107,7 +107,7 @@ cat > /opt/singbox/config.json << EOF
       },
       {
         "tag": "internal",
-        "address": "192.168.1.2:5335",
+        "address": "192.168.50.7:5335",
         "detour": "direct"
       },
       {
@@ -186,7 +186,7 @@ cat > /opt/singbox/config.json << EOF
     {
       "method": "aes-256-gcm",
       "password": "e881080d-32e6-483e-a768-e9081206bf19",
-      "server": "zhk1.capoonetwork.com",
+      "server": "zhk1.capoonetwork",
       "server_port": 12710,
       "tag": "🇭🇰 香港 01",
       "type": "shadowsocks"
@@ -530,6 +530,7 @@ options {
 ## 检验一下
 
 ```bash
+systemctl enable --now sing-box.service
 curl -i https://www.google.com
 curl -i https://www.baidu.com
 nslookup whoami.03k.org
