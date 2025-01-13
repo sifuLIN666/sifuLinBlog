@@ -539,7 +539,7 @@ nslookup whoami.03k.org
 
 # Non-authoritative answer:
 # Name:   whoami.03k.org
-# Address: 121.207.203.139
+# Address: 121.207.203.12
 ```
 
 此处的 Address 就是递归服务器连接到权威 DNS 的 IP,理论上应该是你目前的宽带 IP, 这个项目我感觉用来讲解 singbox 的代理流程挺合适的,我真是~~循循善诱~~(挖坑大侠)
