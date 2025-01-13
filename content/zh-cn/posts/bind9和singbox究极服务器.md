@@ -51,7 +51,7 @@ sysctl -p
 mkdir -p /opt/singbox/bin
 mkdir -p /opt/singbox/lib
 # 下载的singbox压缩包上传到root文件夹下
-tar zxvf --strip-components 1 sing-box-*.tar.gz
+tar -zxvf --strip-components 1 sing-box-*.tar.gz -C /opt/singbox/bin
 
 # 删除压缩包
 rm -rf sing-box-*.tar.gz
