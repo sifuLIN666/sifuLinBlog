@@ -47,17 +47,18 @@ sysctl -p
 去[sing-box](https://github.com/SagerNet/sing-box/releases)页面下载对应的软件包, 这里我下载的是 amd64 的版本或者通过 curl 命令下载也可以
 
 ```bash
-# 下载的singbox压缩包上传到root文件夹下
-tar zxvf sing-box-*.tar.gz
-# 删除压缩包
-rm -rf sing-box-*.tar.gz
 # 创建必要文件夹
 mkdir -p /opt/singbox/bin
 mkdir -p /opt/singbox/lib
+# 下载的singbox压缩包上传到root文件夹下
+tar zxvf --strip-components 1 sing-box-*.tar.gz
+
+# 删除压缩包
+rm -rf sing-box-*.tar.gz
 
 # 将sing-box二进制文件移动到指定目录
-mv sing-box-*/sing-box /opt/singbox/bin
-rm -rf sing-box-*
+mv sing-box /opt/singbox/bin
+rm -rf LICENSE
 ```
 
 2. 设置 sing-box 配置文件
