@@ -25,7 +25,7 @@ apt-get update
 
 # 安装必要的软件
 
-apt install -y sudo vim tar unzip curl resolvconf
+apt install -y sudo vim tar unzip curl resolvconf acl
 
 # 223.5.5.5就行,能让sing-box劫持都可以
 echo "nameserver 223.5.5.5" >> /etc/resolvconf/resolv.conf.d/head
@@ -56,9 +56,6 @@ tar -zxvf sing-box-*.tar.gz -C /opt/singbox/bin --strip-components=1
 # 删除压缩包
 rm -rf sing-box-*.tar.gz
 
-# 将sing-box二进制文件移动到指定目录
-mv sing-box /opt/singbox/bin
-rm -rf LICENSE
 ```
 
 2. 设置 sing-box 配置文件
@@ -97,62 +94,38 @@ cat > /opt/singbox/config.json << EOF
     }
   ],
   "dns": {
-    "final": "external",
+    "final": "internal",
     "strategy": "prefer_ipv4",
     "reverse_mapping": true,
     "servers": [
       {
         "tag": "external",
-        "address": "tls://8.8.8.8",
-        "detour": "select"
-      },
-      {
-        "tag": "internal",
-        "address": "192.168.50.7:5335",
+        "type": "tls",
+        "server": "8.8.8.8",
+        "server_port": 853,
         "detour": "direct"
       },
       {
-        "tag": "dns_block",
-        "address": "rcode://refused"
+        "tag": "internal",
+        "type": "udp",
+        "server": "192.168.50.3",
+        "server_port": 5353,
+        "detour": "direct"
       }
     ],
     "rules": [
       {
         "domain_keyword": ["lzhlovelcl.top"],
-        "server": "internal"
-      },
-      {
-        "outbound": "any",
-        "server": "internal"
-      },
-      {
-        "rule_set": "china-site",
+        "action": "route",
         "server": "internal"
       }
     ]
   },
   "route": {
-    "rule_set": [
-      {
-        "type": "remote",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/cn.srs",
-        "format": "binary",
-        "tag": "china-site",
-        "download_detour": "select",
-        "update_interval": "1d"
-      },
-      {
-        "type": "remote",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/cn.srs",
-        "format": "binary",
-        "tag": "china-ip",
-        "download_detour": "select",
-        "update_interval": "1d"
-      }
-    ],
     "rules": [
       {
         "user": ["bind"],
+        "action": "route",
         "outbound": "direct"
       },
       {
@@ -165,48 +138,35 @@ cat > /opt/singbox/config.json << EOF
       },
       {
         "ip_is_private": true,
+        "action": "route",
         "outbound": "direct"
       },
       {
         "action": "reject",
         "protocol": ["quic"]
-      },
-      {
-        "outbound": "direct",
-        "rule_set": ["china-site", "china-ip"]
       }
     ],
-    "final": "select",
-    "auto_detect_interface": true
+    "final": "direct",
+    "auto_detect_interface": true,
+    "default_domain_resolver": "internal"
   },
   "outbounds": [
     {
       "tag": "direct",
       "type": "direct"
-    },
-    {
-      "method": "aes-256-gcm",
-      "password": "e881080d-32e6-483e-a768-e9081206bf19",
-      "server": "zhk1.capoonetwork",
-      "server_port": 12710,
-      "tag": "🇭🇰 香港 01",
-      "type": "shadowsocks"
-    },
-    {
-      "interrupt_exist_connections": false,
-      "outbounds": ["🇭🇰 香港 01", "auto"],
-      "tag": "select",
-      "type": "selector"
-    },
-    {
-      "interrupt_exist_connections": false,
-      "outbounds": ["🇭🇰 香港 01"],
-      "tag": "auto",
-      "type": "urltest"
     }
   ]
 }
 EOF
+# 以root用户运行sing-box则不需要以下命令
+useradd -r -s /usr/sbin/nologin singbox
+chown -R singbox /opt/singbox
+chgrp -R singbox /opt/singbox
+chmod -R 755 /opt/singbox
+# 给sing-box可执行权限
+chmod u+x /opt/singbox/bin/sing-box
+# root用户使用
+chmod a+x /opt/singbox/bin/sing-box
 ```
 
 - 配置文件模板:
@@ -250,56 +210,32 @@ EOF
     "servers": [
       {
         "tag": "external",
-        "address": "tls://8.8.8.8",
+        "type": "tls",
+        "server": "8.8.8.8",
+        "server_port": 853,
         "detour": "select"
       },
       {
         "tag": "internal",
-        "address": "192.168.1.2:5335",
+        "type": "udp",
+        "server": "192.168.50.3",
+        "server_port": 5353,
         "detour": "direct"
-      },
-      {
-        "tag": "dns_block",
-        "address": "rcode://refused"
       }
     ],
     "rules": [
       {
         "domain_keyword": ["lzhlovelcl.top"],
-        "server": "internal"
-      },
-      {
-        "outbound": "any",
-        "server": "internal"
-      },
-      {
-        "rule_set": "china-site",
+        "action": "route",
         "server": "internal"
       }
     ]
   },
   "route": {
-    "rule_set": [
-      {
-        "type": "remote",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/cn.srs",
-        "format": "binary",
-        "tag": "china-site",
-        "download_detour": "select",
-        "update_interval": "1d"
-      },
-      {
-        "type": "remote",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/cn.srs",
-        "format": "binary",
-        "tag": "china-ip",
-        "download_detour": "select",
-        "update_interval": "1d"
-      }
-    ],
     "rules": [
       {
         "user": ["bind"],
+        "action": "route",
         "outbound": "direct"
       },
       {
@@ -312,44 +248,22 @@ EOF
       },
       {
         "ip_is_private": true,
+        "action": "route",
         "outbound": "direct"
       },
       {
         "action": "reject",
         "protocol": ["quic"]
-      },
-      {
-        "outbound": "direct",
-        "rule_set": ["china-site", "china-ip"]
       }
     ],
     "final": "select",
-    "auto_detect_interface": true
+    "auto_detect_interface": true,
+    "default_domain_resolver": "internal"
   },
   "outbounds": [
     {
       "tag": "direct",
       "type": "direct"
-    },
-    {
-      "method": "aes-256-gcm",
-      "password": "e881080d-32e6-483e-a768-e9081206bf19",
-      "server": "zhk1.capoonetwork",
-      "server_port": 12710,
-      "tag": "🇭🇰 香港 01",
-      "type": "shadowsocks"
-    },
-    {
-      "interrupt_exist_connections": false,
-      "outbounds": ["🇭🇰 香港 01", "auto"],
-      "tag": "select",
-      "type": "selector"
-    },
-    {
-      "interrupt_exist_connections": false,
-      "outbounds": ["🇭🇰 香港 01"],
-      "tag": "auto",
-      "type": "urltest"
     }
   ]
 }
@@ -357,15 +271,17 @@ EOF
 
 - 重点讲解
 
-* dns.servers.address 应该设置为 bind9 监听的地址
+* dns.servers.address 应该设置为 bind9 监听的地址和端口
 
 ```json
 "dns": {
     "servers": [
         {
-            "tag": "internal",
-            "address": "192.168.1.2:5335",
-            "detour": "direct"
+          "tag": "internal",
+          "type": "udp",
+          "server": "192.168.50.3",
+          "server_port": 5353,
+          "detour": "direct"
         },
     ]
 }
@@ -378,6 +294,7 @@ EOF
     "rules": [
             {
                 "user": ["bind"],
+                "action": "route",
                 "outbound": "direct"
             },
             {
@@ -421,6 +338,7 @@ WantedBy=multi-user.target
 EOF
 
 # 设置一般的守护进程
+# 如果要以root用户运行sing-box,则将User和Group字段去除即可
 cat > /usr/lib/systemd/system/sing-box.service << EOF
 [Unit]
 Description=sing-box service
@@ -432,6 +350,8 @@ After=network.target nss-lookup.target network-online.target
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
 
+User=singbox
+Group=singbox
 ExecStart=/opt/singbox/bin/sing-box -D /opt/singbox/lib -c /opt/singbox/config.json run
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=on-failure
@@ -513,7 +433,7 @@ options {
 	dnssec-validation auto;
 
     <!-- 监听端口和IP -->
-	listen-on port 5335 {192.168.50.7;};
+	listen-on port 5335 {192.168.50.3;};
 	allow-query {any;};
 	recursion yes;
 	allow-recursion {any;};
@@ -538,3 +458,5 @@ nslookup whoami.03k.org
 ```
 
 此处的 Address 就是递归服务器连接到权威 DNS 的 IP,理论上应该是你目前的宽带 IP, 这个项目我感觉用来讲解 singbox 的代理流程挺合适的,我真是~~循循善诱~~(挖坑大侠)
+
+## 如果需要配置自动更新 sing-box 配置文件的功能,可以
