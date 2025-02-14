@@ -33,7 +33,7 @@ echo "nameserver 223.5.5.5" >> /etc/resolvconf/resolv.conf.d/head
 resolvconf -u
 
 # 开启ipv4转发
-echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+echo "net.ipv4.ip_forward=1" >> /etc/sysctl.d/99-sysctl.conf
 
 sysctl -p
 ```
@@ -328,7 +328,7 @@ CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
 
 ExecStart=/opt/singbox/bin/sing-box -D /opt/singbox/lib/%i -c /opt/singbox/%i.json run
-ExecReload=/bin/kill -HUP $MAINPID
+ExecReload=/bin/kill -HUP \$MAINPID
 Restart=on-failure
 RestartSec=10s
 LimitNOFILE=infinity
@@ -353,7 +353,7 @@ AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_RE
 User=singbox
 Group=singbox
 ExecStart=/opt/singbox/bin/sing-box -D /opt/singbox/lib -c /opt/singbox/config.json run
-ExecReload=/bin/kill -HUP $MAINPID
+ExecReload=/bin/kill -HUP \$MAINPID
 Restart=on-failure
 RestartSec=10s
 LimitNOFILE=infinity
@@ -363,7 +363,7 @@ WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
-systemctl enable sing-box.service
+systemctl enable --now sing-box.service
 ```
 
 ### 安装 bind9
