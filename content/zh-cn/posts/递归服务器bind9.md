@@ -52,7 +52,7 @@ apt-get install -y bind9*
 
 主文件为{{< quote >}}name.conf{{< /quote >}},其配置文件格式为 C 风格
 
-```bind
+```C
 // This is the primary configuration file for the BIND DNS server named.
 //
 // Please read /usr/share/doc/bind9/README.Debian for information on the
@@ -68,7 +68,7 @@ include "/etc/bind/named.conf.default-zones"; // 存储根服务器IP以及回�
 
 ### 配置监听文件
 
-```bind
+```C
 options {
     // 缓存文件夹
 	directory "/var/cache/bind";
@@ -106,7 +106,7 @@ options {
 如果有一些特殊需求,比如内网很多服务,其实是可以直接用内网 DNS 服务器避免回环问题的,而且诸如谷歌 TV 激活的 ntp 服务器也可以很方便用内网 DNS 服务器进行 host 劫持,我在这里举一个例子
 在{{< quote >}}name.conf.local{{< /quote >}}添加如下
 
-```bind
+```C
 // rfc1918主要包含是内网的ip地址段,也就是如果需要由IP解析域名的时候,通过配置这个文件可以马上得到IP所对应的域名而不需要到公网上去反向解析域名,本来就是内网部署,到公网去反向解析简直抽象,这个根据情况可以放开注释
 // include "/etc/bind/zones.rfc1918";
 
@@ -130,7 +130,7 @@ touch /etc/bind/db.example.com
 4. IN: 网络记录
 5. TTL: 存活时间
 
-```bind
+```C
 $TTL	604800 # 设置变量
 # 注意邮箱的@的符用.代替,@在这里表示所有域名起始记录的解析.
 @	IN	SOA	lzhlovelcl.top. 1982209396.qq.com. (
