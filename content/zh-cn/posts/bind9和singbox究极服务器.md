@@ -431,9 +431,8 @@ options {
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
 	dnssec-validation auto;
-
   // 监听端口和IP
-	listen-on port 5335 {192.168.50.3;};
+	listen-on port 5335 {localhost;};
 	allow-query {any;};
 	recursion yes;
 	allow-recursion {any;};
