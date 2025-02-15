@@ -133,7 +133,7 @@ touch /etc/bind/db.example.com
 ```C
 $TTL	604800 # 设置变量
 # 注意邮箱的@的符用.代替,@在这里表示所有域名起始记录的解析.
-@	IN	SOA	lzhlovelcl.top. 1982209396.qq.com. (
+@	IN	SOA	lzhlovelcl.top. 1986.qq.com. (
 			      2		; Serial
 			 604800		; Refresh
 			  86400		; Retry
