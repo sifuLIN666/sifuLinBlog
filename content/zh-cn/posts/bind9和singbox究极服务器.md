@@ -409,7 +409,7 @@ lsof -i:5335
 
 - 配置模板:
 
-```bind
+```C
 options {
 	directory "/var/cache/bind";
 
@@ -432,7 +432,7 @@ options {
 	//========================================================================
 	dnssec-validation auto;
 
-    <!-- 监听端口和IP -->
+  // 监听端口和IP
 	listen-on port 5335 {192.168.50.3;};
 	allow-query {any;};
 	recursion yes;
