@@ -1,10 +1,11 @@
 baseURL = "https://vercel-blog.sifulin.top/"
 theme = "sifu"
 preserveTaxonomyNames = true
-paginate = 5 #frontpage pagination
 defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir = true
 hasCJKLanguage = true
+[pagination]
+    pagerSize = 5
 [languages]
     [languages.en]
         languageName = "fi fi-us"
