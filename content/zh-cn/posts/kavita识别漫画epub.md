@@ -3,7 +3,7 @@ title = 'Kavita识别漫画epub'
 date = 2025-02-28
 draft = false
 slug = 'kavita-epub'
-summary = 'Article Description'
+summary = '创建自己的漫画epub资源'
 tags = ["kavita","epub"]
 categories = ["kavita漫画服务器"]
 series = ["kavita漫画服务器"]
@@ -23,7 +23,7 @@ comments = true
 ### 简单处理一下
 
 首先删掉图中没用的文件, 并创建自己需要的文件
-{{< imgaes "https://s3.bmp.ovh/imgs/2025/02/28/7452a56afaf57f9f.png" "sigil操作步骤" >}}
+{{< images "https://s3.bmp.ovh/imgs/2025/02/28/7452a56afaf57f9f.png" "sigil操作步骤" >}}
 在` Styles`文件夹下新建一个`style.css `样式文件,并添加样式
 
 ```css
