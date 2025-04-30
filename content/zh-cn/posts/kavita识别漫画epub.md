@@ -162,3 +162,7 @@ print('HTML files have been created successfully.')
 ```
 
 其实这里用 sigil 的目录功能打开看就很清晰明了了
+
+## 结尾
+
+这里我放一下[示例文件](https://wwxc.lanzouo.com/iJVOi2uz7jdc), 两个文件下载后将后缀.7z 删去, 并保证都在同一目录下使用 7z 软件解压即可, 需要注意的是迷宫饭是 epub3 格式, 目录不再需要 ncx 文件而是使用 nav.xhtml 文件进行导航, 而凡人修仙传则是 epub2 格式文件, 目录需要使用 ncx 文件进行导航
