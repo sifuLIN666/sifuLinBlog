@@ -5,8 +5,8 @@ draft = false
 slug = 'kavita-epub'
 summary = '创建自己的漫画epub资源'
 tags = ["kavita","epub"]
-categories = ["kavita漫画服务器"]
-series = ["kavita漫画服务器"]
+categories = ["kavita漫画服务器","epub文件制作"]
+series = ["kavita漫画服务器","epub文件制作"]
 math = false
 toc = true
 comments = true
@@ -50,9 +50,24 @@ ol {
     <dc:date>1995-01-02</dc:date> <!-- 出版日期 -->
     <dc:subject>奇幻</dc:subject> <!-- 分类 -->
     <dc:subject>冒险</dc:subject> <!-- 分类 -->
+    <meta name="cover" content="cover.jpg" /> <!-- 封面图片, 此处的content是与下面的item的id对应, 此项设置对苹果的图书封面显示很重要 -->
     <meta name="Sigil version" content="2.4.2"/>
     <meta property="dcterms:modified">2025-03-01T00:07:01Z</meta>
 </metadata>
+<manifest>
+    <!-- 该书的目录文件 -->
+    <item id="nav.xhtml" href="Text/nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+
+    <item id="Style0001.css" href="Styles/style.css" media-type="text/css"/> <!-- 该书的css文件 -->
+
+    <!-- 该书的封面文件链接, 与<meta name="cover" content="cover.jpg" />对应 -->
+    <item id="cover.jpg" href="image/cover.jpg" media-type="image/jpeg"/>
+
+    <!-- 该书的各种元文件, jpg与html文件都应包含进来, 并且需要注意, 一个文件只能对应一个id, 如果Images/1.jpg对应id 1.jpg和cover.jpg, kavita会解析失败 -->
+    <item id="x1.jpg" href="Images/1.jpg" media-type="image/jpeg"/>
+    <item id="x2.jpg" href="Images/2.jpg" media-type="image/jpeg"/>
+    <item id="page-1.html" href="Text/page-1.html" media-type="application/xhtml+xml"/>
+</manifest>
 ```
 
 ## 创建内容
