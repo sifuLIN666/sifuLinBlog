@@ -165,4 +165,4 @@ print('HTML files have been created successfully.')
 
 ## 结尾
 
-这里我放一下[示例文件](https://wwxc.lanzouo.com/iJVOi2uz7jdc), 需要注意的是迷宫饭是 epub3 格式, 目录不再需要 ncx 文件而是使用 nav.xhtml 文件进行导航, 而凡人修仙传则是 epub2 格式文件, 目录需要使用 ncx 文件进行导航
+这里我放一下[示例文件](https://wwxc.lanzouo.com/iJVOi2uz7jdc), 需要注意的是迷宫饭是 epub3 格式, 目录不再需要 ncx 文件而是使用 nav.xhtml 文件进行导航, 而凡人修仙传则是 epub2 格式文件, 目录需要使用 ncx 文件进行导航 1
