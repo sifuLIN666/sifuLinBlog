@@ -69,7 +69,7 @@ systemctl enable --now frps
 
 ## 客户端配置
 
-同样将压缩包内的 frpc 二进制文件上传到我们的客户端主机上 duan 端, 然后赋予可执行权限
+同样将压缩包内的 frpc 二进制文件上传到我们的客户端主机上, 然后赋予可执行权限
 
 ```bash
 mkdir -p /opt/frp/bin
