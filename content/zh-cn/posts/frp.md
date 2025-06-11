@@ -57,6 +57,11 @@ Wants = network.target
 
 [Service]
 Type = simple
+
+# 如果绑定的端口小于1000, 则需要下面的配置
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
+
 # 启动frps的命令，需修改为您的frps的安装路径
 ExecStart = /opt/frp/bin/frps -c /opt/frp/frps.toml
 
@@ -73,7 +78,9 @@ systemctl enable --now frps
 
 ```bash
 mkdir -p /opt/frp/bin
-chmod a+x /opt/frp/bin/frpc
+useradd -r -s /usr/sbin/nologin frpc
+chown -R frpc:frpc /opt/frp
+chmod -R 755 /opt/frp
 ```
 
 ### 修改配置文件
@@ -119,6 +126,11 @@ Wants = network.target
 
 [Service]
 Type = simple
+
+# 如果绑定的端口小于1000, 则需要下面的配置
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
+
 # 启动frps的命令，需修改为您的frps的安装路径
 ExecStart = /opt/frp/bin/frpc -c /opt/frp/frpc.toml
 

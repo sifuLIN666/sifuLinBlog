@@ -87,3 +87,11 @@ setfacl -R -m d:u:allinssl:rw /opt/test
 touch /opt/test/sifulin.top.pem
 touch /opt/test/sifulin.top.pem
 ```
+
+如果还有涉及到后置命令, 比如说重新加载 nginx, 则需要通过 sudo 配置一下免密权限
+
+```bash
+visudo
+```
+
+输入`allinssl ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl reload nginx`之后, 在页面的后置命令输入`sudo systemctl reload nginx`就可以了
