@@ -19,7 +19,8 @@ comments = true
 ## 配置开始
 
 1. 安装 nginx
-   博主用的是"debian"系统, 于是就很直接 apt 安装就好了, 安装好之后 nginx 的配置文件在/etc/nginx/nginx.conf, 配置文件内容如下:
+
+博主用的是"debian"系统, 于是就很直接 apt 安装就好了, 安装好之后 nginx 的配置文件在/etc/nginx/nginx.conf, 配置文件内容如下:
 
 ```nginx
 user www-data;
@@ -110,7 +111,8 @@ http {
 在"nginx.conf"文件中可以通过 include 引入其他配置文件
 
 2. 配置重定向
-   创建"redirect.conf"文件, 内容如下
+
+创建"redirect.conf"文件, 内容如下
 
 ```nginx
 server {
@@ -122,7 +124,8 @@ server {
 ```
 
 3. 开启 ssl 配置反向代理
-   创建"域名.conf"文件, 内容如下
+
+创建"域名.conf"文件, 内容如下
 
 ```nginx
 server {
@@ -144,7 +147,8 @@ server {
 ## 一点点孤儿应用
 
 1. 孤儿飞牛
-   飞牛系统的 webUI 依赖 websocket, 所以要把 websocket 打开,不然会一直在 UI 界面转圈圈
+
+飞牛系统的 webUI 依赖 websocket, 所以要把 websocket 打开,不然会一直在 UI 界面转圈圈
 
 ```nginx
 server {
