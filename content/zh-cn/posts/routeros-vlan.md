@@ -40,10 +40,10 @@ VLAN可以将端口划分为Access端口、Trunk端口和Hybrid端口, 它们的
 ## RouterOS的接口、网桥、VLAN配置
 1. 首先创建不同的WIFI SSID, 这些SSID可以视作RouterOS路由器扩展出来的端口, 只不过是无线的而已
 2. 创建网桥, 方便统一管理多个端口, 这里介绍一下RouterOS的网桥。RouterOS的网桥创建之后相当于一个交换机, 除了在路由器上加入的实际端口外, 对于路由器自身连接这个网桥交换机也需要一个端口, 这个端口和普通端口一样可以设置PVID
-{{<img "https://gitee.com/linsifu/pic-embed/raw/master/images/routeros-bridge%20network-structure.png" "routeros网桥拓扑">}}
+{{<images "https://gitee.com/linsifu/pic-embed/raw/master/images/routeros-bridge%20network-structure.png" "routeros网桥拓扑">}}
 
 3. 给网桥加入端口, 并设置对应的PVID
 4. 最后将端口添加进列表
 过程如下图所示
 
-{{<img "https://gitee.com/linsifu/pic-embed/raw/master/images/routeros-Bridge&vlan-configuration.png" "routeros网桥配置">}}
+{{<images "https://gitee.com/linsifu/pic-embed/raw/master/images/routeros-Bridge&vlan-configuration.png" "routeros网桥配置">}}
