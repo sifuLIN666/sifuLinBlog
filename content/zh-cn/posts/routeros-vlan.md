@@ -43,6 +43,7 @@ VLAN可以将端口划分为Access端口、Trunk端口和Hybrid端口, 它们的
 {{<images "https://p.sda1.dev/27/5bbafdd9c00c50de62c4b492b551fc69/routeros-bridge network-structure.png" "routeros网桥拓扑">}}
 
 3. 给网桥加入端口, 并设置对应的PVID
+{{<images "https://p.sda1.dev/27/e04f2b9ab23c26c82ea6327fa6b24f28/PVIDconfiguration.png" "routeros端口PVID设置">}}
 4. 最后将端口添加进列表
 过程如下图所示
 
