@@ -11,6 +11,7 @@ math = false
 toc = true
 comments = true
 +++
+
 ## 前言
 
 巨硬的尿性想必大家都知道, 典型的好用就给你删了, 但是这次还真的发现巨硬的一点良心, kms激活windows, 虽然部署异常复杂, 但好歹能用, 而且有大佬给了[开源方案](https://github.com/Wind4/vlmcsd/releases), 我一般在linux上部署vlmcsd-x64-musl-static这个版本, 下载后根据系统什么的找一下就有了, 这里再附上脚本, {{<enhence>}}注意这个脚本要首先创建vlmcsd文件夹, 并且创建bin子目录并将程序上传至bin目录下{{</enhence>}}
