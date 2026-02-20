@@ -143,7 +143,7 @@ ok,这就完事了
 setup /download config.xml
 setup /configure config.xml
 ```
-都搞好后进入office的目录, **"C:\Program Files\Microsoft Office\Office16"**
+都搞好后进入office的目录, {{<quote>}}C:\Program Files\Microsoft Office\Office16{{</quote>}}
 
 ```bash
 cd "C:\Program Files\Microsoft Office\Office16"

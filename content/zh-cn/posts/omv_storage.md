@@ -47,11 +47,11 @@ OMV这个系统要共享文件夹需要首先创建文件夹, 路径**存储器-
 
 用户隔离, 听起来很美好的功能, 但是用起来诡异的很, 首先你要在父文件夹有与用户名称相同的文件夹, 否则是没有权限的
 
-比如你共享**shared**文件夹, 用户**lin**登录, 那你就需要提前在共享文件夹创建好**lin**这个目录, 相对路径写**shared/lin**就好, 然后**shared**和**lin**两个目录都需要设置ACL权限, 要给{{<enhence>}}webdav-users(group)和www-data(user){{</enhence>}}设置读写权限, 然后路径就填你设置的相对路径就好, 他会自动跳转到对应的子目录里面
+比如你共享{{<quote>}}shared{{</quote>}}文件夹, 用户{{<quote>}}lin{{</quote>}}登录, 那你就需要提前在共享文件夹创建好{{<quote>}}lin{{</quote>}}这个目录, 相对路径写{{<quote>}}shared/lin{{</quote>}}就好, 然后{{<quote>}}shared和lin{{</quote>}}两个目录都需要设置ACL权限, 要给{{<enhence>}}webdav-users(group)和www-data(user){{</enhence>}}设置读写权限, 然后路径就填你设置的相对路径就好, 他会自动跳转到对应的子目录里面
 
 2. 用户组别
 
-一定一定要给用户添加一个webdav-users的组, 因为这个webdav实际上是nginx在写入, 用户只是nginx做认证, 所以有关nginx的两个组www-data和webdav-users一定要赋予权限
+一定一定要给用户添加一个{{<quote>}}webdav-users{{</quote>}}的组, 因为这个webdav实际上是nginx在写入, 用户只是nginx做认证, 所以有关nginx的两个组{{<quote>}}www-data和webdav-users{{</quote>}}一定要赋予权限
 
 ## 结束
 
