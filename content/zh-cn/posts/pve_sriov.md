@@ -74,6 +74,7 @@ apt install --reinstall dkms -y # 安装编译环境依赖
 到[这个网址](https://github.com/strongtz/i915-sriov-dkms.git)打开release找到支持你驱动的版本, 你可以选择下载deb包或者下载源码上传到pve上进行编译
 
 1. 源码编译
+
 进入下载的源码文件夹, 查看dkms.conf文件, 确认{{<enhence>}}PACKAGE_NAME="i915-sriov-dkms"和PACKAGE_VERSION="6.17.2-1"{{</enhence>}}
 
 ```bash
