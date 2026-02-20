@@ -22,8 +22,9 @@ comments = false
 
 需要准备一份Windows的安装镜像, 然后挂载镜像, 进入镜像目录后在"sources"文件夹下找到"install.wim"文件, 以管理员身份运行cmd, 输入以下命令
 
-1. {{< quote >}}Dism /Get-ImageInfo /ImageFile:<安装镜像盘符>:\sources\install.wim
-{{< /quote >}}
+1. 获取版本信息
+
+{{< quote >}}Dism /Get-ImageInfo /ImageFile:<install.wim所在路径>{{< /quote >}}
 
 记下想要安装版本的{{< quote >}}索引{{< /quote >}}号, 把对应映像部署到虚拟磁盘
 
@@ -33,6 +34,12 @@ comments = false
 示例: {{< quote >}}Dism /Apply-Image /ImageFile:G:\sources\install.wim /index:4 /ApplyDir:V:\ {{< /quote >}}
 
 ## 安装vhdx系统
+
+### 船新安装版本
+
+利用wepe进入系统, 格式化要装载系统的磁盘, 之后转换GPT分区类型, 接下来在创建一个ESP分区。 该分区作为引导硬盘都会有的, 如果是双系统就不需要创建了。
+
+将安装好系统的虚拟磁盘复制进要装载系统的磁盘中, 并且挂载上去, 之后就可以创建启动引导了
 
 ### 创建启动引导项
 
@@ -46,16 +53,18 @@ lis vol
 
 ```bash
 # sel vol <索引>
-# 示例
+# 示例, 选择索引为2的ESP分区, 并为其指定盘符为S
 sel vol 2
-ass letter=v
+ass letter=s
 # 退出diskpart
 exit
 # 设置启动项
-# bcdboot <虚拟磁盘盘符>:\windows /s <引导分区盘符>: /f UEFI
+# bcdboot <虚拟磁盘挂载路径下的windows文件夹> /s <引导分区盘符>: /f UEFI
 # 示例
 bcdboot V:\windows /s S: /f UEFI
 ```
+
+{{<enhence>}}虚拟磁盘启动后会占满所设置的容量, 务必确保磁盘空间足够{{<\enhence>}}
 
 此时重启后已经已经可以选择双系统了, 但是如果不做标识的话, 都是Windows 11看不出来谁是谁, 因此还需要设置一下
 
@@ -131,5 +140,32 @@ bcdedit /delete {标识符项}
 
 完成后重启生效, 之后再删除卷就可以了
 
+## 扩容磁盘
+
+管理员打开cmd
+
+```bash
+diskpart
+
+sel vdi file="虚拟磁盘vhdx文件的路径"
+
+expand vdisk maximum=30720  # 扩容后的总容量, 单位Mb
+```
+
+## 差分磁盘
+
+```bash
+diskpart
+create vdisk file="新磁盘路径" parent="父磁盘路径"  # 之后对系统的更改都会写进新的磁盘, 而不会在父磁盘了
+
+# 但是父盘更改差分磁盘会失效, 建议改只读
+# 备份的话直接复制文件即可
+# 还原的话直接把差分磁盘删除然后在原来父盘基础上在创建一个差分磁盘就好
+# 将差分磁盘所做的更改合并到父盘
+sel vdisk file="差分磁盘的路径"
+merge vdisk depth=1 # 允许多重差分, 这里只是从父磁盘差分了一次, 所以深度选1
+```
+
+## 最后丢个参考文献
 [参考文献](https://alexliu07.github.io/2024/07/10/3/)
 
