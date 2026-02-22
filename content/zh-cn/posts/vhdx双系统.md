@@ -156,7 +156,7 @@ expand vdisk maximum=30720  # 扩容后的总容量, 单位Mb
 
 ```bash
 diskpart
-create vdisk file="新磁盘路径" parent="父磁盘路径"  # 之后对系统的更改都会写进新的磁盘, 而不会在父磁盘了
+create vdisk file="新磁盘路径" parent="父磁盘路径"  # 之后修改引导启动项为差分磁盘, 之后对系统的更改都会写进新的磁盘, 而不会在父磁盘了
 
 # 但是父盘更改差分磁盘会失效, 建议改只读
 # 备份的话直接复制文件即可
