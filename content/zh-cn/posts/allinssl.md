@@ -49,11 +49,11 @@ docker run -itd \
 
 ```bash
 mkdir -p /opt/allinssl
+mkdir -p /opt/all/certs/sifuhub.top
 tar -xvf allinssl_*.tar.gz -C /opt/allinssl
 useradd -r -s /usr/sbin/nologin allinssl
 chown -R allinssl:allinssl /opt/allinssl
 chmod -R 755 /opt/allinssl
-chmod u+x /opt/allinssl/allinssl
 cat > /usr/lib/systemd/system/allinssl.service <<EOF
 [Unit]
 Description=ALLinSSL Service
@@ -64,6 +64,7 @@ Type=forking
 ExecStart=/opt/allinssl/allinssl 1
 ExecRestart=/opt/allinssl/allinssl 3
 User=allinssl
+Group=allinssl
 Restart=always
 RestartSec=5
 
