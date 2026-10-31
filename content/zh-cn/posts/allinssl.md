@@ -49,7 +49,7 @@ docker run -itd \
 
 ```bash
 mkdir -p /opt/allinssl
-mkdir -p /opt/all/certs/sifuhub.top
+mkdir -p /opt/allinssl/certs/sifuhub.top
 tar -xvf allinssl_*.tar.gz -C /opt/allinssl
 useradd -r -s /usr/sbin/nologin allinssl
 chown -R allinssl:allinssl /opt/allinssl
