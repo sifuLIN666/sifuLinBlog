@@ -98,6 +98,14 @@ deb包安装要简单很多
 
 ```bash
 dpkg -i deb包路径
+dkms status # 再次检查编译是否成功
+lspci | grep VGA    # 查询当前核显ID
+
+# 0000:00:02.0 这个修改为你的ID
+# sriov_numvfs = 7里面的7修改为其他值，不要超过7
+echo "devices/pci0000:00/0000:00:02.0/sriov_numvfs = 7" > /etc/sysfs.conf
+reboot
+lspci | grep VGA    # 此时应有七个小矮人了
 ```
 
 {{<enhence>}}注意!!!千万不要直通代码为0的核显, 那个是主核显, 直通整个pve会崩的{{</enhence>}}
